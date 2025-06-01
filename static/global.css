@@ -102,8 +102,25 @@ button {
 	--font-heading-l: 3rem;
 
 	/* Colors */
-	--color-black: #000;
 	--color-white: #fff;
+	--color-black: #0c0d0c;
+	--color-greyscale-1: #303630;
+	--color-greyscale-2: #616b61;
+	--color-greyscale-3: #949e94;
+	--color-bronze-1: #cc8328;
+	--color-bronze-2: #e59c42;
+	--color-bronze-3: #ecb46f;
+	--color-bronze-4: #f2cb9c;
+	--color-bronze-5: #f6e8d5;
+	--color-bronze-6: #e8d0b0;
+	--color-bronze-7: #f6dcbb;
+	--color-pine-1: #212c21;
+	--color-pine-2: #374937;
+	--color-pine-3: #527a52;
+	--color-pine-4: #99b299;
+	--color-pine-5: #b6c8b6;
+	--color-pine-6: #425742;
+	--color-footer: #1d201d;
 
 	/* Spacing */
 	--padding-inline: 1rem;
@@ -168,6 +185,7 @@ button {
 
 html {
 	overflow-x: hidden;
+	background-color: var(--color-bronze-5);
 }
 
 h1,
@@ -224,7 +242,7 @@ span.material-icons {
 	white-space: nowrap;
 	width: fit-content;
 	height: 40px;
-	padding: var(--spacing-xs) var(--spacing-s);
+	padding: var(--spacing-m) var(--spacing-l);
 	border-radius: 0.5rem;
 	font-size: var(--font-body-s);
 	font-family: var(--font-heading, sans-serif);
@@ -254,8 +272,7 @@ span.material-icons {
 
 .button-primary {
 	color: var(--color-white, #fff);
-	background-color: var(--color-primary, #000);
-	border: 2px solid var(--color-black, #000);
+	background-color: var(--color-pine-3);
 }
 
 /* .button-secondary {
