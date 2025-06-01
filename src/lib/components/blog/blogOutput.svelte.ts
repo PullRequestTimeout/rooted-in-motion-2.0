@@ -1,7 +1,7 @@
 import { Delta } from "quill/core";
 
 // TODO: Link to auth
-export const authorsRegistered = ["Jacob Druery", "Michelle Coish"];
+export const authorsRegistered = ["Michelle Coish"];
 
 // Types ------------------------------------------------
 export type BlogPostState = "unsaved" | "published" | "draft" | "deleted";
