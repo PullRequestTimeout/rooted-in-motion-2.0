@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { slide, fade } from "svelte/transition";
 	import { clickOutside } from "$lib/utils/clickOutside";
+	import { onMount } from "svelte";
 
 	let open = $state(false);
 	function handleToggleMenu() {
@@ -11,10 +12,20 @@
 		// Logic to open the booking modal
 		alert("Booking modal opened!");
 	}
+
+	let scrollPosition = $state(0);
+	onMount(() => {
+		const handleScroll = () => {
+			scrollPosition = window.scrollY;
+		};
+
+		window.addEventListener("scroll", handleScroll);
+	});
 </script>
 
 <header
 	class:open
+	class:scrolled={scrollPosition > 10}
 	use:clickOutside
 	onoutclick={() => {
 		open = false;
@@ -28,18 +39,18 @@
 		<span></span>
 	</button>
 	{#if open}
-		<nav in:slide={{ duration: 300, axis: "y" }} out:slide={{ delay: 300 }} class="mobile-nav" class:open>
+		<nav in:slide={{ duration: 300, axis: "y" }} out:slide={{ duration: 300 }} class="mobile-nav" class:open>
 			<ul>
-				<li out:fade in:fade={{ delay: 3 * 100 }}><a href="/">Home</a></li>
+				<li out:fade in:fade={{ delay: 2 * 100 }}><a href="/">Home</a></li>
+				<hr out:fade in:fade={{ delay: 2.25 * 100 }} />
+				<li out:fade in:fade={{ delay: 2.5 * 100 }}><a href="/services">Services</a></li>
+				<hr out:fade in:fade={{ delay: 2.75 * 100 }} />
+				<li out:fade in:fade={{ delay: 3 * 100 }}><a href="/about">About</a></li>
 				<hr out:fade in:fade={{ delay: 3.25 * 100 }} />
-				<li out:fade in:fade={{ delay: 3.5 * 100 }}><a href="/services">Services</a></li>
+				<li out:fade in:fade={{ delay: 3.5 * 100 }}><a href="/blog">Blog</a></li>
 				<hr out:fade in:fade={{ delay: 3.75 * 100 }} />
-				<li out:fade in:fade={{ delay: 4 * 100 }}><a href="/about">About</a></li>
-				<hr out:fade in:fade={{ delay: 4.25 * 100 }} />
-				<li out:fade in:fade={{ delay: 4.5 * 100 }}><a href="/blog">Blog</a></li>
-				<hr out:fade in:fade={{ delay: 4.75 * 100 }} />
-				<li out:fade in:fade={{ delay: 5 * 100 }}><a href="/contact">Contact</a></li>
-				<li out:fade in:fade={{ delay: 5.25 * 100 }}><button class="button button-primary" onclick={openBookingModal}>Book Session</button></li>
+				<li out:fade in:fade={{ delay: 4 * 100 }}><a href="/contact">Contact</a></li>
+				<li out:fade in:fade={{ delay: 4.25 * 100 }}><button class="button button-primary" onclick={openBookingModal}>Book Session</button></li>
 			</ul>
 		</nav>
 	{/if}
@@ -63,17 +74,21 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: 1rem var(--padding-inline);
-		background-color: var(--color-bronze-5);
+		background-color: transparent;
 		position: fixed;
 		z-index: 1000;
 		width: 100%;
-		transition: background-color 0.3s ease-in-out;
-		transition-delay: 0.3s;
+		transition: 0.3s ease-in-out;
 	}
 
-	header.open {
+	header.open,
+	header.scrolled.open {
 		background-color: var(--color-footer);
-		transition-delay: 0s;
+	}
+
+	header.scrolled {
+		background-color: var(--color-bronze-5);
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 	}
 
 	img.logo {
