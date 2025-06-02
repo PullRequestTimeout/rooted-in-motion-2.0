@@ -1,14 +1,44 @@
 /* Font Imports ---------------------------------------- */
 
-/* @font-face {
-	font-family: "Mogra";
+@font-face {
+	font-family: "Raleway";
 	font-weight: 400;
 	font-style: normal;
 	src:
-		url("/assets/fonts/Mogra-Regular.woff2") format("woff2"),
-		url("/assets/fonts/Mogra-Regular.woff") format("woff");
+		url("/assets/fonts/Raleway-Regular.woff2") format("woff2"),
+		url("/assets/fonts/Raleway-Regular.woff") format("woff");
 	font-display: swap;
-} */
+}
+
+@font-face {
+	font-family: "Raleway";
+	font-weight: 300;
+	font-style: normal;
+	src:
+		url("/assets/fonts/Raleway-Light.woff2") format("woff2"),
+		url("/assets/fonts/Raleway-Light.woff") format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Lato";
+	font-weight: 400;
+	font-style: normal;
+	src:
+		url("/assets/fonts/Lato-Regular.woff2") format("woff2"),
+		url("/assets/fonts/Lato-Regular.woff") format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Lato";
+	font-weight: 300;
+	font-style: normal;
+	src:
+		url("/assets/fonts/Lato-Light.woff2") format("woff2"),
+		url("/assets/fonts/Lato-Light.woff") format("woff");
+	font-display: swap;
+}
 
 /* Reset ----------------------------------------------- */
 
@@ -89,8 +119,8 @@ button {
 
 :root {
 	/* Fonts (w/ System Font Stack) */
-	--font-heading: sans-serif;
-	--font-body: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--font-heading: "Raleway", sans-serif;
+	--font-body: "Lato", sans-serif;
 
 	/* Font sizes */
 	--font-body-s: 1rem;
@@ -206,7 +236,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--font-heading), sans-serif;
+	font-family: var(--font-heading);
 	padding: 0;
 	text-transform: capitalize;
 	margin: 0 0 1rem 0;
@@ -229,7 +259,7 @@ h6::selection {
 }
 
 *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
-	font-family: var(--font-body), sans-serif;
+	font-family: var(--font-body);
 }
 
 p {
@@ -269,8 +299,6 @@ span.material-icons {
 	padding: var(--spacing-m) var(--spacing-l);
 	border-radius: 0.5rem;
 	font-size: var(--font-body-s);
-	font-family: var(--font-heading, sans-serif);
-	font-weight: 700;
 	display: flex;
 	align-items: center;
 	justify-content: center;
