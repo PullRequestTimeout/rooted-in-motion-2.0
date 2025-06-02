@@ -98,6 +98,7 @@
 
 	header.large-screen-nav {
 		display: none;
+		transition: 0s;
 	}
 
 	header.small-screen-nav nav {
