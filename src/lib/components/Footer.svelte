@@ -47,7 +47,8 @@
 <style>
 	footer {
 		background-color: var(--color-footer, #1d201d);
-		padding: 2em 1em;
+		padding-block: 2rem;
+		padding-inline: var(--padding-inline);
 	}
 
 	div.footer__container {
@@ -144,13 +145,13 @@
 
 	@media screen and (min-width: 640px) {
 		footer {
-			padding: 4em 2em;
+			padding-block: 4rem;
 		}
 	}
 
 	@media screen and (min-width: 768px) {
 		footer {
-			padding: 4em;
+			padding-block: 4rem;
 		}
 
 		div.footer__container {
@@ -184,29 +185,11 @@
 
 	@media screen and (min-width: 1024px) {
 		footer {
-			padding: 4em 6em;
+			padding-block: 6rem;
 		}
 
 		.footer__logo {
 			width: 15em;
-		}
-	}
-
-	@media screen and (min-width: 1280px) {
-		footer {
-			padding: 4em 8em;
-		}
-	}
-
-	@media screen and (min-width: 1536px) {
-		footer {
-			padding: 4em 10em;
-		}
-	}
-
-	@media screen and (min-width: 1800px) {
-		footer {
-			padding: 4em 14em;
 		}
 	}
 </style>
