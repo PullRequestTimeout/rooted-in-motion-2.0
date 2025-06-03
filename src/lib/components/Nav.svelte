@@ -55,7 +55,7 @@
 		</nav>
 	{/if}
 </header>
-<header class="large-screen-nav">
+<header class="large-screen-nav" class:scrolled={scrollPosition > 10}>
 	<a href="/"><img src="/logo.svg" alt="Rooted in Motion logo" class="logo" /></a>
 	<nav>
 		<ul>
@@ -98,7 +98,7 @@
 
 	header.large-screen-nav {
 		display: none;
-		transition: 0s;
+		transition: background-color 0.2s ease-in-out;
 	}
 
 	header.small-screen-nav nav {
