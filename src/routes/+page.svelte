@@ -2,6 +2,19 @@
 	import SeoHead from "$lib/components/SeoHead.svelte";
 	import Faq from "$lib/components/FAQ.svelte";
 	import FeedbackCarousel from "$lib/components/FeedbackCarousel.svelte";
+
+	const symptoms = [
+		"Back Pain",
+		"Neck Pain",
+		"Shoulder Pain",
+		"Headaches",
+		"Joint Pain",
+		"Muscle Tension",
+		"Stress Relief",
+		"Chronic Pain",
+		"Sports Injuries",
+		"Postural Issues"
+	];
 </script>
 
 <SeoHead />
@@ -30,7 +43,19 @@
 			</picture>
 		</div>
 	</section>
-	<section class="symptoms"></section>
+	<section class="symptoms">
+		<h2>Symptoms I work with</h2>
+		<div class="symptoms-list">
+			{#each symptoms as symptom}
+				<div class="symptoms-item">
+					<button class="button button-primary" aria-label={`${symptom} modal button`}>X</button>
+					<p>{symptom}</p>
+				</div>
+			{/each}
+		</div>
+		<a href="/services" class="button button-secondary">Read More</a>
+		<img class="symptoms-svg" src="/assets/images/svgs/plant-5.svg" alt="plant svg" />
+	</section>
 </main>
 
 <style>
@@ -265,6 +290,98 @@
 
 	/* Symptoms -------------------------------------------------------------------------------- */
 	section.symptoms {
+		position: relative;
 		background-color: var(--color-greyscale-1);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: var(--color-white);
+		gap: var(--spacing-m);
+		overflow: hidden;
+	}
+
+	section.symptoms h2 {
+		font-size: var(--font-heading-s);
+		font-weight: 300;
+	}
+
+	section.symptoms h2,
+	section.symptoms a,
+	section.symptoms div.symptoms-list {
+		position: relative;
+		z-index: 1;
+	}
+
+	section.symptoms div.symptoms-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--spacing-m);
+	}
+
+	section.symptoms div.symptoms-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--spacing-s);
+	}
+
+	section.symptoms div.symptoms-item button {
+		background-color: var(--color-bronze-5);
+		color: var(--color-white);
+		border-radius: var(--spacing-s);
+		width: 5rem;
+		height: 5rem;
+		border: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	section.symptoms img.symptoms-svg {
+		position: absolute;
+		z-index: 0;
+		bottom: 0;
+		left: 2rem;
+		min-height: 20em;
+		max-width: unset;
+	}
+
+	@media (hover: hover) {
+		section.symptoms div.symptoms-item button:hover {
+			background-color: var(--color-bronze-2);
+		}
+	}
+
+	@media screen and (min-width: 640px) {
+		section.symptoms div.symptoms-list {
+			grid-template-columns: repeat(3, 1fr);
+			gap: var(--spacing-l);
+		}
+
+		section.symptoms div.symptoms-item:last-child {
+			grid-column: 2;
+		}
+
+		section.symptoms img.symptoms-svg {
+			height: 22rem;
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		section.symptoms {
+			gap: var(--spacing-l);
+		}
+
+		section.symptoms div.symptoms-list {
+			grid-template-columns: repeat(5, 1fr);
+		}
+
+		section.symptoms div.symptoms-item:last-child {
+			grid-column: unset;
+		}
+
+		section.symptoms img.symptoms-svg {
+			height: 25rem;
+		}
 	}
 </style>
