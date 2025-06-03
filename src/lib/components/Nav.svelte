@@ -1,4 +1,5 @@
 <script lang="ts">
+	import NavLogo from "./NavLogo.svelte";
 	import { slide, fade } from "svelte/transition";
 	import { clickOutside } from "$lib/utils/clickOutside";
 	import { onMount } from "svelte";
@@ -32,7 +33,7 @@
 	}}
 	class="small-screen-nav"
 >
-	<a href="/"><img src="/logo.svg" alt="Rooted in Motion logo" class="logo" /></a>
+	<a href="/"><NavLogo invertColor={open} /></a>
 	<button class="nav-button" onclick={handleToggleMenu} aria-label="Toggle navigation menu" class:open>
 		<span></span>
 		<span></span>
@@ -56,7 +57,9 @@
 	{/if}
 </header>
 <header class="large-screen-nav" class:scrolled={scrollPosition > 10}>
-	<a href="/"><img src="/logo.svg" alt="Rooted in Motion logo" class="logo" /></a>
+	<a href="/">
+		<NavLogo />
+	</a>
 	<nav>
 		<ul>
 			<li><a href="/about">About</a></li>
@@ -89,11 +92,6 @@
 	header.scrolled {
 		background-color: var(--color-bronze-5);
 		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-	}
-
-	img.logo {
-		height: 4rem;
-		width: auto;
 	}
 
 	header.large-screen-nav {

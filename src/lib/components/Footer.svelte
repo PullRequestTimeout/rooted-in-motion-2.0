@@ -1,7 +1,7 @@
 <footer>
 	<div class="footer__container">
 		<div class="footer__hero">
-			<img class="footer__logo" src="logo.svg" alt="rooted in motion logo" />
+			<img class="footer__logo" src="/assets/images/rooted-in-motion-logo.png" alt="rooted in motion logo" />
 			<p>
 				<a href="mailto:rooted.in.motion@outlook.com"><span title="Shoot me an email!">rooted.in.motion@outlook.com</span></a>
 			</p>
