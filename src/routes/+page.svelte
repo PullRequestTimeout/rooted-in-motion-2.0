@@ -2,19 +2,7 @@
 	import SeoHead from "$lib/components/SeoHead.svelte";
 	import Faq from "$lib/components/FAQ.svelte";
 	import FeedbackCarousel from "$lib/components/FeedbackCarousel.svelte";
-
-	const symptoms = [
-		"Back Pain",
-		"Neck Pain",
-		"Shoulder Pain",
-		"Headaches",
-		"Joint Pain",
-		"Muscle Tension",
-		"Stress Relief",
-		"Chronic Pain",
-		"Sports Injuries",
-		"Postural Issues"
-	];
+	import { symptoms } from "$lib/data/symptoms";
 </script>
 
 <SeoHead />
@@ -46,15 +34,42 @@
 	<section class="symptoms">
 		<h2>Symptoms I work with</h2>
 		<div class="symptoms-list">
-			{#each symptoms as symptom}
+			{#each symptoms as symptom, i}
 				<div class="symptoms-item">
-					<button class="button button-primary" aria-label={`${symptom} modal button`}>X</button>
-					<p>{symptom}</p>
+					<button class="button button-primary" aria-label={`${symptom.title} modal button`}>
+						<img src={`assets/images/svgs/symptom-${i + 1}.svg`} alt={`${symptom.title} icon`} />
+						<img src={`assets/images/svgs/symptom-${i + 1}-white.svg`} alt={`${symptom.title} icon`} />
+					</button>
+					<p>{symptom.title}</p>
 				</div>
 			{/each}
 		</div>
 		<a href="/services" class="button button-secondary">Read More</a>
 		<img class="symptoms-svg" src="/assets/images/svgs/plant-5.svg" alt="plant svg" />
+	</section>
+	<section class="benefits">
+		<div class="benefits-text">
+			<h2>Do <span>you<img src="/assets/images/svgs/chalk-2.svg" alt="chalk outline" /></span> need osteopathy?</h2>
+			<p>
+				If you are having difficulty moving freely due to pain, reduced range of motion, or decreased strength, you may benefit from working with an
+				osteopath.
+			</p>
+			<ul>
+				<li>Modulate pain</li>
+				<li>Increase joint mobility</li>
+				<li>Induce relaxation</li>
+			</ul>
+		</div>
+		<div class="benefits-image">
+			<picture>
+				<source srcset="/assets/images/treatment-2.webp" type="image/webp" />
+				<source srcset="/assets/images/treatment-2.jpg" type="image/jpeg" />
+				<img src="/assets/images/treatment-2.jpg" alt="Michelle treating a client" />
+			</picture>
+			<div class="benefits-image-shadow"></div>
+			<img src="assets/images/svgs/plant-6.svg" alt="svg of a plant" class="benefits-svg-1 svg" />
+			<img src="assets/images/svgs/plant-7.svg" alt="svg of a plant" class="benefits-svg-2 svg" />
+		</div>
 	</section>
 </main>
 
@@ -302,7 +317,6 @@
 
 	section.symptoms h2 {
 		font-size: var(--font-heading-s);
-		font-weight: 300;
 	}
 
 	section.symptoms h2,
@@ -316,6 +330,7 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: var(--spacing-m);
+		text-align: center;
 	}
 
 	section.symptoms div.symptoms-item {
@@ -332,9 +347,28 @@
 		width: 5rem;
 		height: 5rem;
 		border: none;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		display: grid;
+		grid-template-areas: "stack";
+		padding: 0;
+	}
+
+	section.symptoms div.symptoms-item button img {
+		grid-area: stack;
+		height: 4rem;
+		width: 3rem;
+		transition: opacity 0.3s ease-in-out;
+	}
+
+	section.symptoms div.symptoms-item button img:last-child {
+		opacity: 0;
+	}
+
+	section.symptoms div.symptoms-item button:hover img:first-child {
+		opacity: 0;
+	}
+
+	section.symptoms div.symptoms-item button:hover img:last-child {
+		opacity: 1;
 	}
 
 	section.symptoms img.symptoms-svg {
@@ -374,6 +408,7 @@
 
 		section.symptoms div.symptoms-list {
 			grid-template-columns: repeat(5, 1fr);
+			max-width: 50rem;
 		}
 
 		section.symptoms div.symptoms-item:last-child {
@@ -382,6 +417,200 @@
 
 		section.symptoms img.symptoms-svg {
 			height: 25rem;
+		}
+	}
+
+	/* Benefits -------------------------------------------------------------------------------- */
+	section.benefits {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--spacing-l);
+		background-color: var(--color-bronze-6);
+	}
+
+	div.benefits-text {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-m);
+		font-weight: 300;
+	}
+
+	div.benefits-text h2 {
+		font-size: var(--font-heading-s);
+		position: relative;
+		z-index: 1;
+	}
+
+	div.benefits-text h2 span {
+		position: relative;
+		width: 100%;
+	}
+
+	div.benefits-text h2 span img {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: -1;
+		width: 110%;
+		transform: translate(0.1rem, 0.2rem);
+	}
+
+	div.benefits-text p,
+	div.benefits-text ul {
+		font-size: var(--font-body-l);
+		line-height: 1.2;
+	}
+
+	div.benefits-text ul {
+		padding: 0;
+		list-style: none;
+		list-style-type: none;
+	}
+
+	div.benefits-text ul li::before {
+		content: "✔";
+		color: var(--color-pine-3);
+		margin-right: var(--spacing-m);
+	}
+
+	div.benefits-image {
+		position: relative;
+		justify-self: center;
+		align-self: center;
+		margin: var(--spacing-m);
+	}
+
+	div.benefits-image img:not(.svg) {
+		position: relative;
+		z-index: 10;
+		width: 15em;
+		justify-self: center;
+		border-radius: var(--spacing-s);
+		filter: drop-shadow(0 0 0.5rem var(--color-black));
+	}
+
+	div.benefits-image-shadow {
+		position: absolute;
+		background-color: var(--color-pine-4);
+		border-radius: 0.5em;
+		width: 15em;
+		aspect-ratio: 3 / 4;
+		top: 1em;
+		left: 1em;
+		z-index: 0;
+	}
+
+	div.benefits-image .svg {
+		position: absolute;
+		bottom: -1em;
+		width: 5em;
+	}
+
+	div.benefits-image img.benefits-svg-1 {
+		left: -2.5rem;
+	}
+
+	div.benefits-image img.benefits-svg-2 {
+		right: -2.5rem;
+	}
+
+	@media screen and (min-width: 640px) {
+		div.benefits-text {
+			text-align: center;
+		}
+
+		div.benefits-text ul {
+			display: flex;
+			gap: var(--spacing-s);
+			justify-content: center;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		div.benefits-image img:not(.svg),
+		div.benefits-image-shadow {
+			width: 20em;
+		}
+
+		div.benefits-image img.svg {
+			width: 7rem;
+		}
+
+		div.benefits-image img.benefits-svg-1 {
+			left: -4rem;
+		}
+
+		div.benefits-image img.benefits-svg-2 {
+			right: -4rem;
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		section.benefits {
+			grid-template-columns: 1.5fr 1fr;
+			gap: var(--spacing-m);
+		}
+
+		div.benefits-text {
+			text-align: left;
+		}
+
+		div.benefits-text h2 {
+			font-size: var(--font-heading-m);
+		}
+
+		div.benefits-text ul {
+			display: unset;
+		}
+
+		div.benefits-text p,
+		div.benefits-text ul {
+			font-size: var(--font-body-xl, 1.6rem);
+		}
+
+		div.benefits-image img:not(.svg),
+		div.benefits-image-shadow {
+			width: 15rem;
+		}
+
+		div.benefits-image img.svg {
+			width: 5rem;
+		}
+
+		div.benefits-image img.benefits-svg-1 {
+			left: -3rem;
+		}
+
+		div.benefits-image img.benefits-svg-2 {
+			right: -3rem;
+		}
+	}
+
+	@media screen and (min-width: 1280px) {
+		div.benefits-text {
+			gap: var(--spacing-l);
+		}
+
+		div.benefits-text p,
+		div.benefits-text ul {
+			line-height: 1.6;
+		}
+
+		div.benefits-image img:not(.svg),
+		div.benefits-image-shadow {
+			width: 20rem;
+		}
+
+		div.benefits-image img.svg {
+			width: 7rem;
+		}
+
+		div.benefits-image img.benefits-svg-1 {
+			left: -4rem;
+		}
+
+		div.benefits-image img.benefits-svg-2 {
+			right: -4rem;
 		}
 	}
 </style>
