@@ -85,6 +85,31 @@
 			<img src="assets/images/svgs/plant-8.svg" alt="svg of a plant" class="benefits-svg-1 svg" />
 		</div>
 	</section>
+	<section class="promise">
+		<h2>My <span>promise <img src="/assets/images/svgs/chalk-3.svg" alt="chalk" /></span> to you</h2>
+		<div class="promise-cards">
+			<div class="promise-card">
+				<h3>Client Centered Care</h3>
+				<p>Tailoring treatments to your individual needs on any given day.</p>
+			</div>
+			<div class="promise-card">
+				<h3>Holistic Treatment</h3>
+				<p>Assessing the body as a whole to find the root cause of your symptoms.</p>
+			</div>
+			<div class="promise-card">
+				<h3>Restore Healing Mechanisms</h3>
+				<p>Removing barriers to your natural healing mechanism for long-lasting effects.</p>
+			</div>
+		</div>
+		<div class="promise-contact">
+			<img src="/assets/images/svgs/arrow-1.svg" alt="arrow" />
+			<div class="promise-link">
+				<p>Want to know if we are a good fit before committing?</p>
+				<a href="/contact">Get in touch <img src="/assets/images/svgs/chalk-4.svg" alt="chalk line" /></a>
+			</div>
+			<img src="/assets/images/svgs/arrow-1.svg" alt="arrow" />
+		</div>
+	</section>
 </main>
 
 <style>
@@ -107,6 +132,7 @@
 
 	h2.hero-title span {
 		position: relative;
+		font-family: var(--font-heading);
 	}
 
 	h2.hero-title {
@@ -345,6 +371,7 @@
 		grid-template-columns: repeat(2, 1fr);
 		gap: var(--spacing-m);
 		text-align: center;
+		max-width: 25rem;
 	}
 
 	section.symptoms div.symptoms-item {
@@ -456,6 +483,7 @@
 	}
 
 	div.benefits-text h2 span {
+		font-family: var(--font-heading);
 		position: relative;
 		width: 100%;
 	}
@@ -737,6 +765,131 @@
 		div.vision-image > img {
 			width: 32em;
 			min-width: 32em;
+		}
+	}
+
+	/* Promise --------------------------------------------------------------------------------- */
+	section.promise {
+		padding-top: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--spacing-m);
+	}
+
+	section.promise h2 {
+		font-size: var(--font-heading-m);
+		text-align: center;
+	}
+
+	section.promise h2 span {
+		font-family: var(--font-heading);
+		position: relative;
+		width: 100%;
+	}
+
+	section.promise h2 span img {
+		position: absolute;
+		left: -0.5rem;
+		bottom: -1.5rem;
+		z-index: -1;
+	}
+
+	section.promise .promise-cards {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		gap: var(--spacing-m);
+		margin-top: var(--spacing-m);
+	}
+
+	section.promise .promise-card {
+		max-width: 25rem;
+		max-height: 15rem;
+		background-color: var(--color-pine-2);
+		color: var(--color-white);
+		padding: var(--spacing-m) var(--spacing-l);
+		border-radius: var(--spacing-s);
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	section.promise .promise-card h3 {
+		font-size: 1.5rem;
+		margin-bottom: var(--spacing-xs);
+	}
+
+	section.promise div.promise-contact > img {
+		display: none;
+	}
+
+	section.promise div.promise-contact p {
+		font-size: var(--font-body-l);
+		font-family: var(--font-heading);
+		text-align: center;
+	}
+
+	section.promise div.promise-link {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	section.promise div.promise-link a {
+		font-size: var(--font-heading-s);
+		text-decoration: none;
+		color: var(--color-bronze-2);
+		text-align: center;
+	}
+
+	@media screen and (min-width: 768px) {
+		section.promise {
+			gap: var(--spacing-l);
+		}
+
+		section.promise h2 span img {
+			bottom: -2rem;
+		}
+
+		section.promise .promise-cards {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: unset;
+		}
+
+		section.promise .promise-card {
+			max-width: 30rem;
+		}
+
+		section.promise div.promise-contact > img {
+			display: block;
+			width: 4rem;
+			margin-bottom: var(--spacing-xs);
+		}
+
+		section.promise div.promise-contact {
+			display: flex;
+			align-items: center;
+			gap: var(--spacing-xs);
+		}
+
+		section.promise div.promise-contact > img:last-child {
+			transform: scaleX(-1);
+		}
+	}
+
+	@media screen and (min-width: 1280px) {
+		section.promise .promise-cards {
+			gap: var(--spacing-l);
+		}
+
+		section.promise .promise-card {
+			padding: var(--spacing-l);
+		}
+
+		section.promise div.promise-contact > img {
+			width: 6rem;
 		}
 	}
 </style>
