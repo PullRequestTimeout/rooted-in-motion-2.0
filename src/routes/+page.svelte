@@ -71,6 +71,20 @@
 			<img src="assets/images/svgs/plant-7.svg" alt="svg of a plant" class="benefits-svg-2 svg" />
 		</div>
 	</section>
+	<section class="vision">
+		<div class="vision-text">
+			<p>"My goal is to find the root cause of your pain, symptoms, or reduced range of motion so you can get back to the activities you love."</p>
+			<a href="/about" class="button button-primary">Read About Michelle</a>
+		</div>
+		<div class="vision-image">
+			<picture>
+				<source srcset="/assets/images/profile-2.webp" type="image/webp" />
+				<source srcset="/assets/images/profile-2.png" type="image/jpeg" />
+				<img src="/assets/images/profile-2.png" alt="Michelle treating a client" />
+			</picture>
+			<img src="assets/images/svgs/plant-8.svg" alt="svg of a plant" class="benefits-svg-1 svg" />
+		</div>
+	</section>
 </main>
 
 <style>
@@ -556,7 +570,7 @@
 		}
 
 		div.benefits-text h2 {
-			font-size: var(--font-heading-m);
+			font-size: var(--font-heading-s);
 		}
 
 		div.benefits-text ul {
@@ -611,6 +625,118 @@
 
 		div.benefits-image img.benefits-svg-2 {
 			right: -4rem;
+		}
+	}
+
+	/* Vision ---------------------------------------------------------------------------------- */
+	section.vision {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+		gap: var(--spacing-l);
+	}
+
+	div.vision-image {
+		grid-row: 1;
+		position: relative;
+		display: grid;
+		display: grid;
+		grid-template-columns: 1fr;
+		place-items: center;
+		width: 100%;
+	}
+
+	div.vision-image picture img {
+		position: relative;
+		z-index: 100;
+		width: 16em;
+		justify-self: center;
+		filter: drop-shadow(1rem 1rem 1rem #212c2190);
+	}
+
+	div.vision-image > img {
+		position: absolute;
+		justify-self: center;
+		z-index: -1;
+		width: 24rem;
+		min-width: 24rem;
+		bottom: -4rem;
+		transform: translateX(-0.5rem);
+	}
+
+	div.vision-text {
+		grid-row: 2;
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-m);
+		align-items: center;
+		text-align: center;
+	}
+
+	div.vision-text p {
+		font-family: var(--font-heading);
+		font-weight: 300;
+		font-size: var(--font-body-l);
+	}
+
+	@media screen and (min-width: 1024px) {
+		section.vision {
+			grid-template-columns: 1.5fr 1fr;
+			grid-template-rows: unset;
+			gap: var(--spacing-m);
+		}
+
+		div.vision-image {
+			grid-row: unset;
+			align-self: center;
+		}
+
+		div.vision-text {
+			grid-row: unset;
+			align-items: flex-start;
+			justify-content: center;
+			text-align: left;
+			gap: var(--spacing-l);
+		}
+
+		div.vision-text p {
+			font-size: var(--font-body-xl, 1.6rem);
+			line-height: 1.2;
+		}
+	}
+
+	@media screen and (min-width: 640px) {
+		div.vision-image picture img {
+			width: 18rem;
+		}
+
+		div.vision-image > img {
+			width: 28em;
+			min-width: 28em;
+			bottom: -4.5em;
+		}
+	}
+
+	@media screen and (min-width: 1280px) {
+		div.vision-image picture img {
+			width: 20rem;
+		}
+
+		div.vision-image > img {
+			width: 32em;
+			min-width: 32em;
+			bottom: -5.5em;
+		}
+	}
+
+	@media screen and (min-width: 1800px) {
+		div.vision-image picture img {
+			width: 22rem;
+		}
+
+		div.vision-image > img {
+			width: 32em;
+			min-width: 32em;
 		}
 	}
 </style>
