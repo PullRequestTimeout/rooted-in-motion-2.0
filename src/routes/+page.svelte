@@ -111,6 +111,7 @@
 		</div>
 	</section>
 	<section class="feedback">
+		<img class="feedback-plant-1" src="/assets/images/svgs/plant-9.svg" alt="plant svg" />
 		<h2>What my clients think</h2>
 		<FeedbackCarousel />
 		<div class="feedback-cta">
@@ -131,6 +132,7 @@
 				<a class="button button-secondary" href="/contact">Book Session</a>
 			</div>
 		</div>
+		<img class="feedback-plant-2" src="/assets/images/svgs/plant-10.svg" alt="plant svg" />
 	</section>
 	<section class="faq">
 		<FAQ />
@@ -925,6 +927,7 @@
 	/* Feedback -------------------------------------------------------------------------------- */
 	section.feedback {
 		background-color: var(--color-greyscale-1);
+		position: relative;
 	}
 
 	section.feedback h2 {
@@ -960,6 +963,11 @@
 		gap: var(--spacing-m);
 	}
 
+	section.feedback div.feedback-cta-text a,
+	section.feedback div.feedback-cta-text p {
+		z-index: 10;
+	}
+
 	section.feedback div.feedback-cta h2 {
 		text-align: left;
 		margin: 0;
@@ -971,6 +979,26 @@
 		font-weight: 300;
 		line-height: 1.4;
 		color: var(--color-white);
+	}
+
+	section.feedback img.feedback-plant-1,
+	section.feedback img.feedback-plant-2 {
+		position: absolute;
+	}
+
+	section.feedback img.feedback-plant-1 {
+		top: 0;
+		right: 10%;
+		width: 6rem;
+		opacity: 0.5;
+	}
+
+	section.feedback img.feedback-plant-2 {
+		bottom: -1.5rem;
+		right: 10%;
+		width: 12rem;
+		filter: drop-shadow(0 0 0.15rem var(--color-black));
+		z-index: 0;
 	}
 
 	@media screen and (min-width: 1024px) {
@@ -995,6 +1023,16 @@
 		section.feedback div.feedback-cta-image img {
 			max-width: 40rem;
 		}
+
+		section.feedback img.feedback-plant-1 {
+			opacity: 1;
+		}
+
+		section.feedback img.feedback-plant-2 {
+			right: 20%;
+			width: 16rem;
+			bottom: -2.25rem;
+		}
 	}
 
 	@media screen and (min-width: 1440px) {
@@ -1004,8 +1042,10 @@
 	}
 
 	/* FAQ ------------------------------------------------------------------------------------- */
-	section.faq {
-		max-width: 80rem;
-		margin: 0 auto;
+	@media screen and (min-width: 1024px) {
+		section.faq {
+			max-width: 60rem;
+			margin: 0 auto;
+		}
 	}
 </style>

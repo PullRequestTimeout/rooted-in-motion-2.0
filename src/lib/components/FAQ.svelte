@@ -34,31 +34,37 @@
 	}
 </script>
 
-<section>
-	<h3>My frequently asked questions</h3>
+<h3>My frequently asked questions</h3>
+<hr />
+{#each faqs as faq, i}
+	<div class="faq-item">
+		<button on:click={() => toggleFaq(i)} aria-label="Toggle answer for {faq.question}">
+			<h4 class="faq-question">{faq.question}</h4>
+			<div class="faq-icon" class:open={openFaqIndex === i}>
+				<span></span>
+				<span></span>
+			</div>
+		</button>
+		{#if openFaqIndex === i}
+			<p transition:slide={{ axis: "y" }} class="faq-answer">{faq.answer}</p>
+		{/if}
+	</div>
 	<hr />
-	{#each faqs as faq, i}
-		<div class="faq-item">
-			<button on:click={() => toggleFaq(i)} aria-label="Toggle answer for {faq.question}">
-				<h4 class="faq-question">{faq.question}</h4>
-				<div class="faq-icon" class:open={openFaqIndex === i}>
-					<span></span>
-					<span></span>
-				</div>
-			</button>
-			{#if openFaqIndex === i}
-				<p transition:slide={{ axis: "y" }} class="faq-answer">{faq.answer}</p>
-			{/if}
-		</div>
-		<hr />
-	{/each}
-</section>
+{/each}
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+	h3 {
+		font-size: var(--font-heading-m);
+		font-weight: 400;
+		text-align: center;
+		margin-bottom: var(--spacing-l);
+	}
+
+	h4 {
+		text-align: left;
+		font-size: var(--font-body-l);
+		font-family: var(--font-body);
+		font-weight: 400;
 	}
 
 	div.faq-item {
@@ -72,7 +78,7 @@
 		align-items: center;
 		background: none;
 		border: none;
-		padding: 1rem 0;
+		padding: 0.75rem 0;
 	}
 
 	div.faq-item button * {
@@ -81,21 +87,14 @@
 
 	div.faq-item p {
 		margin-bottom: 1rem;
+		font-size: var(--font-body-s);
+		font-weight: 300;
 	}
 
 	hr {
 		width: 100%;
 		border: none;
 		border-top: 2px solid var(--color-black);
-	}
-
-	h3 {
-		text-align: center;
-		margin-bottom: 1rem;
-	}
-
-	h4 {
-		text-align: left;
 	}
 
 	div.faq-icon {
@@ -124,10 +123,17 @@
 		transform: rotate(0deg);
 	}
 
-	@media (min-width: 768px) {
-		section {
-			max-width: 1000px;
-			margin: 0 auto;
+	@media screen and (min-width: 1024px) {
+		h3 {
+			font-size: var(--font-heading-s);
+		}
+
+		h4 {
+			font-size: var(--font-body-l);
+		}
+
+		div.faq-item p {
+			font-size: var(--font-body-l);
 		}
 	}
 </style>

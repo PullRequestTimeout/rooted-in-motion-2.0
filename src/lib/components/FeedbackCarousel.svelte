@@ -64,7 +64,6 @@
 		margin-top: var(--spacing-l);
 		width: 100%;
 		position: relative;
-		background-color: var(--color-greyscale-1);
 		overflow: hidden;
 		margin-bottom: var(--spacing-l);
 	}
