@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SeoHead from "$lib/components/SeoHead.svelte";
-	import Faq from "$lib/components/FAQ.svelte";
+	import FAQ from "$lib/components/FAQ.svelte";
 	import FeedbackCarousel from "$lib/components/FeedbackCarousel.svelte";
 	import { symptoms } from "$lib/data/symptoms";
 </script>
@@ -109,6 +109,31 @@
 			</div>
 			<img src="/assets/images/svgs/arrow-1.svg" alt="arrow" />
 		</div>
+	</section>
+	<section class="feedback">
+		<h2>What my clients think</h2>
+		<FeedbackCarousel />
+		<div class="feedback-cta">
+			<div class="feedback-cta-image">
+				<picture>
+					<source srcset="/assets/images/treatment-3.webp" type="image/webp" />
+					<source srcset="/assets/images/treatment-3.png" type="image/jpeg" />
+					<img src="/assets/images/treatment-3.png" alt="Michelle treating a client" loading="lazy" />
+				</picture>
+			</div>
+			<div class="feedback-cta-text">
+				<h2>Get the time and attention you deserve</h2>
+				<p>
+					Recognizing the interconnectedness of the body's systems, I approach each client with a holistic perspective. I take the time to identify
+					the root causes of your concerns and provide comprehensive treatment to address your body as a whole, leading to long-lasting and effective
+					results.
+				</p>
+				<a class="button button-secondary" href="/contact">Book Session</a>
+			</div>
+		</div>
+	</section>
+	<section class="faq">
+		<FAQ />
 	</section>
 </main>
 
@@ -357,6 +382,7 @@
 
 	section.symptoms h2 {
 		font-size: var(--font-heading-s);
+		font-weight: 400;
 	}
 
 	section.symptoms h2,
@@ -480,6 +506,7 @@
 		font-size: var(--font-heading-s);
 		position: relative;
 		z-index: 1;
+		font-weight: 400;
 	}
 
 	div.benefits-text h2 span {
@@ -705,6 +732,7 @@
 		font-family: var(--font-heading);
 		font-weight: 300;
 		font-size: var(--font-body-l);
+		line-height: 1.2;
 	}
 
 	@media screen and (min-width: 1024px) {
@@ -729,7 +757,7 @@
 
 		div.vision-text p {
 			font-size: var(--font-body-xl, 1.6rem);
-			line-height: 1.2;
+			line-height: 1.6;
 		}
 	}
 
@@ -778,8 +806,9 @@
 	}
 
 	section.promise h2 {
-		font-size: var(--font-heading-m);
+		font-size: var(--font-heading-s);
 		text-align: center;
+		font-weight: 400;
 	}
 
 	section.promise h2 span {
@@ -838,9 +867,9 @@
 	}
 
 	section.promise div.promise-link a {
-		font-size: var(--font-heading-s);
+		font-size: var(--font-body-xl, 1.6rem);
 		text-decoration: none;
-		color: var(--color-bronze-2);
+		color: var(--color-bronze-1);
 		text-align: center;
 	}
 
@@ -885,11 +914,98 @@
 		}
 
 		section.promise .promise-card {
-			padding: var(--spacing-l);
+			padding: var(--spacing-l) var(--spacing-m);
 		}
 
 		section.promise div.promise-contact > img {
 			width: 6rem;
 		}
+	}
+
+	/* Feedback -------------------------------------------------------------------------------- */
+	section.feedback {
+		background-color: var(--color-greyscale-1);
+	}
+
+	section.feedback h2 {
+		text-align: center;
+		font-size: var(--font-heading-m);
+		font-weight: 400;
+		color: var(--color-white);
+	}
+
+	section.feedback div.feedback-cta {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: calc(var(--spacing-m) + 1rem);
+	}
+
+	section.feedback div.feedback-cta-image {
+		position: relative;
+		width: 100%;
+	}
+
+	section.feedback div.feedback-cta-image img {
+		position: relative;
+		width: calc(100% - 1rem);
+		max-width: 30rem;
+		border-radius: var(--spacing-s);
+		filter: drop-shadow(-1rem 1rem 0 var(--color-bronze-6));
+		transform: translateX(1rem);
+	}
+
+	section.feedback div.feedback-cta-text {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-m);
+	}
+
+	section.feedback div.feedback-cta h2 {
+		text-align: left;
+		margin: 0;
+	}
+
+	section.feedback div.feedback-cta p {
+		font-size: var(--font-body-l);
+		font-family: var(--font-heading);
+		font-weight: 300;
+		line-height: 1.4;
+		color: var(--color-white);
+	}
+
+	@media screen and (min-width: 1024px) {
+		section.feedback h2 {
+			font-size: var(--font-heading-s);
+		}
+
+		section.feedback div.feedback-cta {
+			grid-template-columns: 1fr 1fr;
+			gap: var(--spacing-xl);
+		}
+
+		section.feedback div.feedback-cta-text {
+			gap: 2.5rem;
+			justify-content: center;
+		}
+
+		section.feedback div.feedback-cta-text p {
+			font-size: var(--font-body-l);
+		}
+
+		section.feedback div.feedback-cta-image img {
+			max-width: 40rem;
+		}
+	}
+
+	@media screen and (min-width: 1440px) {
+		section.feedback div.feedback-cta-text p {
+			font-size: var(--font-body-m);
+		}
+	}
+
+	/* FAQ ------------------------------------------------------------------------------------- */
+	section.faq {
+		max-width: 80rem;
+		margin: 0 auto;
 	}
 </style>

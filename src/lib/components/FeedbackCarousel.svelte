@@ -61,11 +61,12 @@
 
 <style>
 	div.embla {
-		padding-top: 5rem;
+		margin-top: var(--spacing-l);
 		width: 100%;
 		position: relative;
 		background-color: var(--color-greyscale-1);
 		overflow: hidden;
+		margin-bottom: var(--spacing-l);
 	}
 
 	div.embla__container {
@@ -73,14 +74,13 @@
 	}
 
 	div.embla__slide {
-		padding-inline: var(--padding-inline);
 		min-width: 100%;
 		height: 100%;
 		font-size: var(--font-body-s);
 		color: var(--color-white);
 		text-align: center;
-		display: grid;
-		grid-template-columns: 2rem 1fr 2rem;
+		display: flex;
+		justify-content: center;
 		gap: var(--spacing-xs);
 	}
 
@@ -88,6 +88,7 @@
 		font-size: 2rem;
 		color: var(--color-bronze-4);
 		opacity: 0.75;
+		margin: 0;
 	}
 
 	div.embla__slide span:first-child {
@@ -100,7 +101,10 @@
 
 	div.embla__slide p {
 		max-width: 600px;
-		margin: 0 auto;
+		line-height: 1.4;
+		font-weight: 300;
+		font-size: var(--font-body-l);
+		margin: 0;
 	}
 
 	div.embla__buttons {
@@ -119,6 +123,9 @@
 		border-radius: 50%;
 		width: 2.5rem;
 		height: 2.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		font-size: 1.5rem;
 		cursor: pointer;
 	}
@@ -155,5 +162,15 @@
 	div.embla__dots button.selected,
 	div.embla__dots button[aria-current="true"] {
 		opacity: 1;
+	}
+
+	@media screen and (min-width: 1024px) {
+		div.embla {
+			margin-bottom: var(--spacing-xl);
+		}
+
+		div.embla__slide p {
+			font-size: var(--font-body-l);
+		}
 	}
 </style>
