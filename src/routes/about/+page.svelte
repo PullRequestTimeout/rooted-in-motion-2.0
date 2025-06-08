@@ -246,7 +246,7 @@
 
 	section.about-me p {
 		margin: 1em 0;
-		font-size: var(--font-body-m);
+		font-size: var(--font-body-s);
 		line-height: 1.3;
 	}
 
