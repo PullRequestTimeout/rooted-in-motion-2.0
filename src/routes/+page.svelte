@@ -1044,7 +1044,7 @@
 	/* FAQ ------------------------------------------------------------------------------------- */
 	@media screen and (min-width: 1024px) {
 		section.faq {
-			max-width: 60rem;
+			max-width: 80%;
 			margin: 0 auto;
 		}
 	}
