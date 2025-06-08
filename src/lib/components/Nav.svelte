@@ -19,7 +19,7 @@
 		const handleScroll = () => {
 			scrollPosition = window.scrollY;
 		};
-
+		scrollPosition = window.scrollY;
 		window.addEventListener("scroll", handleScroll);
 	});
 </script>
@@ -64,8 +64,8 @@
 		<ul>
 			<li><a href="/about">About</a></li>
 			<li><a href="/services">Services</a></li>
-			<li><a href="/contact">Contact</a></li>
 			<li><a href="/blog">Blog</a></li>
+			<li><a href="/contact">Contact</a></li>
 		</ul>
 		<button class="button button-primary" onclick={openBookingModal}>Book Session</button>
 	</nav>
@@ -188,7 +188,7 @@
 		transform: rotate(-135deg);
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 1024px) {
 		header.small-screen-nav {
 			display: none;
 		}
