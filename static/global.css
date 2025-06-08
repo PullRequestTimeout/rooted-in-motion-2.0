@@ -172,8 +172,8 @@ button {
 	:root {
 		/* Font sizes */
 		--font-heading-s: 2rem;
-		--font-heading-m: 3rem;
-		--font-heading-l: 4rem;
+		--font-heading-m: 2.5rem;
+		--font-heading-l: 3rem;
 
 		/* Spacing */
 		--padding-inline: 2rem;
@@ -183,7 +183,7 @@ button {
 @media screen and (min-width: 1024px) {
 	:root {
 		/* Spacing */
-		--padding-inline: 4rem;
+		--padding-inline: 6rem;
 		--padding-block: 4rem;
 	}
 }
@@ -195,19 +195,18 @@ button {
 		--font-body-m: 1.3rem;
 		--font-body-l: 1.5rem;
 
-		--font-heading-s: 2.5rem;
-		--font-heading-m: 4rem;
-		--font-heading-l: 5rem;
+		--font-heading-m: 3rem;
+		--font-heading-l: 3.5rem;
 
 		/* Spacing */
-		--padding-inline: 6rem;
+		--padding-inline: 8rem;
 	}
 }
 
 @media screen and (min-width: 1536px) {
 	:root {
 		/* Padding */
-		--padding-inline: 8rem;
+		--padding-inline: 10rem;
 	}
 }
 
@@ -238,8 +237,8 @@ h5,
 h6 {
 	font-family: var(--font-heading);
 	padding: 0;
-	text-transform: capitalize;
 	margin: 0 0 1rem 0;
+	font-weight: 300;
 }
 
 /* All heading selections */
@@ -281,7 +280,7 @@ section {
 }
 
 *:focus-visible {
-	outline: 2px solid var(--color-primary, blue);
+	outline: 2px solid var(--color-bronze-2);
 	transition: none;
 }
 
@@ -295,25 +294,18 @@ span.material-icons {
 	border: none;
 	white-space: nowrap;
 	width: fit-content;
-	height: 40px;
 	padding: var(--spacing-m) var(--spacing-l);
 	border-radius: 0.5rem;
-	font-size: var(--font-body-s);
+	font-size: 1rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: var(--spacing-xs);
 	cursor: pointer;
-}
-
-@media screen and (min-width: 768px) {
-	.button {
-		padding: var(--spacing-s) var(--spacing-m);
-	}
+	transition: 0.2s;
 }
 
 .button:focus-visible {
-	outline: 2px solid var(--color-primary, blue);
 	transition: outline 0s;
 }
 
@@ -322,13 +314,31 @@ span.material-icons {
 	cursor: not-allowed;
 }
 
-.button-primary {
+.button-primary,
+.button-primary:visited {
 	color: var(--color-white, #fff);
 	background-color: var(--color-pine-3);
 }
 
-/* .button-secondary {
-} */
+.button-secondary,
+.button-secondary:visited {
+	color: var(--color-pine-4);
+	background-color: transparent;
+	border: 2px solid var(--color-pine-4);
+}
+
+@media (hover: hover) {
+	.button-primary:hover {
+		background-color: var(--color-bronze-2);
+		box-shadow: 0 0 0.5rem var(--color-bronze-2);
+	}
+
+	.button-secondary:hover {
+		color: var(--color-pine-2);
+		background-color: var(--color-pine-4);
+		box-shadow: 0 0 0.5rem var(--color-pine-4);
+	}
+}
 
 .button-link {
 	color: inherit;
