@@ -1,10 +1,16 @@
-<script>
+<script lang="ts">
+	import SeoHead from "$lib/components/SeoHead.svelte";
 	import { fade } from "svelte/transition";
 	import { clickOutside } from "$lib/utils/clickOutside";
 	let mapOpen = $state(false);
 	let rosslandMapOpen = $state(false);
 	let castlegarMapOpen = $state(false);
 </script>
+
+<SeoHead
+	title="Contact | Rooted In Motion Osteopathy"
+	description="Contact Rooted In Motion Osteopathy to book an appointment, ask a question, or get directions to our locations in Rossland and Castlegar, BC."
+></SeoHead>
 
 <section class="info">
 	<h2>Get in touch with me</h2>
@@ -338,7 +344,7 @@
 		border: 2px solid var(--color-black);
 		resize: none;
 		height: 10rem;
-		margin-top: 0.5rem;
+		margin-top: 1rem;
 	}
 	section.contact-form form textarea:focus-visible,
 	section.contact-form form input:focus-visible {

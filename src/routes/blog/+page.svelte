@@ -1,4 +1,6 @@
 <script lang="ts">
+	import SeoHead from "$lib/components/SeoHead.svelte";
+
 	// Import blog posts
 	import type { PageData } from "./$types";
 	const { data }: { data: PageData } = $props();
@@ -9,9 +11,10 @@
 	const blogPostsArr = data.publishedBlogPosts.sort((a: BlogPost, b: BlogPost) => b.date.localeCompare(a.date));
 </script>
 
-<svelte:head>
-	<title>Our Blog</title>
-</svelte:head>
+<SeoHead
+	title="Blog | Rooted In Motion Osteopathy"
+	description="Read blog articles published by Rooted In Motion on topics related to osteopathy, pediatric and early-life care, and wellness."
+></SeoHead>
 
 <main>
 	<section class="blog-header">
@@ -36,9 +39,6 @@
 				</div>
 			{/each}
 		</div>
-	</section>
-	<section>
-		<a class="button-link admin" href="/blog/admin">Admin Log In</a>
 	</section>
 </main>
 
@@ -90,12 +90,6 @@
 
 	.blog-card:hover {
 		transform: translateY(-0.25rem);
-	}
-
-	.admin {
-		position: fixed;
-		bottom: 1rem;
-		right: 1rem;
 	}
 
 	@media screen and (min-width: 768px) {

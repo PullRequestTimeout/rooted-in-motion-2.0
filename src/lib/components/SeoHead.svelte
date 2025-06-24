@@ -5,7 +5,7 @@
 
 	let {
 		title = "Rooted In Motion Osteopathy",
-		description = "Rooted in Motion Osteopathy is an Osteopathy practice operated by Michelle Coish at Madhu Wellness Collective in Rossland, BC."
+		description = "Rooted in Motion Osteopathy is an Osteopathy practice operated by Michelle Coish at Madhu Wellness Collective in Rossland, BC, and Spectrum Treatment Centre in Castlegar, BC."
 	}: { title?: string; description?: string } = $props();
 	const image = "/assets/images/og-image.jpg";
 	const url = $page.url.toString();
