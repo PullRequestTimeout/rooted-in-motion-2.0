@@ -3,7 +3,7 @@
 		<div class="footer__hero">
 			<img class="footer__logo" src="/assets/images/rooted-in-motion-logo.png" alt="rooted in motion logo" />
 			<p>
-				<a href="mailto:rooted.in.motion@outlook.com"><span title="Shoot me an email!">rooted.in.motion@outlook.com</span></a>
+				<a href="mailto:michelle@rootedinmotion.ca"><span title="Shoot me an email!">michelle@rootedinmotion.ca</span></a>
 			</p>
 			<p>
 				<a href="tel:+1(250)362-0021"><span title="Give me a call!">+1 (250) 362-0021</span></a>
@@ -40,7 +40,7 @@
 		</div>
 	</div>
 	<div class="footer__credits">
-		<a href="https://pixelmountain.ca">A<img src="pixelmountainlogo.png" alt="pixel mountain logo" />Creation</a>
+		<a href="https://pixelmountain.ca">A<img src="/pixelmountainlogo.png" alt="pixel mountain logo" />Creation</a>
 	</div>
 </footer>
 
