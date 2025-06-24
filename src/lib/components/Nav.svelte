@@ -42,15 +42,50 @@
 	{#if open}
 		<nav in:slide={{ duration: 300, axis: "y" }} out:slide={{ duration: 300 }} class="mobile-nav" class:open>
 			<ul>
-				<li out:fade in:fade={{ delay: 2 * 100 }}><a href="/">Home</a></li>
+				<li out:fade in:fade={{ delay: 2 * 100 }}>
+					<a
+						onclick={() => {
+							open = false;
+						}}
+						href="/">Home</a
+					>
+				</li>
 				<hr out:fade in:fade={{ delay: 2.25 * 100 }} />
-				<li out:fade in:fade={{ delay: 2.5 * 100 }}><a href="/services">Services</a></li>
+				<li out:fade in:fade={{ delay: 2.5 * 100 }}>
+					<a
+						onclick={() => {
+							open = false;
+						}}
+						href="/services">Services</a
+					>
+				</li>
 				<hr out:fade in:fade={{ delay: 2.75 * 100 }} />
-				<li out:fade in:fade={{ delay: 3 * 100 }}><a href="/about">About</a></li>
+				<li out:fade in:fade={{ delay: 3 * 100 }}>
+					<a
+						onclick={() => {
+							open = false;
+						}}
+						href="/about">About</a
+					>
+				</li>
 				<hr out:fade in:fade={{ delay: 3.25 * 100 }} />
-				<li out:fade in:fade={{ delay: 3.5 * 100 }}><a href="/blog">Blog</a></li>
+				<li out:fade in:fade={{ delay: 3.5 * 100 }}>
+					<a
+						onclick={() => {
+							open = false;
+						}}
+						href="/blog">Blog</a
+					>
+				</li>
 				<hr out:fade in:fade={{ delay: 3.75 * 100 }} />
-				<li out:fade in:fade={{ delay: 4 * 100 }}><a href="/contact">Contact</a></li>
+				<li out:fade in:fade={{ delay: 4 * 100 }}>
+					<a
+						onclick={() => {
+							open = false;
+						}}
+						href="/contact">Contact</a
+					>
+				</li>
 				<li out:fade in:fade={{ delay: 4.25 * 100 }}><button class="button button-primary" onclick={openBookingModal}>Book Session</button></li>
 			</ul>
 		</nav>
