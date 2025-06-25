@@ -15,11 +15,10 @@
 			</picture>
 		</div>
 		<div class="feedback-cta-text">
-			<h2>Get the time and attention you deserve</h2>
+			<h2>Specialized care for women, parents, & growing families</h2>
 			<p>
-				Recognizing the interconnectedness of the body's systems, I approach each client with a holistic perspective. I take the time to identify the
-				root causes of your concerns and provide comprehensive treatment to address your body as a whole, leading to long-lasting and effective
-				results.
+				Whether you're healing from injury, navigating hormonal changes, or recovering from birth, I offer personalized, whole-body care focused on
+				relieving pain, restoring function, and supporting long-term wellbeing.
 			</p>
 			<a class="button button-secondary" href="/contact">Book Session</a>
 		</div>
