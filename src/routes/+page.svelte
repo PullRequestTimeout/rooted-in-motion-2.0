@@ -11,11 +11,10 @@
 	<section class="hero">
 		<div class="hero-text">
 			<h2 class="hero-title">
-				Providing <span>effective<img src="/assets/images/svgs/chalk-1.svg" class="hero-chalk" alt="chalk outline" /></span> and holistic care for people
-				in pain
+				Providing <span>holistic<img src="/assets/images/svgs/chalk-1.svg" class="hero-chalk" alt="chalk outline" /></span> care for all ages and stages
 			</h2>
 
-			<p>Using a dynamic and gentle approach I aim to improve my client’s pain management, movement, and general health.</p>
+			<p>Osteopathy and lactation support to relieve pain, restore function, and help you feel more like yourself.</p>
 			<a class="button button-primary" href="https://madhucollective.janeapp.com/#/staff_member/42">Book Session</a>
 		</div>
 		<div class="hero-image">
@@ -152,7 +151,8 @@
 		top: 0;
 		z-index: -1;
 		width: 110%;
-		transform: translate(-0.1rem, -0.2rem);
+		transform: translate(-0.1rem, -0.1rem);
+		scale: 1.15;
 	}
 
 	div.hero-text p {
