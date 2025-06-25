@@ -166,7 +166,7 @@
 					frameborder="0"
 					style="border:0"
 					loading="lazy"
-					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDjohjZA0cglI5vLCl1uhgEzDBVJWiK0B0&q=Madhu+Wellness+Collective,Rossland,BC"
+					src={`https://www.google.com/maps/embed/v1/place?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}&q=Madhu+Wellness+Collective,Rossland,BC`}
 					allowfullscreen
 				>
 				</iframe>
@@ -176,7 +176,7 @@
 					frameborder="0"
 					style="border:0"
 					loading="lazy"
-					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDjohjZA0cglI5vLCl1uhgEzDBVJWiK0B0&q=Spectrum+Treatment+Centre,Castlegar,BC"
+					src={`https://www.google.com/maps/embed/v1/place?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}&q=Spectrum+Treatment+Centre,Castlegar,BC`}
 					allowfullscreen
 				>
 				</iframe>
