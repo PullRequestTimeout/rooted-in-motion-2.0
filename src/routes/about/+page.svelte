@@ -12,12 +12,12 @@
 	<section class="hero">
 		<div class="hero-text">
 			<h2 class="hero-title">Michelle<br />Coish</h2>
-			<p>
-				Helping with pain and movement by addressing the <span class="hero-chalk"
-					><img src="/assets/images/svgs/chalk-4.svg" alt="chalk svg" />
-					root&nbsp;cause</span
-				>
-			</p>
+			<div class="hero-text-credentials">
+				<p>DOMP</p>
+				<p>IBCLC</p>
+				<p>BScN</p>
+			</div>
+			<p>Osteopathic Practitioner & Lactation Consultant</p>
 		</div>
 		<div class="hero-image">
 			<picture>
@@ -34,31 +34,26 @@
 	<section class="about-me">
 		<h2>My Story</h2>
 		<p>
-			I'm a manual therapist in my fourth year of study at the Canadian School of Osteopathy Manual Practice, one of the few five-year programs in
-			Canada. I practice out of Madhu Wellness Collective, a multidisciplinary health clinic and yoga studio in Rossland, BC, as well as Spectrum
-			Treatment Centre in Castlegar, BC. My therapeutic approach is informed by my years of post-secondary study, athletic conditioning, and
-			self-study of various healing modalities, helping me to offer a holistic approach to my clients' health and wellness needs.
+			I'm Michelle — an osteopathic practitioner and lactation consultant providing hands-on treatment for pain, tension, feeding issues, and
+			hormone-related concerns across all stages of life. My work is shaped by over a decade of clinical experience and a holistic, client-centered
+			approach that focuses on uncovering and treating the root cause of each person's concerns.
 		</p>
 		<p>
-			In 2016, I discovered Rossland and was immediately captivated by its stunning landscapes and friendly community. After working as a registered
-			nurse at the Kootenay Boundary Regional Hospital for three years, I decided to embark on a new career path as a manual therapist.
+			I provide osteopathic treatment in Rossland and Castlegar, BC, and provide virtual lactation consultations to families across Canada. I work
+			primarily with women, parents, and growing families — supporting recovery from injury, birth, and chronic stress, as well as navigating
+			menstrual concerns, pregnancy, postpartum, and infant feeding challenges. My goal is always to understand the full picture and help restore
+			balance, movement, and function.
 		</p>
 		<p>
-			Having always been fascinated by the human body's complexity and healing abilities, I earned a Bachelor of Science in Nursing in 2012 and
-			primarily worked in labor and delivery, pediatrics, and public health. However, after experiencing burnout and seeing many patients suffer from
-			chronic pain and illness with mixed results from Western medicine, I turned to manual therapy to pursue a proactive and holistic approach to
-			health.
+			I completed the five-year program at the Canadian School of Osteopathy Manual Practice in Vancouver and hold a Bachelor of Science in Nursing,
+			with clinical experience in labour and delivery, pediatrics, and public health. As an International Board Certified Lactation Consultant
+			(IBCLC), I integrate infant feeding support into my osteopathic care when needed.
 		</p>
 		<p>
-			In 2018, I was introduced to osteopathic manual therapy and immediately drawn to its client-centered approach and recognition of the
-			interconnectedness of the body's systems. Having experienced the benefits of this therapy firsthand, I am committed to making it more accessible
-			to our community through affordable student rates. As a practitioner, my goal is to identify the root cause of my clients' concerns and provide
-			long-lasting relief. Above all, I am passionate about helping my clients discover their innate health and wellness.
+			I'm a member of Osteopathy BC, and my treatments are eligible for most extended health benefits. Combining osteopathy and lactation consulting,
+			I provide comprehensive, compassionate care to help you feel better, move more freely, and feed with confidence.
 		</p>
-		<p>
-			If you're ready to discover the benefits of osteopathic manual therapy and achieve long-lasting relief from your pain and symptoms, let's
-			connect! Book a session with me today and take the first step towards optimizing your health and wellness.
-		</p>
+		<p>I'm excited to meet you and support your journey—get in touch to learn how I can help!</p>
 	</section>
 	<FeedbackSection />
 </main>
@@ -85,23 +80,25 @@
 		margin-bottom: 1rem;
 	}
 
-	div.hero-text p {
+	div.hero-text > p {
 		font-size: 1.6em;
 		font-family: "Raleway", sans-serif;
 		line-height: 1.3;
+		font-weight: 300;
 	}
 
-	span.hero-chalk {
-		position: relative;
-		font-family: var(--font-heading);
-		font-weight: 400;
+	div.hero-text div.hero-text-credentials {
+		display: flex;
+		gap: 0.5rem;
+		font-weight: 700;
+		font-size: 0.85rem;
 	}
 
-	span.hero-chalk img {
-		position: absolute;
-		width: 100%;
-		bottom: -0.5rem;
-		left: 0;
+	div.hero-text div.hero-text-credentials p {
+		background-color: var(--color-pine-5);
+		color: var(--color-pine-1);
+		padding: 0.25rem 0.75rem;
+		border-radius: 1.5rem;
 	}
 
 	div.hero-image {
@@ -115,7 +112,7 @@
 
 	div.hero-image img:not(.svg) {
 		position: relative;
-		transform: translateY(calc(0.2em + var(--padding-block)));
+		transform: translateY(calc(0.75rem + var(--padding-block)));
 		z-index: 10;
 		width: 20em;
 		filter: drop-shadow(1em 1em 1em var(--color-black));
@@ -212,7 +209,7 @@
 
 		h2.hero-title {
 			font-size: 5em;
-			margin-bottom: 2rem;
+			margin-bottom: 1rem;
 		}
 	}
 
