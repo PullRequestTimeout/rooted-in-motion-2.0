@@ -1,28 +1,32 @@
+<script>
+	import { uiStore } from "$lib/stores/uiStore.svelte";
+	import { authHandlers } from "$lib/firebase/auth";
+</script>
+
 <footer>
-	<div class="footer__container">
-		<div class="footer__hero">
-			<img class="footer__logo" src="/assets/images/rooted-in-motion-logo.png" alt="rooted in motion logo" />
-			<p>
-				<a href="mailto:michelle@rootedinmotion.ca"><span title="Shoot me an email!">michelle@rootedinmotion.ca</span></a>
-			</p>
-			<p>
-				<a href="tel:+1(250)362-0021"><span title="Give me a call!">+1 (250) 362-0021</span></a>
-			</p>
+	<div class="container">
+		<div class="hero">
+			<img class="logo" src="/assets/images/rooted-in-motion-logo.png" alt="rooted in motion logo" />
 		</div>
-		<div class="footer__quick-links">
+		<div class="quick-links">
 			<h3>Quick Links</h3>
 			<a href="/">Home</a>
 			<a href="/about">About</a>
 			<a href="/services">Services</a>
 			<a href="/blog">Blog</a>
+			<a href="/blog/admin">Admin</a>
 			<a href="/privacy">Privacy Policy</a>
+			{#if uiStore.loggedIn}
+				<a href="/" onclick={authHandlers.logout}>Logout</a>
+			{/if}
 		</div>
-		<div class="footer__bookings">
+		<div class="bookings">
 			<h3>Get In Touch</h3>
 			<a href="/pages/contact">Contact</a>
 			<a href="https://madhucollective.janeapp.com/#/staff_member/42">Book Session</a>
+			<a href="mailto:michelle@rootedinmotion.ca"><span title="Shoot me an email!">Email</span></a>
 		</div>
-		<div class="footer__socials">
+		<div class="socials">
 			<a aria-label="Link to Rooted in Motion Instagram page" href="https://www.instagram.com/rooted.in.motionmanualtherapy/">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 					<path
@@ -39,8 +43,8 @@
 			</a>
 		</div>
 	</div>
-	<div class="footer__credits">
-		<a href="https://pixelmountain.ca">A<img src="/pixelmountainlogo.png" alt="pixel mountain logo" />Creation</a>
+	<div class="credits">
+		<a href="https://pixelmountain.ca"><span>A</span><img src="/pixelmountainlogo.png" alt="pixel mountain logo" /><span>Creation</span></a>
 	</div>
 </footer>
 
@@ -51,19 +55,18 @@
 		padding-inline: var(--padding-inline);
 	}
 
-	div.footer__container {
+	div.container {
 		display: flex;
 		flex-direction: column;
 		gap: 2em;
 	}
 
-	.footer__logo {
+	.logo {
 		width: 12em;
 		margin-bottom: 1em;
 	}
 
 	footer a,
-	footer p,
 	footer h3 {
 		color: var(--color-white, #fff);
 		line-height: 1.6;
@@ -74,52 +77,62 @@
 		font-weight: 600;
 	}
 
-	div.footer__credits {
-		margin-top: 1.5em;
+	div.credits {
+		margin-top: 2.5rem;
 		text-transform: uppercase;
 		font-style: italic;
 	}
 
-	div.footer__credits a {
+	div.credits a {
 		font-weight: 600;
 		display: flex;
 		gap: 0.5em;
 		align-items: center;
 	}
 
-	.footer__credits img {
+	div.credits a:hover {
+		color: var(--color-white);
+	}
+
+	@media screen and (max-width: 375px) {
+		div.credits span {
+			display: none;
+		}
+	}
+
+	.credits img {
 		width: 14em;
 		transform: translateY(-0.3rem);
 	}
 
-	.footer__quick-links,
-	.footer__bookings {
+	.quick-links,
+	.bookings {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 	}
 
-	.footer__quick-links h3,
-	.footer__bookings h3 {
+	.quick-links h3,
+	.bookings h3 {
 		grid-column: 1 / 3;
 		margin-bottom: 0.5em;
 	}
 
-	.footer__hero,
-	.footer__socials,
-	.footer__credits {
+	.hero,
+	.socials,
+	.credits {
 		display: flex;
 	}
 
-	.footer__hero,
-	.footer__credits {
+	.hero,
+	.credits {
 		flex-direction: column;
 	}
 
-	.footer__socials {
+	.socials {
 		gap: 2em;
 	}
 
-	.footer__socials svg {
+	.socials svg {
 		width: 2em;
 		fill: #fff;
 		transition: 0.3s;
@@ -138,8 +151,8 @@
 		filter: hue-rotate(90deg);
 	}
 
-	.footer__socials svg:hover,
-	.footer__socials svg:active {
+	.socials svg:hover,
+	.socials svg:active {
 		fill: var(--color-bronze-2, #e59c42);
 	}
 
@@ -154,27 +167,29 @@
 			padding-block: 4rem;
 		}
 
-		div.footer__container {
+		div.container {
 			flex-direction: row;
 			justify-content: space-between;
 		}
 
-		.footer__logo {
+		.logo {
 			transform: translateY(-5px);
 		}
 
-		.footer__bookings,
-		.footer__quick-links {
+		.bookings {
 			display: flex;
 			flex-direction: column;
 		}
 
-		.footer__socials {
-			flex-direction: column;
+		.quick-links {
+			gap: 0 2rem;
+		}
+
+		.socials {
 			gap: 1em;
 		}
 
-		.footer__credits {
+		.credits {
 			margin-top: 4em;
 			display: flex;
 			justify-content: space-evenly;
@@ -188,7 +203,7 @@
 			padding-block: 6rem;
 		}
 
-		.footer__logo {
+		.logo {
 			width: 15em;
 		}
 	}
