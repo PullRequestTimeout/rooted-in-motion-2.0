@@ -93,7 +93,7 @@
 				/> Remember me
 			</label>
 			<div class="login-actions">
-				<button class="button button-primary" type="submit">Log In</button>
+				<button class="button button-primary" type="submit"><span class="material-icons">login</span>Log In</button>
 				<button class="button button-link" type="button" onclick={() => (forgotPassword = true)}>Forgot Password?</button>
 			</div>
 		{:else if forgotPassword}
@@ -113,10 +113,13 @@
 <style>
 	form {
 		width: fit-content;
+		accent-color: var(--color-bronze-3);
 	}
 
 	form h2 {
 		text-align: center;
+		font-size: var(--font-heading-s);
+		font-weight: 400;
 	}
 
 	label span.required {
