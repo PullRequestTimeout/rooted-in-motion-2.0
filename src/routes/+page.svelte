@@ -3,6 +3,7 @@
 	import FAQ from "$lib/components/FAQ.svelte";
 	import { symptoms } from "$lib/data/symptoms";
 	import FeedbackSection from "$lib/components/FeedbackSection.svelte";
+	import { homeFaqs } from "$lib/data/faqs";
 </script>
 
 <SeoHead />
@@ -112,7 +113,7 @@
 	<FeedbackSection />
 	<section class="faq">
 		<h3>My frequently asked questions</h3>
-		<FAQ />
+		<FAQ faqs={homeFaqs} />
 	</section>
 </main>
 

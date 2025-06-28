@@ -1,44 +1,19 @@
 <script lang="ts">
 	import { slide } from "svelte/transition";
 
-	const faqs = [
-		{
-			question: "What is Rooted in Motion?",
-			answer:
-				"Rooted in Motion is a holistic wellness practice that combines movement, mindfulness, and therapeutic techniques to promote physical and mental well-being."
-		},
-		{
-			question: "What services do you offer?",
-			answer:
-				"We offer a range of services including individual coaching, group workshops, and online courses focused on movement therapy, mindfulness, and personal development."
-		},
-		{
-			question: "How can I book a session?",
-			answer: "You can book a session through our website by visiting the 'Book Session' page or by contacting us directly via email or phone."
-		},
-		{
-			question: "Do you offer online sessions?",
-			answer: "Yes, we offer both in-person and online sessions to accommodate different preferences and needs."
-		},
-		{
-			question: "What should I expect?",
-			answer:
-				"During your first session, we will discuss your goals, assess your current state, and create a personalized plan to help you achieve your wellness objectives."
-		}
-	];
-
-	let openFaqIndex: number | null = null;
+	let openFaqIndex: number | null = $state(null);
 
 	function toggleFaq(i: number) {
 		openFaqIndex = openFaqIndex === i ? null : i;
 	}
+
+	let { faqs = $bindable([]) } = $props();
 </script>
 
-<h3>My frequently asked questions</h3>
 <hr />
 {#each faqs as faq, i}
 	<div class="faq-item">
-		<button on:click={() => toggleFaq(i)} aria-label="Toggle answer for {faq.question}">
+		<button onclick={() => toggleFaq(i)} aria-label="Toggle answer for {faq.question}">
 			<h4 class="faq-question">{faq.question}</h4>
 			<div class="faq-icon" class:open={openFaqIndex === i}>
 				<span></span>
@@ -46,20 +21,31 @@
 			</div>
 		</button>
 		{#if openFaqIndex === i}
-			<p transition:slide={{ axis: "y" }} class="faq-answer">{faq.answer}</p>
+			<div transition:slide={{ axis: "y" }} class="faq-answer">
+				{#each faq.answer as answer}
+					{#if answer.element === "p"}
+						<p>{answer.content}</p>
+					{:else if answer.element === "ul"}
+						<ul>
+							{#if Array.isArray(answer.content)}
+								{#each answer.content as item}
+									<li>{item}</li>
+								{/each}
+							{/if}
+						</ul>
+					{:else if answer.element === "a"}
+						{#if typeof answer.content === "object" && answer.content !== null && "href" in answer.content && "text" in answer.content}
+							<a href={answer.content.href}>{answer.content.text}</a>
+						{/if}
+					{/if}
+				{/each}
+			</div>
 		{/if}
 	</div>
 	<hr />
 {/each}
 
 <style>
-	h3 {
-		font-size: var(--font-heading-m);
-		font-weight: 400;
-		text-align: center;
-		margin-bottom: var(--spacing-l);
-	}
-
 	h4 {
 		text-align: left;
 		font-size: var(--font-body-l);
@@ -85,10 +71,24 @@
 		margin: 0;
 	}
 
-	div.faq-item p {
-		margin-bottom: 1rem;
-		font-size: var(--font-body-s);
+	div.faq-item div.faq-answer * {
+		margin: 0;
+		font-size: var(--font-body-m);
 		font-weight: 300;
+		line-height: 1.4;
+	}
+
+	div.faq-item div.faq-answer {
+		margin-bottom: var(--spacing-m);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-s);
+	}
+
+	div.faq-item div.faq-answer a {
+		color: var(--color-pine-3);
+		text-decoration: underline;
+		font-weight: 400;
 	}
 
 	hr {
@@ -124,10 +124,6 @@
 	}
 
 	@media screen and (min-width: 1024px) {
-		h3 {
-			font-size: var(--font-heading-s);
-		}
-
 		h4 {
 			font-size: var(--font-body-l);
 		}
