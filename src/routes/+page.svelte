@@ -48,15 +48,15 @@
 	</section>
 	<section class="benefits">
 		<div class="benefits-text">
-			<h2>Do <span>you<img src="/assets/images/svgs/chalk-2.svg" alt="chalk outline" /></span> need osteopathy?</h2>
+			<h2>Could <span>osteopathy<img src="/assets/images/svgs/chalk-1.svg" alt="chalk outline" /></span> help you feel better?</h2>
 			<p>
-				If you are having difficulty moving freely due to pain, reduced range of motion, or decreased strength, you may benefit from working with an
-				osteopath.
+				Osteopathy addresses the body as a whole — easing tension, improving movement, and helping you feel more like yourself. Osteopathic treatment
+				may help to:
 			</p>
 			<ul>
-				<li>Modulate pain</li>
-				<li>Increase joint mobility</li>
-				<li>Induce relaxation</li>
+				<li>Relieve pain and discomfort</li>
+				<li>Improve mobility and circulation</li>
+				<li>Reduce stress and restore balance</li>
 			</ul>
 		</div>
 		<div class="benefits-image">
@@ -85,32 +85,33 @@
 		</div>
 	</section>
 	<section class="promise">
-		<h2>My <span>promise <img src="/assets/images/svgs/chalk-3.svg" alt="chalk" /></span> to you</h2>
+		<h2><span>What to expect<img src="/assets/images/svgs/chalk-3.svg" alt="chalk" /></span></h2>
 		<div class="promise-cards">
 			<div class="promise-card">
-				<h3>Client Centered Care</h3>
-				<p>Tailoring treatments to your individual needs on any given day.</p>
+				<h3>Personalized Care</h3>
+				<p>No two people are the same — your session is shaped around your unique needs.</p>
 			</div>
 			<div class="promise-card">
-				<h3>Holistic Treatment</h3>
-				<p>Assessing the body as a whole to find the root cause of your symptoms.</p>
+				<h3>Whole-Body Focus</h3>
+				<p>We work with the body as a whole, not just isolated symptoms.</p>
 			</div>
 			<div class="promise-card">
-				<h3>Restore Healing Mechanisms</h3>
-				<p>Removing barriers to your natural healing mechanism for long-lasting effects.</p>
+				<h3>Sustainable Relief</h3>
+				<p>I support your body's long-term healing and function for lasting comfort and improved movement.</p>
 			</div>
 		</div>
 		<div class="promise-contact">
 			<img src="/assets/images/svgs/arrow-1.svg" alt="arrow" />
 			<div class="promise-link">
-				<p>Want to know if we are a good fit before committing?</p>
-				<a href="/contact">Get in touch <img src="/assets/images/svgs/chalk-4.svg" alt="chalk line" /></a>
+				<p>Wondering if this type of care could help you?</p>
+				<a href="/contact">Let's connect<img src="/assets/images/svgs/chalk-4.svg" alt="chalk line" /></a>
 			</div>
 			<img src="/assets/images/svgs/arrow-1.svg" alt="arrow" />
 		</div>
 	</section>
 	<FeedbackSection />
 	<section class="faq">
+		<h3>My frequently asked questions</h3>
 		<FAQ />
 	</section>
 </main>
@@ -499,8 +500,8 @@
 		left: 0;
 		top: 0;
 		z-index: -1;
-		width: 110%;
-		transform: translate(0.1rem, 0.2rem);
+		transform: translate(0.1rem, -0.75rem);
+		scale: 1.1;
 	}
 
 	div.benefits-text p,
@@ -798,9 +799,9 @@
 
 	section.promise h2 span img {
 		position: absolute;
-		left: -0.5rem;
-		bottom: -1.5rem;
+		translate: 0rem 0.75rem;
 		z-index: -1;
+		scale: 0.7;
 	}
 
 	section.promise .promise-cards {
@@ -850,6 +851,11 @@
 		text-decoration: none;
 		color: var(--color-bronze-1);
 		text-align: center;
+	}
+
+	section.promise div.promise-link img {
+		scale: 1.1;
+		translate: 0.5rem 0;
 	}
 
 	@media screen and (min-width: 768px) {
@@ -902,10 +908,21 @@
 	}
 
 	/* FAQ ------------------------------------------------------------------------------------- */
+	section.faq h3 {
+		font-size: var(--font-heading-m);
+		font-weight: 400;
+		text-align: center;
+		margin-bottom: var(--spacing-l);
+	}
+
 	@media screen and (min-width: 1024px) {
 		section.faq {
 			max-width: 80%;
 			margin: 0 auto;
+		}
+
+		section.faq h3 {
+			font-size: var(--font-heading-s);
 		}
 	}
 </style>
