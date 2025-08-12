@@ -7,21 +7,21 @@
 		openFaqIndex = openFaqIndex === i ? null : i;
 	}
 
-	let { faqs = $bindable([]) } = $props();
+	let { faqs = $bindable([]), darkMode = $bindable(false) } = $props();
 </script>
 
-<hr />
+<hr style={`border-color: ${darkMode ? "#fff" : "var(--color-black)"};`} />
 {#each faqs as faq, i}
 	<div class="faq-item">
 		<button onclick={() => toggleFaq(i)} aria-label="Toggle answer for {faq.question}">
-			<h4 class="faq-question">{faq.question}</h4>
+			<h4 style={`color: ${darkMode ? "#fff" : "var(--color-black)"};`} class="faq-question">{faq.question}</h4>
 			<div class="faq-icon" class:open={openFaqIndex === i}>
 				<span></span>
 				<span></span>
 			</div>
 		</button>
 		{#if openFaqIndex === i}
-			<div transition:slide={{ axis: "y" }} class="faq-answer">
+			<div style={`color: ${darkMode ? "#fff" : "var(--color-black)"};`} transition:slide={{ axis: "y" }} class="faq-answer">
 				{#each faq.answer as answer}
 					{#if answer.element === "p"}
 						<p>{answer.content}</p>
@@ -42,7 +42,7 @@
 			</div>
 		{/if}
 	</div>
-	<hr />
+	<hr style={`border-color: ${darkMode ? "#fff" : "var(--color-black)"};`} />
 {/each}
 
 <style>
