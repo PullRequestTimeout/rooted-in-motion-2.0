@@ -27,7 +27,7 @@
 	</div>
 </section>
 
-<section class="osteo">
+<section class="osteo" id="osteopathy">
 	<img class="symptoms-svg" src="/assets/images/svgs/plant-5.svg" alt="plant svg" />
 	<div class="osteo-text">
 		<h2>Osteopathic Manual Therapy</h2>
@@ -58,16 +58,108 @@
 			</div>
 		{/each}
 	</div>
-	<a href="/services" class="button button-secondary">Read More</a>
+	<a href="/services" class="button button-secondary">Book Session</a>
 </section>
 <section class="osteo-faq">
 	<h2>Questions I get asked about Osteopathy</h2>
 	<Faq darkMode={true} faqs={osteoFaqs} />
 </section>
 
-<section class="lactation"></section>
-<section>
-	<Faq faqs={lactationFaqs} />
+<div class="boob-background">
+	<section class="osteo lactation" id="lactation">
+		<div class="osteo-text">
+			<h2>Lactation Consultation</h2>
+			<p>
+				Whether you're exclusively breastfeeding, pumping, combo feeding, or using formula, I provide in person and virtual consults to help you meet
+				your feeding goals with confidence. From newborn feeding challenges to complex cases, I combine IBCLC expertise with a whole-person approach
+				that centers your values and your baby's needs. In person consults available in Rossland, BC and virtual consults are available across Canada.
+			</p>
+		</div>
+		<div class="osteo-image">
+			<picture>
+				<source srcset="/assets/images/profile-4.webp" type="image/webp" />
+				<source srcset="/assets/images/profile-4.jpg" type="image/jpeg" />
+				<img src="/assets/images/profile-4.jpg" alt="Michelle holding her IBCLC certification" />
+			</picture>
+		</div>
+	</section>
+	<section class="symptoms lactation">
+		<h2>Symptoms I work with</h2>
+		<div class="symptoms-list">
+			{#each symptoms as symptom, i}
+				<div class="symptoms-item">
+					<button class="button button-primary" aria-label={`${symptom.title} modal button`}>
+						<img src={`assets/images/svgs/symptom-${i + 1}.svg`} alt={`${symptom.title} icon`} />
+						<img src={`assets/images/svgs/symptom-${i + 1}-white.svg`} alt={`${symptom.title} icon`} />
+					</button>
+					<p>{symptom.title}</p>
+				</div>
+			{/each}
+		</div>
+		<a href="/services" class="button button-primary">Book Session</a>
+	</section>
+	<section class="osteo-faq lactation">
+		<h2>Questions I get asked about Lactation Consultation</h2>
+		<Faq faqs={lactationFaqs} />
+	</section>
+</div>
+<section class="pricing">
+	<h2>Pricing</h2>
+	<div class="pricing-section">
+		<h3>Osteopathy</h3>
+		<div class="pricing-item">
+			<p class="pricing-item-heading">60 min Osteopathic Treatment</p>
+			<div></div>
+			<p>$135</p>
+		</div>
+		<div class="pricing-item">
+			<p class="pricing-item-heading">60 min Pediatric Osteopathic Treatment</p>
+			<div></div>
+			<p>$135</p>
+		</div>
+		<div class="pricing-item">
+			<p class="pricing-item-heading">75 min Osteopathic Treatment</p>
+			<div></div>
+			<p>$160</p>
+		</div>
+		<div class="pricing-item">
+			<p class="pricing-item-heading">90 min Osteopathic Treatment</p>
+			<div></div>
+			<p>$180</p>
+		</div>
+	</div>
+	<div class="pricing-section">
+		<h3>Lactation Consultation</h3>
+		<div class="pricing-item">
+			<p class="pricing-item-heading">20 min Discovery Call</p>
+			<div></div>
+			<p>FREE</p>
+		</div>
+		<div class="pricing-item">
+			<p class="pricing-item-heading">90 min Initial In-Person Consultation</p>
+			<div></div>
+			<p>$180</p>
+		</div>
+		<div class="pricing-item">
+			<p class="pricing-item-heading">60 min Follow-Up In-Person Consultation</p>
+			<div></div>
+			<p>$135</p>
+		</div>
+		<div class="pricing-item">
+			<p class="pricing-item-heading">60 min Virtual Consultation - Initial or Followup</p>
+			<div></div>
+			<p>$135</p>
+		</div>
+	</div>
+	<div class="pricing-section">
+		<h3>Osteopathy & Lactation Combination Session</h3>
+		<div class="pricing-item">
+			<p class="pricing-item-heading">90 min Osteopathy + Lactation Consultation</p>
+			<div></div>
+			<p>$180</p>
+		</div>
+	</div>
+	<img class="pricing-svg" src="/assets/images/svgs/plant-17.svg" alt="plant svg" />
 </section>
 
 <style>
@@ -347,8 +439,14 @@
 
 	@media screen and (min-width: 1024px) {
 		section.osteo {
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: auto 40%;
 			gap: var(--spacing-xl);
+		}
+
+		section.osteo div.osteo-text {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 		}
 	}
 
@@ -466,15 +564,154 @@
 	/* Osteopathy FAQ -------------------------------------------------------------------------- */
 	section.osteo-faq {
 		background-color: var(--color-greyscale-1);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: calc(1rem + var(--padding-block));
 	}
 
 	section.osteo-faq h2 {
 		text-align: center;
 		font-size: var(--font-heading-s);
 		font-weight: 400;
+		margin-bottom: var(--spacing-l);
+		max-width: 80%;
 	}
 
 	section.osteo-faq * {
 		color: var(--color-white);
+	}
+
+	/* Lactation ------------------------------------------------------------------------------- */
+	div.boob-background {
+		position: relative;
+	}
+
+	div.boob-background::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: url("/assets/images/boob-background.png") repeat;
+		background-size: 30rem;
+	}
+
+	section.osteo.lactation {
+		background-color: transparent;
+		pointer-events: auto;
+	}
+	section.osteo.lactation div.osteo-text {
+		color: var(--color-black);
+	}
+
+	section.osteo-faq.lactation {
+		background-color: transparent;
+		position: relative;
+		z-index: 10;
+	}
+
+	section.osteo-faq.lactation h2 {
+		color: var(--color-black);
+	}
+
+	section.symptoms.lactation {
+		background-color: transparent;
+		color: var(--color-black);
+	}
+
+	section.symptoms.lactation div.symptoms-item button {
+		background-color: var(--color-bronze-7);
+		transition: 0.2s;
+	}
+
+	section.symptoms.lactation div.symptoms-item button:hover {
+		background-color: var(--color-bronze-2);
+	}
+
+	/* Pricing ------------------------------------------------------------------------------- */
+	section.pricing {
+		background-color: var(--color-bronze-6);
+		overflow: hidden;
+		position: relative;
+	}
+
+	section.pricing h2,
+	section.pricing div.pricing-section {
+		position: relative;
+		z-index: 1;
+	}
+
+	section.pricing h2 {
+		font-size: var(--font-heading-m);
+		font-weight: 400;
+		text-align: center;
+	}
+
+	section.pricing div.pricing-section {
+		margin-bottom: var(--spacing-l);
+	}
+
+	section.pricing h3 {
+		font-weight: 400;
+		font-size: var(--font-body-l);
+		margin-bottom: 0.5rem;
+	}
+
+	section.pricing p {
+		font-size: var(--font-body-s);
+		font-weight: 300;
+		margin-block: 0;
+		display: flex;
+		align-items: end;
+	}
+
+	section.pricing p.pricing-item-heading {
+		min-width: 40vw;
+		overflow-wrap: break-word;
+	}
+
+	section.pricing div.pricing-item {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 0.5rem;
+	}
+
+	section.pricing div.pricing-item div {
+		width: 100%;
+		border-bottom: 2px dotted var(--color-black);
+		margin: 0 0.5rem;
+		translate: 0 -0.3rem;
+	}
+
+	section.pricing img.pricing-svg {
+		position: absolute;
+		bottom: -0.5rem;
+		left: 0;
+		z-index: 0;
+		opacity: 0.3;
+		height: 20rem;
+	}
+
+	@media screen and (min-width: 640px) {
+		section.pricing p {
+			font-size: var(--font-body-l);
+		}
+
+		section.pricing p.pricing-item-heading {
+			min-width: fit-content;
+		}
+
+		section.pricing img.pricing-svg {
+			height: 25rem;
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		section.pricing img.pricing-svg {
+			height: unset;
+			opacity: 0.4;
+		}
 	}
 </style>
