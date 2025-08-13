@@ -1,51 +1,117 @@
 export const symptoms = [
 	{
 		title: "Headaches and Neurological Conditions",
-		description:
-			"Manual therapy works with muscles, joints, and fascia (connective tissue surrounding muscles, joints, and organs) of the head, neck, and spine, may help decrease the frequency of headaches and migraines, and may help with neurological symptoms like tinnitus, vertigo, and insomnia and help with rehabilitation after concussions."
+		description: [
+			"Migraines or chronic headaches",
+			"Tension headaches or associated neck stiffness and tightness",
+			"Dizziness, lightheadedness, or balance issues",
+			"Tinnitus (ringing or buzzing in the ears)",
+			"Facial or sinus pressure",
+			"Concussion recovery and lingering post-concussive symptoms (e.g. sensitivity to light or sound, brain fog, difficulty concentrating)",
+			"Popping, fullness, or pressure in the ears"
+		]
 	},
 	{
-		title: "Traumatic Injuries and Whiplash",
-		description:
-			"Manual therapy can help with rehabilitation after car accidents, whiplash injuries, falls, fractures, concussions, and treatment of scar tissue post surgery."
+		title: "Injury Recovery",
+		description: [
+			"Lingering pain or stiffness after a fall or accident",
+			"Limited mobility following sprains, strains, or fractures",
+			"Scar sensitivity or tissue tightness after surgery or injury",
+			"Muscle tension and postural changes after compensation or guarding",
+			"Headaches, dizziness, or neck pain after whiplash or concussion",
+			"Nerve sensitivity or tingling following trauma",
+			"Discomfort from overuse injuries (e.g. tendinitis, repetitive strain)",
+			"Ongoing discomfort despite initial healing or clearance from other providers"
+		]
 	},
 	{
-		title: "Sports Injuries",
-		description:
-			"Manual therapy may benefit injuries associated with contact sports and overuse, rehabilitation after ligament tears, sprains, and tendon or capsule injuries."
+		title: "Feeding-Related Concerns for Parents & Babies",
+		description: [
+			"Physical strain or discomfort in the chest, shoulders, back, or neck related to feeding and carrying your baby",
+			"Babies experiencing feeding difficulties linked to oral tension, tongue tie, latch challenges, or dysfunctional sucking pattern",
+			"Issues with milk supply",
+			"Support for mastitis and related breast discomfort",
+			"Coordination of care with lactation consulting for integrated osteopathic and feeding support"
+		]
 	},
 	{
-		title: "Back or Neck Pain",
-		description:
-			"Treatment may benefit those with scoliosis, disc injuries and herniations, arthritis, sciatica, restless leg syndrome, people working in jobs with repetitive movements or requiring long periods of sitting, falls on the back, hips, or tailbone."
+		title: "Chronic Pain & Inflammatory Conditions",
+		description: [
+			"Discomfort linked to autoimmune or systemic inflammatory conditions",
+			"Persistent joint pain or stiffness",
+			"Widespread muscle aches or tenderness",
+			"Stiffness in the morning or after rest",
+			"Chronic back, neck, or pelvic pain"
+		]
 	},
 	{
-		title: "Arthritis",
-		description:
-			"Treatment may help decrease inflammation, improve circulation surrounding affected joints, and decrease muscle tightness, and is safe for those with osteoarthritis and rheumatoid arthritis."
+		title: "Stress, Fatigue & Nervous System Regulation",
+		description: [
+			"Muscle tension related to stress or burnout",
+			"Feeling “tired but wired” or difficulty relaxing",
+			"Ongoing fatigue that doesn't improve with rest",
+			"Trouble sleeping or staying asleep",
+			"Sensory overwhelm or feeling easily overstimulated",
+			"Headaches, jaw clenching, or body tightness from increased levels of stress"
+		]
 	},
 	{
 		title: "Joint or Muscle Pain",
-		description:
-			"Manual therapy may help loosen restricted or tight muscles, joints, and fascia (connective tissue surrounding muscles, joints, and organs) and can lubricate joint spaces and decrease inflammation. I work with clients who have connective tissue disorders, joint inflammation (osteoarthritis and rheumatoid arthritis), plantar fasciitis, frozen shoulder, bursitis, numbness and tingling in the extremities, muscle spasms, and carpal tunnel syndrome."
+		description: [
+			"Shoulder pain or stiffness, including frozen shoulder",
+			"Hip discomfort or limited mobility",
+			"Knee pain, swelling, or instability",
+			"Foot pain, including plantar fasciitis or arch discomfort",
+			"Hand or wrist pain, including carpal tunnel symptoms",
+			"Joint inflammation, tendonitis, and bursitis",
+			"Muscle tightness, tension, or cramping",
+			"Pain related to overuse, strain, or injury"
+		]
 	},
 	{
-		title: "TMJ Pain",
-		description:
-			"Manual therapy can be related to tight muscles in the face, neck, shoulders, and pelvis and can be related to teeth grinding, history of dental work or dental surgeries, and frequent sinus or ear infections."
+		title: "TMJ & Jaw Pain",
+		description: [
+			"Jaw tension, aching, or tightness",
+			"Clicking, popping, or locking of the jaw",
+			"Pain from clenching or grinding",
+			"Discomfort while chewing or opening the mouth",
+			"Headaches or facial pain linked to jaw tension",
+			"Jaw or facial discomfort following dental work or orthodontic procedures",
+			"Sinus congestion contributing to facial or jaw tension"
+		]
 	},
 	{
-		title: "Digestive Concerns",
-		description:
-			"Manual therapy may help with bloating, gas, cramping, hiatal hernias, acid reflux, indigestion, and digestive motility issues like constipation or diarrhea."
+		title: "Digestive Health",
+		description: [
+			"Bloating or abdominal distension",
+			"Acid reflux or heartburn",
+			"Cramping, pain, or digestive spasms",
+			"Constipation or irregular bowel movements",
+			"Diarrhea or loose stools",
+			"Indigestion or feelings of fullness",
+			"Gas and discomfort after meals",
+			"Ongoing symptoms following gut infections like SIBO, SIFO, or parasites",
+			"IBS-type symptoms (alternating bowel habits, chronic constipation or diarrhea, discomfort, urgency)",
+			"Tension in the abdominal or pelvic region affecting digestion",
+			"Discomfort related to abdominal scars or post-surgical recovery"
+		]
 	},
 	{
-		title: "Women's Health Concerns",
-		description: "Manual therapy may help with PMS, abdominal and back pain during menses, PCOS, and endometriosis."
+		title: "Women's Health & Hormonal Concerns",
+		description: [
+			"Painful or heavy periods",
+			"PMS or PMDD",
+			"Irregular cycles",
+			"Endometriosis",
+			"PCOS",
+			"Pelvic floor tension or pain",
+			"Perimenopausal and menopausal symptoms (e.g. sleep changes, fatigue, brain fog, joint aches)"
+		]
 	},
 	{
-		title: "And more!",
-		description:
+		title: "Pregnancy, Postpartum & Infant Care",
+		description: [
 			"I work with clients of all ages and stages of life including perinatal (prenatal and postnatal) clients, newborns, and pediatric clients. Treatments can help prepare the body for labor and work with symptoms associated with pregnancy like muscle and joint pain, nausea, and swelling in the legs. In the postpartum period I work with people who are having breastfeeding difficulties, and babies struggling with gastrointestinal concerns like reflux, gas, and colic or musculoskeletal concerns like torticollis or plagiocephaly. Manual therapy can also help reduce stress and induce relaxation."
+		]
 	}
 ];
