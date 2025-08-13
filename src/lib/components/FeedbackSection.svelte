@@ -10,8 +10,8 @@
 		<div class="feedback-cta-image">
 			<picture>
 				<source srcset="/assets/images/treatment-3.webp" type="image/webp" />
-				<source srcset="/assets/images/treatment-3.png" type="image/jpeg" />
-				<img src="/assets/images/treatment-3.png" alt="Michelle treating a client" loading="lazy" />
+				<source srcset="/assets/images/treatment-3.jpg" type="image/jpeg" />
+				<img src="/assets/images/treatment-3.jpg" alt="Michelle treating a client" loading="lazy" />
 			</picture>
 		</div>
 		<div class="feedback-cta-text">
