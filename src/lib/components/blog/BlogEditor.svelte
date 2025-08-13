@@ -387,8 +387,8 @@
 </script>
 
 <dialog class="blog-editor surface" bind:this={dialog} transition:fade={{ duration: 100 }}>
-	<button class="button close" onclick={handleClose}><span class="material-icons">close</span></button>
-	<h3>Blog Post Editor</h3>
+	<button class="close" onclick={handleClose}><span class="material-icons">close</span></button>
+	<h2>Blog Post Editor</h2>
 	<div class="blog-inputs">
 		<label class="blog-input-labels">
 			Title:
@@ -431,9 +431,9 @@
 		<p class="quill-stats">Word Count: {wordCount} | Character Count: {charCount}</p>
 	</div>
 	<div class="blog-actions">
-		<button class="button" onclick={handleSaveDraft}><span class="material-icons">save</span>Save Draft</button>
-		<button class="button" onclick={handlePreview}><span class="material-icons">preview</span>Preview</button>
-		<button class="button" onclick={handleClose}><span class="material-icons">delete</span>Discard Changes</button>
+		<button class="button button-secondary" onclick={handleSaveDraft}><span class="material-icons">save</span>Save Draft</button>
+		<button class="button button-secondary" onclick={handlePreview}><span class="material-icons">preview</span>Preview</button>
+		<button class="button button-secondary" onclick={handleClose}><span class="material-icons">delete</span>Discard Changes</button>
 		<button class="button button-primary" onclick={handlePublish}><span class="material-icons">publish</span>Publish</button>
 	</div>
 	{#if uiStore.alertMessage}
@@ -468,8 +468,13 @@
 		max-height: calc(100vh - 4rem);
 		overflow-y: auto;
 		scrollbar-width: thin;
-		scrollbar-color: var(--color-primary, #000) var(--color-white, #fff);
+		scrollbar-color: var(--color-pine-2) var(--color-bronze-6);
 		padding: var(--spacing-m);
+	}
+
+	dialog.blog-editor h2 {
+		font-size: var(--font-heading-s);
+		font-weight: 400;
 	}
 
 	div.toast-message {
@@ -501,6 +506,18 @@
 		background-color: var(--color-primary, #000);
 	}
 
+	button.button-secondary {
+		border-color: var(--color-pine-3);
+		color: var(--color-pine-3);
+	}
+
+	@media (hover: hover) {
+		button.button-secondary:hover {
+			background-color: var(--color-pine-3);
+			color: var(--color-white, #fff);
+		}
+	}
+
 	button.close {
 		position: absolute;
 		top: 1rem;
@@ -508,15 +525,16 @@
 		background-color: transparent;
 		border: none;
 		cursor: pointer;
-		transition:
-			background-color 0.2s,
-			color 0.2s;
+		transition: color 0.2s;
+	}
+
+	button span {
+		font-size: 1.5rem;
 	}
 
 	button.close:hover,
 	button.close:focus {
-		background-color: var(--color-primary, #000);
-		color: var(--color-white, #fff);
+		color: var(--color-bronze-2);
 	}
 
 	div.quill-container {
