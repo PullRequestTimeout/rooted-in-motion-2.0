@@ -40,6 +40,16 @@
 	font-display: swap;
 }
 
+@font-face {
+	font-family: "Oswald";
+	font-weight: 700;
+	font-style: normal;
+	src:
+		url("/assets/fonts/Oswald-Bold.woff2") format("woff2"),
+		url("/assets/fonts/Oswald-Bold.woff") format("woff");
+	font-display: swap;
+}
+
 /* Reset ----------------------------------------------- */
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -168,15 +178,19 @@ button {
 	}
 }
 
+@media screen and (min-width: 640px) {
+	:root {
+		/* Spacing */
+		--padding-inline: 2rem;
+	}
+}
+
 @media screen and (min-width: 768px) {
 	:root {
 		/* Font sizes */
 		--font-heading-s: 2rem;
 		--font-heading-m: 2.5rem;
 		--font-heading-l: 3rem;
-
-		/* Spacing */
-		--padding-inline: 2rem;
 	}
 }
 
@@ -355,25 +369,26 @@ input {
 }
 
 .text-input {
-	border: 1px solid var(--color-black, #000);
-	border-radius: var(--spacing-s);
-	padding: var(--spacing-s);
+	border: none;
+	border-bottom: 2px solid var(--color-black, #000);
+	padding: 0.25rem 0;
 	width: 100%;
 	font-size: var(--font-body-s);
 	transition: border-color 0.2s ease-in-out;
+	background-color: transparent;
 }
 
 .text-input:focus-visible {
-	border-color: var(--color-primary, blue);
-	outline: 1px solid var(--color-primary, blue);
-	transition: none;
+	border-color: var(--color-bronze-2);
+	outline: none;
 }
+
 .text-input:user-invalid {
 	border-color: var(--color-error, red);
 }
 
 .surface {
-	background-color: var(--color-white);
+	background-color: var(--color-bronze-5);
 	border-radius: 0.5rem;
 	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
 	padding: var(--spacing-m) var(--spacing-l);
