@@ -567,7 +567,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding-bottom: calc(1rem + var(--padding-block));
+		padding-bottom: calc(0.5rem + var(--padding-block));
 	}
 
 	section.osteo-faq h2 {
