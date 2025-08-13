@@ -3,6 +3,11 @@
 	import Faq from "$lib/components/FAQ.svelte";
 	import { symptoms } from "$lib/data/symptoms";
 	import { osteoFaqs, lactationFaqs } from "$lib/data/faqs";
+	import { fade } from "svelte/transition";
+	import { clickOutside } from "$lib/utils/clickOutside";
+
+	let modalOpen = $state(false);
+	let modalContent = $state<{ title: string; description: string[] }>({ title: "", description: [] });
 </script>
 
 <SeoHead
@@ -46,11 +51,18 @@
 	</div>
 </section>
 <section class="symptoms">
-	<h2>Symptoms I work with</h2>
+	<h2>What brings people in</h2>
 	<div class="symptoms-list">
 		{#each symptoms as symptom, i}
 			<div class="symptoms-item">
-				<button class="button button-primary" aria-label={`${symptom.title} modal button`}>
+				<button
+					class="button button-primary"
+					aria-label={`${symptom.title} modal button`}
+					onclick={() => {
+						modalOpen = true;
+						modalContent = { title: symptom.title, description: symptom.description };
+					}}
+				>
 					<img src={`assets/images/svgs/symptom-${i + 1}.svg`} alt={`${symptom.title} icon`} />
 					<img src={`assets/images/svgs/symptom-${i + 1}-white.svg`} alt={`${symptom.title} icon`} />
 				</button>
@@ -84,11 +96,18 @@
 		</div>
 	</section>
 	<section class="symptoms lactation">
-		<h2>Symptoms I work with</h2>
+		<h2>Feeding concerns I work with</h2>
 		<div class="symptoms-list">
 			{#each symptoms as symptom, i}
 				<div class="symptoms-item">
-					<button class="button button-primary" aria-label={`${symptom.title} modal button`}>
+					<button
+						class="button button-primary"
+						aria-label={`${symptom.title} modal button`}
+						onclick={() => {
+							modalOpen = true;
+							modalContent = { title: symptom.title, description: symptom.description };
+						}}
+					>
 						<img src={`assets/images/svgs/symptom-${i + 1}.svg`} alt={`${symptom.title} icon`} />
 						<img src={`assets/images/svgs/symptom-${i + 1}-white.svg`} alt={`${symptom.title} icon`} />
 					</button>
@@ -161,6 +180,20 @@
 	</div>
 	<img class="pricing-svg" src="/assets/images/svgs/plant-17.svg" alt="plant svg" />
 </section>
+
+{#if modalOpen}
+	<div class="modal-overlay" transition:fade={{ duration: 200 }}>
+		<div class="modal-content" use:clickOutside onoutclick={() => (modalOpen = false)}>
+			<button class="modal-close" onclick={() => (modalOpen = false)}><span class="material-icons">close</span></button>
+			<h2>{modalContent.title}</h2>
+			<ul>
+				{#each modalContent.description as description}
+					<li>{description}</li>
+				{/each}
+			</ul>
+		</div>
+	</div>
+{/if}
 
 <style>
 	/* Hero ------------------------------------------------------------------------------------ */
@@ -582,6 +615,12 @@
 		color: var(--color-white);
 	}
 
+	@media screen and (min-width: 1024px) {
+		section.osteo-faq h2 {
+			margin-bottom: calc(var(--spacing-l) + var(--spacing-m));
+		}
+	}
+
 	/* Lactation ------------------------------------------------------------------------------- */
 	div.boob-background {
 		position: relative;
@@ -712,6 +751,79 @@
 		section.pricing img.pricing-svg {
 			height: unset;
 			opacity: 0.4;
+		}
+	}
+
+	/* Modal ----------------------------------------------------------------------------------- */
+	div.modal-overlay {
+		position: fixed;
+		cursor: pointer;
+		z-index: 1000;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.75);
+		backdrop-filter: blur(2px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: var(--padding-block) var(--padding-inline);
+	}
+
+	div.modal-content {
+		position: relative;
+		cursor: auto;
+		background: var(--color-bronze-6);
+		padding: var(--spacing-m);
+		border-radius: var(--spacing-s);
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		max-width: 40rem;
+	}
+
+	div.modal-content h2 {
+		font-size: var(--font-heading-s);
+		font-weight: 400;
+		text-align: center;
+	}
+
+	div.modal-content li {
+		font-size: var(--font-body-l);
+		font-weight: 300;
+		margin-bottom: 0.25rem;
+	}
+
+	button.modal-close {
+		background: none;
+		border: none;
+		cursor: pointer;
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+	}
+
+	button.modal-close span {
+		font-size: 1.5rem;
+		transition: color 0.2s;
+	}
+
+	@media (hover: hover) {
+		button.modal-close span:hover {
+			color: var(--color-bronze-2);
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		div.modal-content {
+			padding: var(--spacing-l);
+		}
+
+		div.modal-content li {
+			font-size: var(--font-body-m);
+		}
+
+		button.modal-close span {
+			font-size: 2rem;
 		}
 	}
 </style>
