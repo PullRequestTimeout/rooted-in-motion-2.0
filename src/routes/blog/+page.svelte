@@ -1,5 +1,6 @@
 <script lang="ts">
 	import SeoHead from "$lib/components/SeoHead.svelte";
+	import FeedbackSection from "$lib/components/FeedbackSection.svelte";
 
 	// Import blog posts
 	import type { PageData } from "./$types";
@@ -19,53 +20,74 @@
 <main>
 	<section class="blog-header">
 		<h1>Blog</h1>
-		<p>Welcome to the blog! Here you can find all our latest articles.</p>
-		<hr />
+		<p>All our latest articles about Osteopathy and Lactation Support</p>
 	</section>
-	<section>
-		<h2>Latest Articles</h2>
-		<div class="blog-posts-container">
-			{#each blogPostsArr as post}
-				<div class="blog-card surface">
-					{#if post.heroImage}
-						<img src={post.heroImage} alt={`${post.title} hero image`} />
-					{/if}
-					<div>
-						<p>{post.author} — <span>{formatDate(post.date)}</span></p>
+	<section class="blog-posts">
+		<!-- Blog posts -->
+		{#if blogPostsArr.length === 0}
+			<p>No blog posts yet, check again soon!</p>
+		{:else}
+			<h2>Latest Articles</h2>
+			<div class="blog-posts-container">
+				{#each blogPostsArr as post}
+					<div class="blog-card surface">
+						{#if post.heroImage}
+							<img src={post.heroImage} alt={`${post.title} hero image`} />
+						{/if}
+						<div>
+							<p>{post.author} — <span>{formatDate(post.date)}</span></p>
+						</div>
+						<h3>{post.title}</h3>
+						<p>{post.subtitle}</p>
+						<a class="button-link" href={`/blog/${post.slug}`}>Read More </a>
 					</div>
-					<h3>{post.title}</h3>
-					<p>{post.subtitle}</p>
-					<a class="button-link" href={`/blog/${post.slug}`}>Read More </a>
-				</div>
-			{/each}
-		</div>
+				{/each}
+			</div>
+		{/if}
 	</section>
+	<FeedbackSection />
 </main>
 
 <style>
-	.blog-header {
-		padding-block: 4rem;
-		text-align: center;
+	main {
+		background: linear-gradient(var(--color-bronze-5), #e9c69aff);
+	}
+
+	section.blog-header {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		padding: 7em var(--padding-inline) 2em var(--padding-inline);
 	}
 
-	.blog-header h1 {
-		font-size: var(--font-heading-m, 2.5rem);
-	}
-	.blog-header hr {
-		width: 20%;
-		margin-top: 1rem;
+	section.blog-header h1 {
+		font-family: "Oswald", sans-serif;
+		font-weight: 700;
+		line-height: 1;
+		color: var(--color-pine-6);
+		font-size: 5em;
 	}
 
-	.blog-posts-container {
+	section.blog-header p {
+		font-size: var(--font-body-l);
+		font-family: "Raleway", sans-serif;
+		line-height: 1.3;
+		font-weight: 300;
+		max-width: 80%;
+	}
+
+	section.blog-posts p {
+		font-size: var(--font-body-m);
+		font-family: "Raleway", sans-serif;
+		line-height: 1.5;
+	}
+
+	div.blog-posts-container {
 		display: grid;
 		grid-template-columns: repeat(1, 1fr);
 		gap: 1rem;
 	}
 
-	.blog-card {
+	div.blog-card {
 		width: 100%;
 		height: 100%;
 		padding: 1rem;
@@ -75,44 +97,66 @@
 		display: flex;
 		flex-direction: column;
 	}
-	.blog-card h3 {
+	div.blog-card h3 {
 		margin: 0;
 		font-size: 1.5rem;
 	}
 
-	.blog-card p span {
+	div.blog-card p span {
 		font-style: italic;
 	}
 
-	.blog-card a {
+	div.blog-card a {
 		margin-top: auto;
 	}
 
-	.blog-card:hover {
+	div.blog-card:hover {
 		transform: translateY(-0.25rem);
 	}
 
 	@media screen and (min-width: 768px) {
-		.blog-posts-container {
+		div.blog-posts-container {
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 
 	@media screen and (min-width: 1024px) {
-		.blog-posts-container {
+		div.blog-posts-container {
 			grid-template-columns: repeat(3, 1fr);
 		}
 	}
 
 	@media screen and (min-width: 1280px) {
-		.blog-posts-container {
+		div.blog-posts-container {
 			grid-template-columns: repeat(4, 1fr);
 		}
 	}
 
 	@media screen and (min-width: 1600px) {
-		.blog-posts-container {
+		div.blog-posts-container {
 			grid-template-columns: repeat(5, 1fr);
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		section.blog-header h1 {
+			font-size: 6em;
+		}
+	}
+
+	@media screen and (min-width: 1280px) {
+		section.blog-header h1 {
+			font-size: 7em;
+		}
+
+		section.blog-header p {
+			font-size: calc(var(--font-body-l) * 1.2);
+		}
+	}
+
+	@media screen and (min-width: 1600px) {
+		section.blog-header h1 {
+			font-size: 8em;
 		}
 	}
 </style>
