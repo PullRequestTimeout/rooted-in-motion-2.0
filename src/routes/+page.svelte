@@ -31,21 +31,54 @@
 			</picture>
 		</div>
 	</section>
-	<section class="symptoms">
-		<h2>Symptoms I work with</h2>
-		<div class="symptoms-list">
-			{#each symptoms as symptom, i}
-				<div class="symptoms-item">
-					<button class="button button-primary" aria-label={`${symptom.title} modal button`}>
-						<img src={`assets/images/svgs/symptom-${i + 1}.svg`} alt={`${symptom.title} icon`} />
-						<img src={`assets/images/svgs/symptom-${i + 1}-white.svg`} alt={`${symptom.title} icon`} />
-					</button>
-					<p>{symptom.title}</p>
+	<section class="services">
+		<h2>Services I provide</h2>
+		<div class="services-container">
+			<div class="services-card">
+				<div class="services-card-heading">
+					<div class="services-card-icon">
+						<img src="/assets/images/svgs/services-1.svg" alt="osteo svg" />
+					</div>
+					<h3>Osteopathy</h3>
+					<p class="subtitle">Gentle, hands-on treatment for pain and mobility</p>
 				</div>
-			{/each}
+				<hr />
+				<p>
+					Osteopathy uses gentle, manual techniques to relieve pain, improve mobility, and support recovery from injury. Suitable for all ages, it
+					focuses on restoring balance and promoting overall wellbeing through a whole-body approach.
+				</p>
+			</div>
+			<div class="services-card">
+				<div class="services-card-heading">
+					<div class="services-card-icon">
+						<img src="/assets/images/svgs/services-2.svg" alt="lactation svg" />
+					</div>
+					<h3>Lactation Consultation</h3>
+					<p class="subtitle">Personalised support for your breastfeeding journey</p>
+				</div>
+				<hr />
+				<p>
+					As an IBCLC-certified consultant, I provide personalised guidance to help with latching, positioning, and milk supply. Whether in person or
+					online, sessions are tailored to meet your baby’s needs and support your feeding goals with confidence.
+				</p>
+			</div>
+			<div class="services-card">
+				<div class="services-card-heading">
+					<div class="services-card-icon">
+						<img src="/assets/images/svgs/services-3.svg" alt="osteo svg" />
+					</div>
+					<h3>Combination Treatment</h3>
+					<p class="subtitle">Integrated care for body and breastfeeding</p>
+				</div>
+				<hr />
+				<p>
+					This treatment blends osteopathic care with lactation support, addressing both physical discomfort and feeding challenges. It’s a holistic
+					option for new parents seeking complete, gentle care during postpartum recovery.
+				</p>
+			</div>
 		</div>
-		<a href="/services" class="button button-secondary">Read More</a>
-		<img class="symptoms-svg" src="/assets/images/svgs/plant-5.svg" alt="plant svg" />
+		<a href="/services" class="button button-secondary">See Services</a>
+		<img class="services-svg" src="/assets/images/svgs/plant-5.svg" alt="plant svg" />
 	</section>
 	<section class="benefits">
 		<div class="benefits-text">
@@ -349,77 +382,32 @@
 		}
 	}
 
-	/* Symptoms -------------------------------------------------------------------------------- */
-	section.symptoms {
+	/* Services -------------------------------------------------------------------------------- */
+	section.services {
 		position: relative;
 		background-color: var(--color-greyscale-1);
+		color: var(--color-white);
+		overflow: hidden;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		color: var(--color-white);
-		gap: var(--spacing-m);
-		overflow: hidden;
 	}
 
-	section.symptoms h2 {
-		font-size: var(--font-heading-s);
-		font-weight: 400;
+	section.services h2 {
+		font-size: var(--font-heading-m);
+		text-align: center;
+		font-weight: 300;
+		margin-bottom: 2rem;
 	}
 
-	section.symptoms h2,
-	section.symptoms a,
-	section.symptoms div.symptoms-list {
+	section.services h2,
+	section.services div.services-container,
+	section.services a.button {
 		position: relative;
 		z-index: 1;
 	}
 
-	section.symptoms div.symptoms-list {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: var(--spacing-m);
-		text-align: center;
-		max-width: 25rem;
-	}
-
-	section.symptoms div.symptoms-item {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: var(--spacing-s);
-	}
-
-	section.symptoms div.symptoms-item button {
-		background-color: var(--color-bronze-5);
-		color: var(--color-white);
-		border-radius: var(--spacing-s);
-		width: 5rem;
-		height: 5rem;
-		border: none;
-		display: grid;
-		grid-template-areas: "stack";
-		padding: 0;
-	}
-
-	section.symptoms div.symptoms-item button img {
-		grid-area: stack;
-		height: 4rem;
-		width: 3rem;
-		transition: opacity 0.3s ease-in-out;
-	}
-
-	section.symptoms div.symptoms-item button img:last-child {
-		opacity: 0;
-	}
-
-	section.symptoms div.symptoms-item button:hover img:first-child {
-		opacity: 0;
-	}
-
-	section.symptoms div.symptoms-item button:hover img:last-child {
-		opacity: 1;
-	}
-
-	section.symptoms img.symptoms-svg {
+	section.services img.services-svg {
 		position: absolute;
 		z-index: 0;
 		bottom: 0;
@@ -428,43 +416,136 @@
 		max-width: unset;
 	}
 
-	@media (hover: hover) {
-		section.symptoms div.symptoms-item button:hover {
-			background-color: var(--color-bronze-2);
-		}
+	section.services div.services-container {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-m);
+	}
+
+	div.services-card {
+		max-width: 25rem;
+		color: var(--color-black);
+		border-radius: var(--spacing-s);
+		background-color: var(--color-bronze-5);
+		overflow: hidden;
+		padding: var(--spacing-l) var(--spacing-m);
+		box-shadow: 0 0 1rem #00000080;
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-s);
+		justify-content: center;
+		align-items: center;
+	}
+
+	div.services-card div.services-card-heading {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: var(--spacing-xs);
+		height: fit-content;
+	}
+
+	div.services-card div.services-card-icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 1rem;
+		background-color: #ffffff40;
+		box-shadow: 0 0.25rem 0.25rem #212c2105;
+		border-radius: 50%;
+	}
+
+	div.services-card img {
+		height: 3.5rem;
+	}
+
+	div.services-card h3 {
+		font-size: var(--font-heading-s);
+		font-weight: 400;
+		margin-bottom: 0;
+	}
+
+	div.services-card h3,
+	div.services-card p {
+		text-align: center;
+	}
+
+	div.services-card p {
+		font-size: var(--font-body-s);
+		line-height: 1.4;
+		font-family: var(--font-heading);
+	}
+
+	div.services-card hr {
+		border: none;
+		border-top: 2px solid var(--color-pine-2);
+		opacity: 0.5;
+		width: 65%;
+		margin-bottom: 0.5rem;
+	}
+
+	div.services-card p.subtitle {
+		font-weight: 300;
+		max-width: 85%;
+	}
+
+	section.services a.button {
+		margin-top: var(--spacing-l);
 	}
 
 	@media screen and (min-width: 640px) {
-		section.symptoms div.symptoms-list {
-			grid-template-columns: repeat(3, 1fr);
-			gap: var(--spacing-l);
-		}
-
-		section.symptoms div.symptoms-item:last-child {
-			grid-column: 2;
-		}
-
-		section.symptoms img.symptoms-svg {
+		section.services img.services-svg {
 			height: 22rem;
 		}
 	}
 
 	@media screen and (min-width: 1024px) {
-		section.symptoms {
+		section.services div.services-container {
+			flex-direction: row;
+		}
+
+		div.services-card {
+			flex: 1;
+			transition: 0.3s;
+		}
+
+		div.services-card:nth-of-type(2) {
+			translate: 0 2rem;
+		}
+
+		/* This fixes a visual stutter */
+		div.services-card:nth-of-type(1),
+		div.services-card:nth-of-type(3) {
+			translate: 0 0.01rem;
+		}
+
+		section.services a.button {
+			margin-top: calc(var(--spacing-xl) + 1rem);
+		}
+
+		section.services h2 {
+			margin-bottom: var(--spacing-xl);
+		}
+
+		section.services img.services-svg {
+			height: 25rem;
+		}
+	}
+
+	@media screen and (min-width: 1280px) {
+		section.services div.services-container {
 			gap: var(--spacing-l);
 		}
 
-		section.symptoms div.symptoms-list {
-			grid-template-columns: repeat(5, 1fr);
-			max-width: 50rem;
+		div.services-card {
+			padding: var(--spacing-m) var(--spacing-l);
 		}
+	}
 
-		section.symptoms div.symptoms-item:last-child {
-			grid-column: unset;
-		}
-
-		section.symptoms img.symptoms-svg {
-			height: 25rem;
+	@media (hover: hover) {
+		div.services-card:hover {
+			transform: translateY(-0.35rem);
 		}
 	}
 
@@ -484,7 +565,7 @@
 	}
 
 	div.benefits-text h2 {
-		font-size: var(--font-heading-s);
+		font-size: var(--font-heading-m);
 		position: relative;
 		z-index: 1;
 		font-weight: 400;
@@ -565,6 +646,10 @@
 	}
 
 	@media screen and (min-width: 640px) {
+		div.benefits-text h2 {
+			font-size: var(--font-heading-s);
+		}
+
 		div.benefits-text {
 			text-align: center;
 		}
@@ -918,12 +1003,12 @@
 
 	@media screen and (min-width: 1024px) {
 		section.faq {
-			max-width: 80%;
 			margin: 0 auto;
 		}
 
 		section.faq h3 {
 			font-size: var(--font-heading-s);
+			margin-bottom: calc(var(--spacing-m) + var(--spacing-l));
 		}
 	}
 </style>
