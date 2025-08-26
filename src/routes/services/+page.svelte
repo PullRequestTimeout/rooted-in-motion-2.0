@@ -779,6 +779,8 @@
 		border-radius: var(--spacing-s);
 		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 		max-width: 40rem;
+		max-height: calc(100vh - 2rem);
+		overflow-y: auto;
 	}
 
 	div.modal-content h2 {

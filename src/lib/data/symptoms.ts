@@ -111,7 +111,19 @@ export const symptoms = [
 	{
 		title: "Pregnancy, Postpartum & Infant Care",
 		description: [
-			"I work with clients of all ages and stages of life including perinatal (prenatal and postnatal) clients, newborns, and pediatric clients. Treatments can help prepare the body for labor and work with symptoms associated with pregnancy like muscle and joint pain, nausea, and swelling in the legs. In the postpartum period I work with people who are having breastfeeding difficulties, and babies struggling with gastrointestinal concerns like reflux, gas, and colic or musculoskeletal concerns like torticollis or plagiocephaly. Manual therapy can also help reduce stress and induce relaxation."
+			"Back or pelvic pain, round ligament pain, symphysis pubis dysfunction",
+			"Rib or diaphragm tension",
+			"Swelling in the feet and legs",
+			"Preparation for delivery",
+			"Recovery after vaginal or cesarean birth",
+			"Scar care after cesarean delivery",
+			"Pelvic floor concerns",
+			"Core and pelvic realignment",
+			"Muscle tension from carrying and feeding your baby",
+			"Infant digestive concerns such as gas, reflux, or constipation",
+			"Fussiness or colic",
+			"Latching or feeding challenges",
+			"Flattening of the head (plagiocephaly), torticollis, or muscle tension and stiffness in babies"
 		]
 	}
 ];
