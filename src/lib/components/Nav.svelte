@@ -22,6 +22,13 @@
 		scrollPosition = window.scrollY;
 		window.addEventListener("scroll", handleScroll);
 	});
+
+	let bookingOpen = $state(false);
+	$effect(() => {
+		if (open === false) {
+			bookingOpen = false;
+		}
+	});
 </script>
 
 <header
@@ -33,7 +40,12 @@
 	}}
 	class="small-screen-nav"
 >
-	<a href="/"><NavLogo invertColor={open} /></a>
+	<a
+		href="/"
+		onclick={() => {
+			open = false;
+		}}><NavLogo invertColor={open} /></a
+	>
 	<button class="nav-button" onclick={handleToggleMenu} aria-label="Toggle navigation menu" class:open>
 		<span></span>
 		<span></span>
@@ -41,7 +53,7 @@
 	</button>
 	{#if open}
 		<nav in:slide={{ duration: 300, axis: "y" }} out:slide={{ duration: 300 }} class="mobile-nav" class:open>
-			<ul>
+			<ul class:booking={bookingOpen}>
 				<li out:fade in:fade={{ delay: 2 * 100 }}>
 					<a
 						onclick={() => {
@@ -86,8 +98,30 @@
 						href="/contact">Contact</a
 					>
 				</li>
-				<li out:fade in:fade={{ delay: 4.25 * 100 }}><button class="button button-primary" onclick={openBookingModal}>Book Session</button></li>
+				<li out:fade in:fade={{ delay: 4.25 * 100 }}>
+					<button
+						class="button button-primary"
+						onclick={() => {
+							bookingOpen = true;
+						}}>Book Session</button
+					>
+				</li>
 			</ul>
+			<div class="small-screen-booking" class:booking={bookingOpen}>
+				<h2>Book Session:</h2>
+				<!-- <hr /> -->
+				<a href="https://madhucollective.janeapp.com/#/staff_member/42">Rossland</a>
+				<hr />
+				<a href="https://spectrumtreatmentcentre.janeapp.com/#/staff_member/29">Castlegar</a>
+				<hr />
+				<a href="/contact">Online</a>
+				<button
+					class="button button-secondary"
+					onclick={() => {
+						bookingOpen = false;
+					}}>Back to Navigation</button
+				>
+			</div>
 		</nav>
 	{/if}
 </header>
@@ -221,6 +255,50 @@
 	button.nav-button.open span:nth-child(3) {
 		top: 0.5rem;
 		transform: rotate(-135deg);
+	}
+
+	/* Animate booking */
+	header.small-screen-nav nav ul {
+		transition: 0.4s;
+		z-index: 2;
+	}
+
+	header.small-screen-nav nav ul.booking {
+		opacity: 0;
+		transform: translateX(-100px);
+		z-index: 1;
+	}
+
+	header.small-screen-nav nav div.small-screen-booking {
+		opacity: 0;
+		transition: 0.4s;
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		transform: translateX(100px);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: var(--spacing-m);
+	}
+
+	header.small-screen-nav nav div.small-screen-booking.booking {
+		opacity: 1;
+		transform: translateX(0px);
+		z-index: 2;
+	}
+
+	header.small-screen-nav nav div.small-screen-booking a {
+		text-transform: uppercase;
+	}
+
+	header.small-screen-nav nav div.small-screen-booking h2 {
+		margin-bottom: var(--spacing-m);
+	}
+
+	header.small-screen-nav nav div.small-screen-booking button {
+		margin-top: var(--spacing-m);
 	}
 
 	@media (min-width: 1024px) {
