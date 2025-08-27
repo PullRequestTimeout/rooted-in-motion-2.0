@@ -111,12 +111,15 @@
 </form>
 
 <style>
-	form {
+	form.surface {
 		width: fit-content;
 		accent-color: var(--color-bronze-3);
+		background-color: var(--color-white);
+		box-shadow: 1rem 1rem 0 var(--color-bronze-3);
+		border: 2px solid var(--color-pine-3);
 	}
 
-	form h2 {
+	form.surface h2 {
 		text-align: center;
 		font-size: var(--font-heading-s);
 		font-weight: 400;
