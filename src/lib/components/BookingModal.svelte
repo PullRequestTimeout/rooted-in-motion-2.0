@@ -9,11 +9,11 @@
 		<div class="modal-content surface" use:clickOutside onoutclick={closeBookingModal}>
 			<button class="close" onclick={closeBookingModal}><span class="material-icons">close</span></button>
 			<h2 out:fade in:fade={{ delay: 2 * 100 }}>Book Session:</h2>
-			<a out:fade in:fade={{ delay: 2.25 * 100 }} href="https://madhucollective.janeapp.com/#/staff_member/42">Rossland</a>
-			<hr out:fade in:fade={{ delay: 2.5 * 100 }} />
-			<a out:fade in:fade={{ delay: 2.75 * 100 }} href="https://spectrumtreatmentcentre.janeapp.com/#/staff_member/29">Castlegar</a>
+			<a out:fade in:fade={{ delay: 2.5 * 100 }} href="https://madhucollective.janeapp.com/#/staff_member/42">Rossland</a>
 			<hr out:fade in:fade={{ delay: 3 * 100 }} />
-			<a out:fade in:fade={{ delay: 3.25 * 100 }} href="/contact">Virtual</a>
+			<a out:fade in:fade={{ delay: 3.5 * 100 }} href="https://spectrumtreatmentcentre.janeapp.com/#/staff_member/29">Castlegar</a>
+			<hr out:fade in:fade={{ delay: 4 * 100 }} />
+			<a out:fade in:fade={{ delay: 4.5 * 100 }} href="/contact">Virtual</a>
 		</div>
 	</div>
 {/if}
