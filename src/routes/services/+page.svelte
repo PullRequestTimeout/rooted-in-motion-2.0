@@ -503,7 +503,7 @@
 	}
 
 	section.symptoms h2,
-	section.symptoms a,
+	section.symptoms button,
 	section.symptoms div.symptoms-list {
 		position: relative;
 		z-index: 1;
