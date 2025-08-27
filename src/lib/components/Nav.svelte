@@ -3,15 +3,11 @@
 	import { slide, fade } from "svelte/transition";
 	import { clickOutside } from "$lib/utils/clickOutside";
 	import { onMount } from "svelte";
+	import { openBookingModal } from "$lib/stores/uiStore.svelte";
 
 	let open = $state(false);
 	function handleToggleMenu() {
 		open = !open;
-	}
-
-	function openBookingModal() {
-		// Logic to open the booking modal
-		alert("Booking modal opened!");
 	}
 
 	let scrollPosition = $state(0);
@@ -114,7 +110,7 @@
 				<hr />
 				<a href="https://spectrumtreatmentcentre.janeapp.com/#/staff_member/29">Castlegar</a>
 				<hr />
-				<a href="/contact">Online</a>
+				<a href="/contact">Virtual</a>
 				<button
 					class="button button-secondary"
 					onclick={() => {

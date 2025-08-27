@@ -2,7 +2,8 @@ export let uiStore = $state({
 	loggedIn: false,
 	loading: false,
 	alertMessage: "",
-	blogEditorOpen: false
+	blogEditorOpen: false,
+	bookingModalOpen: false
 });
 
 // Used to control the toast component. If no time is given, it will default to 3 seconds.
@@ -14,4 +15,12 @@ export function handleAlertMessage(message: string, seconds?: number) {
 		},
 		(!!seconds ? seconds : 3) * 1000
 	);
+}
+
+export function openBookingModal() {
+	uiStore.bookingModalOpen = true;
+}
+
+export function closeBookingModal() {
+	uiStore.bookingModalOpen = false;
 }
