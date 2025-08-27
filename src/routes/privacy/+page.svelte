@@ -1,3 +1,12 @@
+<script lang="ts">
+	import SeoHead from "$lib/components/SeoHead.svelte";
+</script>
+
+<SeoHead
+	title="Privacy Policy | Rooted In Motion Osteopathy"
+	description="Privacy Policy for Rooted In Motion Osteopathy, outlining the collection, use, and protection of your personal information."
+></SeoHead>
+
 <section>
 	<h1>Privacy Policy</h1>
 	<p class="updated">Last updated: August 27, 2025</p>
