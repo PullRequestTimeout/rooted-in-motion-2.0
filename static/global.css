@@ -231,17 +231,21 @@ html {
 	background-color: var(--color-bronze-5);
 }
 
-/* * {
-	scrollbar-color: var(--color-pine-1) var(--color-pine-5);
+* {
+	scrollbar-color: var(--color-pine-2) var(--color-bronze-5);
 }
 
 *::-webkit-scrollbar-track {
-	background-color: var(--color-pine-5);
+	background-color: var(--color-bronze-5);
 }
 
 *::-webkit-scrollbar-thumb {
-	background-color: var(--color-pine-1);
-} */
+	background-color: var(--color-pine-2);
+}
+
+img {
+	user-select: none;
+}
 
 h1,
 h2,
@@ -332,6 +336,7 @@ span.material-icons {
 .button-primary:visited {
 	color: var(--color-white, #fff);
 	background-color: var(--color-pine-3);
+	border: 2px solid var(--color-pine-3);
 }
 
 .button-secondary,
@@ -343,6 +348,7 @@ span.material-icons {
 
 @media (hover: hover) {
 	.button-primary:hover {
+		border: 2px solid var(--color-bronze-2);
 		background-color: var(--color-bronze-2);
 		box-shadow: 0 0 0.5rem var(--color-bronze-2);
 	}

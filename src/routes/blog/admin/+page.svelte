@@ -10,7 +10,9 @@
 
 <main>
 	{#if !uiStore.loggedIn}
-		<LoginForm />
+		<div class="login-container">
+			<LoginForm />
+		</div>
 	{:else if uiStore.loggedIn}
 		<AdminPanel />
 	{/if}
@@ -22,5 +24,13 @@
 		flex-direction: column;
 		align-items: center;
 		padding-top: 5rem;
+	}
+
+	div.login-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 85vh;
 	}
 </style>
