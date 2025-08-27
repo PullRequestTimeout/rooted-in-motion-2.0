@@ -1,5 +1,5 @@
 <script>
-	import { uiStore } from "$lib/stores/uiStore.svelte";
+	import { uiStore, openBookingModal } from "$lib/stores/uiStore.svelte";
 	import { authHandlers } from "$lib/firebase/auth";
 </script>
 
@@ -22,8 +22,8 @@
 		</div>
 		<div class="bookings">
 			<h3>Get In Touch</h3>
-			<a href="/pages/contact">Contact</a>
-			<a href="https://madhucollective.janeapp.com/#/staff_member/42">Book Session</a>
+			<a href="/contact">Contact</a>
+			<button onclick={openBookingModal}>Book Session</button>
 			<a href="mailto:michelle@rootedinmotion.ca"><span title="Shoot me an email!">Email</span></a>
 		</div>
 		<div class="socials">
@@ -139,7 +139,7 @@
 	}
 
 	footer a {
-		transition: 0.3s;
+		transition: 0.2s;
 	}
 
 	footer a:hover,
@@ -154,6 +154,24 @@
 	.socials svg:hover,
 	.socials svg:active {
 		fill: var(--color-bronze-2, #e59c42);
+	}
+
+	div.bookings button {
+		background-color: transparent;
+		color: var(--color-white, #fff);
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		transition: 0.2s;
+		width: fit-content;
+	}
+
+	div.bookings button:hover {
+		color: var(--color-bronze-3, #d68f2b);
+	}
+
+	div.bookings *:not(h3) {
+		margin-bottom: 0.25em;
 	}
 
 	@media screen and (min-width: 640px) {

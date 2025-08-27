@@ -5,6 +5,7 @@
 	import { osteoFaqs, lactationFaqs } from "$lib/data/faqs";
 	import { fade } from "svelte/transition";
 	import { clickOutside } from "$lib/utils/clickOutside";
+	import { openBookingModal } from "$lib/stores/uiStore.svelte";
 
 	let modalOpen = $state(false);
 	let modalContent = $state<{ title: string; description: string[] }>({ title: "", description: [] });
@@ -70,7 +71,7 @@
 			</div>
 		{/each}
 	</div>
-	<a href="/services" class="button button-secondary">Book Session</a>
+	<button class="button button-secondary" onclick={openBookingModal}>Book Session</button>
 </section>
 <section class="osteo-faq">
 	<h2>Questions I get asked about Osteopathy</h2>
@@ -115,7 +116,7 @@
 				</div>
 			{/each}
 		</div>
-		<a href="/services" class="button button-primary">Book Session</a>
+		<button class="button button-primary" onclick={openBookingModal}>Book Session</button>
 	</section>
 	<section class="osteo-faq lactation">
 		<h2>Questions I get asked about Lactation Consultation</h2>

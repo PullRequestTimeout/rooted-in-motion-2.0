@@ -1,5 +1,6 @@
 <script lang="ts">
 	import FeedbackCarousel from "$lib/components/FeedbackCarousel.svelte";
+	import { openBookingModal } from "$lib/stores/uiStore.svelte";
 </script>
 
 <section class="feedback">
@@ -20,7 +21,7 @@
 				Whether you're healing from injury, navigating hormonal changes, or recovering from birth, I offer personalized, whole-body care focused on
 				relieving pain, restoring function, and supporting long-term wellbeing.
 			</p>
-			<a class="button button-secondary" href="/contact">Book Session</a>
+			<button class="button button-secondary" onclick={openBookingModal}>Book Session</button>
 		</div>
 	</div>
 	<img class="feedback-plant-2" src="/assets/images/svgs/plant-10.svg" alt="plant svg" />
@@ -66,7 +67,7 @@
 		gap: var(--spacing-m);
 	}
 
-	section.feedback div.feedback-cta-text a,
+	section.feedback div.feedback-cta-text button,
 	section.feedback div.feedback-cta-text p {
 		z-index: 10;
 	}

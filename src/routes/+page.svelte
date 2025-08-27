@@ -1,9 +1,9 @@
 <script lang="ts">
 	import SeoHead from "$lib/components/SeoHead.svelte";
 	import FAQ from "$lib/components/FAQ.svelte";
-	import { symptoms } from "$lib/data/symptoms";
 	import FeedbackSection from "$lib/components/FeedbackSection.svelte";
 	import { homeFaqs } from "$lib/data/faqs";
+	import { openBookingModal } from "$lib/stores/uiStore.svelte";
 </script>
 
 <SeoHead />
@@ -16,7 +16,7 @@
 			</h2>
 
 			<p>Osteopathy and lactation support to relieve pain, restore function, and help you feel more like yourself.</p>
-			<a class="button button-primary" href="https://madhucollective.janeapp.com/#/staff_member/42">Book Session</a>
+			<button class="button button-primary" onclick={openBookingModal}>Book Session</button>
 		</div>
 		<div class="hero-image">
 			<img class="hero-svg1 svg" src="/assets/images/svgs/plant-1.svg" alt="plant svg" />
