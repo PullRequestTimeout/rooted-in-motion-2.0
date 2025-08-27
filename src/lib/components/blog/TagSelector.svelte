@@ -143,7 +143,7 @@
 	}
 
 	input[type="checkbox"] {
-		accent-color: var(--color-primary, #000);
+		accent-color: var(--color-pine-3);
 	}
 
 	div.tag-selector-list button.button-primary {
@@ -202,6 +202,18 @@
 	span.tag button span {
 		font-size: 0.75rem;
 		transform: translate(0.005rem, 0);
+	}
+
+	button.button-secondary {
+		border-color: var(--color-pine-3);
+		color: var(--color-pine-3);
+	}
+
+	@media (hover: hover) {
+		button.button-secondary:hover {
+			background-color: var(--color-pine-3);
+			color: var(--color-white, #fff);
+		}
 	}
 
 	@media screen and (min-width: 768px) {

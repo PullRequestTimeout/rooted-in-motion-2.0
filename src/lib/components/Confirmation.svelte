@@ -61,4 +61,16 @@
 		background-color: rgba(0, 0, 0, 0.5);
 		cursor: pointer;
 	}
+
+	button.button-secondary {
+		border-color: var(--color-pine-3);
+		color: var(--color-pine-3);
+	}
+
+	@media (hover: hover) {
+		button.button-secondary:hover {
+			background-color: var(--color-pine-3);
+			color: var(--color-white, #fff);
+		}
+	}
 </style>
