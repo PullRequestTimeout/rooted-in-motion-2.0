@@ -47,6 +47,6 @@
 		width: 0;
 		width: var(--scroll-percent);
 		height: 100%;
-		background-color: var(--color-primary);
+		background-color: var(--color-bronze-2);
 	}
 </style>

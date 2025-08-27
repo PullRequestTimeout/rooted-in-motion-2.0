@@ -3,6 +3,7 @@
 	import { formatDate } from "$lib/utils/formatDate";
 	import type { BlogPost } from "$lib/components/blog/blogOutput.svelte";
 	const { data }: { data: PageData } = $props();
+	import ScrollProgress from "$lib/components/ScrollProgress.svelte";
 
 	function readingTimeFromHTML(html: string): number {
 		const wordsPerMinute = 200;
@@ -27,6 +28,7 @@
 	<meta name="description" content={`${data.blog?.title} — ${data.blog?.subtitle}`} />
 </svelte:head>
 
+<ScrollProgress />
 <main>
 	<section class="blog-header">
 		{#if data.blog?.heroImage}
