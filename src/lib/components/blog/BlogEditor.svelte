@@ -455,6 +455,12 @@
 		max-height: 100vh;
 	}
 
+	@media (min-width: 1024px) {
+		:global(body:has(dialog.blog-editor[open]) header nav) {
+			translate: -1rem 0;
+		}
+	}
+
 	:global(.ql-toolbar.ql-snow) {
 		border: 1px solid var(--color-black, #000);
 		border-radius: 0.5rem 0.5rem 0 0;
