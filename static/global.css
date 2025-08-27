@@ -417,3 +417,45 @@ a[href^="https://maps.google.com/maps"]
 .gm-style iframe + div {
 	border: none !important;
 }
+
+/* Blog ---------------------------------------------------------------------------------------- */
+
+section.blog-body {
+	padding-top: 0;
+}
+
+section.blog-body * {
+	font-family: var(--font-heading);
+	margin-bottom: 0.75rem;
+	line-height: 1.5;
+}
+
+section.blog-body h1,
+section.blog-body h2,
+section.blog-body h3,
+section.blog-body h4,
+section.blog-body h5,
+section.blog-body h6 {
+	margin-bottom: 1.25rem;
+	font-weight: 400;
+	clear: both;
+}
+
+section.blog-body p:nth-child(2)::first-letter {
+	font-size: 5rem;
+	font-family: "Oswald", sans-serif;
+	color: var(--color-pine-2);
+	font-weight: bold;
+	line-height: 1;
+	margin-right: 0.1em;
+	float: left;
+	margin: 0.5rem 1rem 1rem 0rem;
+}
+
+section.blog-body a {
+	color: var(--color-pine-2);
+}
+
+section.blog-body li::marker {
+	color: var(--color-pine-3);
+}

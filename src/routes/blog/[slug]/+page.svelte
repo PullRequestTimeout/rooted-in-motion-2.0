@@ -33,16 +33,16 @@
 			<img class="blog-hero-image" src={data.blog?.heroImage} alt="hero" />
 		{/if}
 		<h1>{data.blog?.title}</h1>
-		<p>{data.blog?.subtitle}</p>
+		<p class="blog-subtitle">{data.blog?.subtitle}</p>
 		{#if data.blog?.date}
 			<p class="blog-date">{formatDate(data.blog.date)}</p>
 		{/if}
 		<hr />
 	</section>
-	<section class="blog-body" class:columns={data.publishedBlogPosts.length > 0}>
+	<section class="blog-body" class:columns={data.publishedBlogPosts.length > 1}>
 		<div class="blog-content">
 			{#if !!readingTime}
-				<p>Estimated reading time — {readingTime}min</p>
+				<p class="blog-reading-time">Estimated reading time — {readingTime}min</p>
 			{/if}
 			{@html data.blog?.html}
 			<hr />
@@ -51,8 +51,8 @@
 				<a class="button-link" href="/blog">Back to blog</a>
 			</div>
 		</div>
-		<div class="recent-blogs">
-			{#if data.publishedBlogPosts.length > 1}
+		{#if data.publishedBlogPosts.length > 1}
+			<div class="recent-blogs">
 				<h2>Recent Articles</h2>
 				<div class="blog-posts-container">
 					{#each data.publishedBlogPosts.filter((post: BlogPost) => post.slug !== data.blog?.slug).slice(0, 3) as post}
@@ -67,8 +67,8 @@
 						</div>
 					{/each}
 				</div>
-			{/if}
-		</div>
+			</div>
+		{/if}
 	</section>
 </main>
 
@@ -77,11 +77,35 @@
 		display: flex;
 		flex-direction: column;
 		text-align: center;
-		margin: 4rem 0;
+		padding-top: 7rem;
+		align-items: center;
+	}
+
+	section.blog-header h1 {
+		font-weight: 400;
+		font-family: "Oswald", sans-serif;
+		color: var(--color-pine-2);
+		font-size: var(--font-heading-l);
+		margin-bottom: var(--spacing-s);
+	}
+
+	section.blog-header p.blog-subtitle {
+		font-family: var(--font-heading);
+		font-size: var(--font-body-l);
+		font-weight: 300;
 	}
 
 	section.blog-header p.blog-date {
 		font-style: italic;
+		opacity: 0.75;
+	}
+
+	section.blog-header hr {
+		border: none;
+		border-top: 2px solid var(--color-pine-2);
+		opacity: 0.5;
+		width: 100%;
+		max-width: 1200px;
 	}
 
 	div.blog-footer {
@@ -100,7 +124,6 @@
 
 	section.blog-body {
 		display: grid;
-		margin-bottom: var(--spacing-l);
 	}
 
 	section.blog-body.columns {
@@ -118,6 +141,7 @@
 		display: flex;
 		flex-direction: column;
 	}
+
 	div.blog-card a {
 		width: fit-content;
 		margin-top: auto;
