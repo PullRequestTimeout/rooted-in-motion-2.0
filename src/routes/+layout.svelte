@@ -6,6 +6,7 @@
 	import "material-icons/iconfont/filled.css";
 	import Nav from "$lib/components/Nav.svelte";
 	import Footer from "$lib/components/Footer.svelte";
+	import BookingModal from "$lib/components/BookingModal.svelte";
 
 	onMount(() => {
 		uiStore.loading = true;
@@ -29,3 +30,4 @@
 <slot />
 <Footer />
 <Toast />
+<BookingModal />
