@@ -885,7 +885,7 @@
 
 	section.promise h2 span img {
 		position: absolute;
-		translate: 0rem 0.75rem;
+		top: 100%;
 		z-index: -1;
 		scale: 0.7;
 	}
@@ -947,10 +947,6 @@
 	@media screen and (min-width: 768px) {
 		section.promise {
 			gap: var(--spacing-l);
-		}
-
-		section.promise h2 span img {
-			bottom: -2rem;
 		}
 
 		section.promise .promise-cards {
