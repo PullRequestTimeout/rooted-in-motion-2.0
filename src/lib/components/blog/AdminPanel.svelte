@@ -109,7 +109,7 @@
 						<li class="blog-item">
 							<div>
 								<h4>{blog.title}</h4>
-								<p>{blog.subtitle}</p>
+								<p class="blog-subtitle">{blog.subtitle}</p>
 								<p class="blog-date">{formatDate(blog.date)}</p>
 							</div>
 							<div class="blog-actions">
@@ -146,7 +146,7 @@
 							<li class="blog-item">
 								<div>
 									<h4>{blog.title}</h4>
-									<p>{blog.subtitle}</p>
+									<p class="blog-subtitle">{blog.subtitle}</p>
 									<p class="blog-date">{formatDate(blog.date)}</p>
 								</div>
 								<div class="blog-actions">
@@ -186,7 +186,7 @@
 							<li class="blog-item">
 								<div>
 									<h4>{blog.title}</h4>
-									<p>{blog.subtitle}</p>
+									<p class="blog-subtitle">{blog.subtitle}</p>
 									<p class="blog-date">{formatDate(blog.date)}</p>
 								</div>
 								<div class="blog-actions">
@@ -224,12 +224,29 @@
 		width: 100%;
 	}
 
+	h3 {
+		font-weight: 400;
+	}
+
 	div.admin-hero {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
 		gap: var(--spacing-s);
+	}
+
+	div.admin-hero h2 {
+		font-family: "Oswald", sans-serif;
+		font-size: var(--font-heading-l);
+		font-weight: 700;
+		color: var(--color-pine-6);
+	}
+
+	div.admin-hero p {
+		font-family: var(--font-heading);
+		font-size: var(--font-body-l);
+		font-weight: 300;
 	}
 
 	div.create-post {
@@ -252,26 +269,32 @@
 	}
 
 	li.blog-item {
-		background-color: #00000009;
+		background-color: #ffffff50;
 		text-align: left;
 		display: flex;
 		justify-content: space-between;
 		gap: var(--spacing-m);
-		/* align-items: center; */
 		padding: 1rem;
-		border-radius: 2px;
+		border-radius: var(--spacing-s);
+		transition: 0.2s;
 	}
 
 	li.blog-item:hover {
-		background-color: #00000010;
+		background-color: #ffffffa9;
 	}
 
 	li.blog-item h4 {
 		margin: 0;
 		font-size: var(--font-body-l, 1.5rem);
+		font-weight: 400;
 	}
 
-	li.blog-item .blog-date {
+	li.blog-item p.blog-subtitle {
+		font-family: var(--font-heading);
+		font-size: var(--font-body-s);
+	}
+
+	li.blog-item p.blog-date {
 		color: #505050;
 		font-style: italic;
 	}
@@ -286,8 +309,9 @@
 
 	hr {
 		width: 100%;
-		border: 1px solid var(--color-black);
+		border: 1px solid var(--color-pine-3);
 		margin: 1rem auto;
+		opacity: 0.75;
 	}
 
 	button.deleted-posts-button,
@@ -301,6 +325,18 @@
 
 	button.deleted-posts-button.open span {
 		transform: rotate(180deg);
+	}
+
+	button.button-secondary {
+		border-color: var(--color-pine-3);
+		color: var(--color-pine-3);
+	}
+
+	@media (hover: hover) {
+		button.button-secondary:hover {
+			background-color: var(--color-pine-3);
+			color: var(--color-white, #fff);
+		}
 	}
 
 	@media screen and (min-width: 768px) {
