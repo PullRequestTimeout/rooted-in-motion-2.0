@@ -106,6 +106,13 @@
 		flex-direction: column;
 	}
 
+	div.blog-card img {
+		border-radius: var(--spacing-xs);
+		width: 100%;
+		height: auto;
+		margin-bottom: var(--spacing-s);
+	}
+
 	div.blog-card h3 {
 		margin: 0;
 		font-size: 1.5rem;
