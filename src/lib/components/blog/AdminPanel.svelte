@@ -225,7 +225,8 @@
 	}
 
 	h3 {
-		font-weight: 400;
+		font-weight: 700;
+		color: var(--color-pine-1);
 	}
 
 	div.admin-hero {

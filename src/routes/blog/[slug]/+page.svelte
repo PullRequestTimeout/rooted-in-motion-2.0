@@ -31,15 +31,15 @@
 <ScrollProgress />
 <main>
 	<section class="blog-header">
-		{#if data.blog?.heroImage}
-			<img class="blog-hero-image" src={data.blog?.heroImage} alt="hero" />
-		{/if}
 		<h1>{data.blog?.title}</h1>
 		<p class="blog-subtitle">{data.blog?.subtitle}</p>
 		{#if data.blog?.date}
 			<p class="blog-date">{formatDate(data.blog.date)}</p>
 		{/if}
 		<hr />
+		{#if data.blog?.heroImage}
+			<img class="blog-hero-image" src={data.blog?.heroImage} alt="hero" />
+		{/if}
 	</section>
 	<section class="blog-body" class:columns={data.publishedBlogPosts.length > 1}>
 		<div class="blog-content">
@@ -110,6 +110,13 @@
 		max-width: 1200px;
 	}
 
+	section.blog-header img {
+		border-radius: var(--spacing-s);
+		box-shadow: 1rem 1rem 0 var(--color-bronze-4);
+		width: calc(100% - 1rem);
+		max-width: calc(800px - 1rem);
+	}
+
 	div.blog-footer {
 		display: flex;
 		justify-content: space-between;
@@ -124,8 +131,18 @@
 		margin-block: 2rem;
 	}
 
+	p.blog-reading-time {
+		font-style: italic;
+		opacity: 0.75;
+	}
+
 	section.blog-body {
 		display: grid;
+	}
+
+	section.blog-body:not(.columns) {
+		max-width: calc(1200px + calc(var(--padding-inline) * 2));
+		margin: 0 auto;
 	}
 
 	section.blog-body.columns {
@@ -147,6 +164,8 @@
 	div.blog-card a {
 		width: fit-content;
 		margin-top: auto;
+		color: var(--color-pine-2);
+		text-decoration: underline;
 	}
 
 	@media screen and (min-width: 768px) {

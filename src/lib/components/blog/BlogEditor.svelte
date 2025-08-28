@@ -495,21 +495,8 @@
 	}
 
 	dialog.blog-editor::backdrop {
-		background-color: rgba(0, 0, 0, 0.5);
-	}
-
-	dialog.blog-editor::-webkit-scrollbar {
-		width: 9px;
-	}
-
-	dialog.blog-editor::-webkit-scrollbar-track {
-		background-color: var(--color-white, #fff);
-		border-radius: 5px;
-	}
-
-	dialog.blog-editor::-webkit-scrollbar-thumb {
-		border-radius: 5px;
-		background-color: var(--color-primary, #000);
+		background-color: #1d201db7;
+		backdrop-filter: blur(2px);
 	}
 
 	button.button-secondary {
@@ -532,6 +519,7 @@
 		border: none;
 		cursor: pointer;
 		transition: color 0.2s;
+		color: var(--color-pine-2);
 	}
 
 	button span {
