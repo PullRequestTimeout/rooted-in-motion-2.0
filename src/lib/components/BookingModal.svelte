@@ -25,7 +25,9 @@
 				href="https://spectrumtreatmentcentre.janeapp.com/#/staff_member/29">Castlegar</a
 			>
 			<hr out:fade in:fade={{ delay: 4 * 100 }} />
-			<a out:fade in:fade={{ delay: 4.5 * 100 }} onclick={closeBookingModal} href="/contact">Virtual</a>
+			<a out:fade in:fade={{ delay: 4.5 * 100 }} onclick={closeBookingModal} href="https://fernandfawnlactation.janeapp.com/#/staff_member/1"
+				>Virtual</a
+			>
 		</div>
 	</div>
 {/if}
