@@ -8,6 +8,241 @@
 
 <SeoHead />
 
+<svelte:head>
+	<style>
+		/* Hero ------------------------------------------------------------------------------------ */
+		section.hero {
+			padding: var(--padding-block) var(--padding-inline);
+			display: grid;
+			grid-template-columns: 1fr;
+			background: linear-gradient(#f6e8d5, #edd1ab);
+			gap: 1em;
+		}
+
+		div.hero-text {
+			margin-top: 5em;
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			margin-bottom: 1em;
+		}
+
+		h2.hero-title span {
+			position: relative;
+			font-family: var(--font-heading);
+		}
+
+		h2.hero-title {
+			font-size: 2.5em;
+			font-weight: 300;
+			line-height: 1.3;
+			z-index: +1;
+		}
+
+		img.hero-chalk {
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: -1;
+			width: 110%;
+			transform: translate(-0.1rem, -0.1rem);
+			scale: 1.15;
+		}
+
+		div.hero-text p {
+			font-size: 1.3em;
+			line-height: 1.6;
+			font-weight: 300;
+		}
+
+		div.hero-image {
+			justify-self: center;
+			position: relative;
+		}
+
+		div.hero-image picture img {
+			filter: drop-shadow(0px 0px 1em var(--color-bronze-2));
+			width: 15em;
+		}
+
+		div.hero-image .svg {
+			position: absolute;
+		}
+
+		img.hero-svg1 {
+			right: 11em;
+			width: 3em;
+		}
+
+		img.hero-svg2 {
+			right: 12em;
+			top: 1em;
+			width: 6em;
+		}
+
+		img.hero-svg3 {
+			right: 13em;
+			top: 4em;
+			width: 8em;
+		}
+
+		img.hero-svg4 {
+			right: 12em;
+			top: 10em;
+			width: 9em;
+		}
+
+		@media screen and (min-width: 640px) {
+			section.hero {
+				gap: 2em;
+			}
+
+			div.hero-text {
+				text-align: center;
+				align-items: center;
+				margin-bottom: unset;
+			}
+
+			div.hero-image {
+				width: unset;
+			}
+		}
+
+		@media screen and (min-width: 1024px) {
+			section.hero {
+				display: grid;
+				margin-top: 0;
+				grid-template-columns: 1fr 1fr;
+			}
+
+			div.hero-text {
+				text-align: left;
+				align-items: flex-start;
+				gap: 1em;
+			}
+
+			h2.hero-title {
+				font-size: 3em;
+				grid-column-start: 1;
+			}
+
+			div.hero-text p {
+				font-size: 1.6em;
+			}
+
+			h2.hero-title,
+			div.hero-text p {
+				padding: 0;
+			}
+
+			div.hero-image {
+				justify-self: end;
+				align-self: center;
+				margin-top: 4em;
+				grid-column-start: 2;
+			}
+
+			div.hero-image picture img {
+				width: 20em;
+			}
+
+			img.hero-svg1 {
+				right: 14em;
+				top: -1em;
+				width: 5em;
+			}
+
+			img.hero-svg2 {
+				right: 16em;
+				top: 2em;
+				width: 7em;
+			}
+
+			img.hero-svg3 {
+				right: 17em;
+				top: 6em;
+				width: 11em;
+			}
+
+			img.hero-svg4 {
+				right: 16em;
+				top: 15em;
+				width: 10em;
+			}
+		}
+
+		@media screen and (min-width: 1280px) {
+			h2.hero-title {
+				font-size: 3.5em;
+			}
+
+			div.hero-image picture img {
+				width: 23em;
+			}
+
+			img.hero-svg1 {
+				right: 16em;
+				top: -1em;
+				width: 6em;
+			}
+
+			img.hero-svg2 {
+				right: 18em;
+				top: 3em;
+				width: 9em;
+			}
+
+			img.hero-svg3 {
+				right: 20em;
+				top: 7em;
+				width: 11em;
+			}
+
+			img.hero-svg4 {
+				right: 18em;
+				top: 16em;
+				width: 12em;
+			}
+		}
+
+		@media screen and (min-width: 1800px) {
+			h2.hero-title {
+				font-size: 5em;
+			}
+
+			div.hero-image picture img {
+				width: 27em;
+			}
+
+			img.hero-svg1 {
+				right: 19em;
+				top: -1em;
+				width: 7em;
+			}
+
+			img.hero-svg2 {
+				right: 21em;
+				top: 2em;
+				width: 12em;
+				transform: rotate(-20deg);
+			}
+
+			img.hero-svg3 {
+				right: 23em;
+				top: 10em;
+				width: 13em;
+				transform: rotate(-10deg);
+			}
+
+			img.hero-svg4 {
+				right: 22em;
+				top: 21em;
+				width: 12em;
+			}
+		}
+	</style>
+</svelte:head>
+
 <main>
 	<section class="hero">
 		<div class="hero-text">
@@ -97,7 +332,7 @@
 			<picture>
 				<source srcset="/assets/images/treatment-2.webp" type="image/webp" />
 				<source srcset="/assets/images/treatment-2.jpg" type="image/jpeg" />
-				<img src="/assets/images/treatment-2.jpg" alt="Michelle treating a client" />
+				<img src="/assets/images/treatment-2.jpg" alt="Michelle treating a client" loading="lazy" />
 			</picture>
 			<div class="benefits-image-shadow"></div>
 			<img src="assets/images/svgs/plant-6.svg" alt="svg of a plant" class="benefits-svg-1 svg" />
@@ -113,7 +348,7 @@
 			<picture>
 				<source srcset="/assets/images/profile-2.webp" type="image/webp" />
 				<source srcset="/assets/images/profile-2.png" type="image/jpeg" />
-				<img src="/assets/images/profile-2.png" alt="Michelle treating a client" />
+				<img src="/assets/images/profile-2.png" alt="Michelle treating a client" loading="lazy" />
 			</picture>
 			<img src="assets/images/svgs/plant-8.svg" alt="svg of a plant" class="benefits-svg-1 svg" />
 		</div>
@@ -151,237 +386,6 @@
 </main>
 
 <style>
-	/* Hero ------------------------------------------------------------------------------------ */
-	section.hero {
-		padding: var(--padding-block) var(--padding-inline);
-		display: grid;
-		grid-template-columns: 1fr;
-		background: linear-gradient(#f6e8d5, #edd1ab);
-		gap: 1em;
-	}
-
-	div.hero-text {
-		margin-top: 5em;
-		display: flex;
-		flex-direction: column;
-		gap: 1em;
-		margin-bottom: 1em;
-	}
-
-	h2.hero-title span {
-		position: relative;
-		font-family: var(--font-heading);
-	}
-
-	h2.hero-title {
-		font-size: 2.5em;
-		font-weight: 300;
-		line-height: 1.3;
-		z-index: +1;
-	}
-
-	img.hero-chalk {
-		position: absolute;
-		left: 0;
-		top: 0;
-		z-index: -1;
-		width: 110%;
-		transform: translate(-0.1rem, -0.1rem);
-		scale: 1.15;
-	}
-
-	div.hero-text p {
-		font-size: 1.3em;
-		line-height: 1.6;
-		font-weight: 300;
-	}
-
-	div.hero-image {
-		justify-self: center;
-		position: relative;
-	}
-
-	div.hero-image picture img {
-		filter: drop-shadow(0px 0px 1em var(--color-bronze-2));
-		width: 15em;
-	}
-
-	div.hero-image .svg {
-		position: absolute;
-	}
-
-	img.hero-svg1 {
-		right: 11em;
-		width: 3em;
-	}
-
-	img.hero-svg2 {
-		right: 12em;
-		top: 1em;
-		width: 6em;
-	}
-
-	img.hero-svg3 {
-		right: 13em;
-		top: 4em;
-		width: 8em;
-	}
-
-	img.hero-svg4 {
-		right: 12em;
-		top: 10em;
-		width: 9em;
-	}
-
-	@media screen and (min-width: 640px) {
-		section.hero {
-			gap: 2em;
-		}
-
-		div.hero-text {
-			text-align: center;
-			align-items: center;
-			margin-bottom: unset;
-		}
-
-		div.hero-image {
-			width: unset;
-		}
-	}
-
-	@media screen and (min-width: 1024px) {
-		section.hero {
-			display: grid;
-			margin-top: 0;
-			grid-template-columns: 1fr 1fr;
-		}
-
-		div.hero-text {
-			text-align: left;
-			align-items: flex-start;
-			gap: 1em;
-		}
-
-		h2.hero-title {
-			font-size: 3em;
-			grid-column-start: 1;
-		}
-
-		div.hero-text p {
-			font-size: 1.6em;
-		}
-
-		h2.hero-title,
-		div.hero-text p {
-			padding: 0;
-		}
-
-		div.hero-image {
-			justify-self: end;
-			align-self: center;
-			margin-top: 4em;
-			grid-column-start: 2;
-		}
-
-		div.hero-image picture img {
-			width: 20em;
-		}
-
-		img.hero-svg1 {
-			right: 14em;
-			top: -1em;
-			width: 5em;
-		}
-
-		img.hero-svg2 {
-			right: 16em;
-			top: 2em;
-			width: 7em;
-		}
-
-		img.hero-svg3 {
-			right: 17em;
-			top: 6em;
-			width: 11em;
-		}
-
-		img.hero-svg4 {
-			right: 16em;
-			top: 15em;
-			width: 10em;
-		}
-	}
-
-	@media screen and (min-width: 1280px) {
-		h2.hero-title {
-			font-size: 3.5em;
-		}
-
-		div.hero-image picture img {
-			width: 23em;
-		}
-
-		img.hero-svg1 {
-			right: 16em;
-			top: -1em;
-			width: 6em;
-		}
-
-		img.hero-svg2 {
-			right: 18em;
-			top: 3em;
-			width: 9em;
-		}
-
-		img.hero-svg3 {
-			right: 20em;
-			top: 7em;
-			width: 11em;
-		}
-
-		img.hero-svg4 {
-			right: 18em;
-			top: 16em;
-			width: 12em;
-		}
-	}
-
-	@media screen and (min-width: 1800px) {
-		h2.hero-title {
-			font-size: 5em;
-		}
-
-		div.hero-image picture img {
-			width: 27em;
-		}
-
-		img.hero-svg1 {
-			right: 19em;
-			top: -1em;
-			width: 7em;
-		}
-
-		img.hero-svg2 {
-			right: 21em;
-			top: 2em;
-			width: 12em;
-			transform: rotate(-20deg);
-		}
-
-		img.hero-svg3 {
-			right: 23em;
-			top: 10em;
-			width: 13em;
-			transform: rotate(-10deg);
-		}
-
-		img.hero-svg4 {
-			right: 22em;
-			top: 21em;
-			width: 12em;
-		}
-	}
-
 	/* Services -------------------------------------------------------------------------------- */
 	section.services {
 		position: relative;

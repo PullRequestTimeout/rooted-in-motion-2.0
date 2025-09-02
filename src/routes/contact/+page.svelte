@@ -12,6 +12,121 @@
 	description="Contact Rooted In Motion Osteopathy to book an appointment, ask a question, or get directions to our locations in Rossland and Castlegar, BC."
 ></SeoHead>
 
+<svelte:head>
+	<style>
+		/* Conact Info ----------------------------------------------------------------------------- */
+		section.info {
+			padding-top: 6rem;
+		}
+
+		section.info h2,
+		section.contact-form h2 {
+			text-align: center;
+			margin-bottom: 2rem;
+			font-size: var(--font-heading-l);
+			font-weight: 400;
+			line-height: 1;
+		}
+
+		div.location-info {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+
+		div.location-info-item {
+			display: flex;
+			gap: 1rem;
+		}
+
+		div.location-info-item span.material-icons {
+			font-size: 2rem;
+			color: var(--color-bronze-2);
+			transform: translateY(0.25rem);
+		}
+
+		div.location-info-item h3,
+		div.location-info-item p {
+			line-height: 1.6;
+		}
+
+		div.location-info-item h3 {
+			font-size: var(--font-heading-s);
+			font-weight: 400;
+			margin: 0;
+		}
+
+		div.location-info-item p {
+			font-size: var(--font-body-s);
+			margin: 0;
+			font-weight: 400;
+		}
+
+		div.booking-actions {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--spacing-m);
+			width: 100%;
+			justify-content: center;
+			margin-top: 2rem;
+		}
+
+		div.booking-actions button.button-secondary {
+			color: var(--color-pine-3);
+			border-color: var(--color-pine-3);
+		}
+
+		@media (hover: hover) {
+			div.booking-actions button.button-secondary:hover {
+				background-color: var(--color-pine-3);
+				color: var(--color-white);
+			}
+		}
+
+		hr {
+			margin: 2rem 0;
+			border: none;
+			border-top: 2px solid var(--color-pine-2);
+			opacity: 0.25;
+		}
+
+		@media screen and (min-width: 640px) {
+			div.location-info {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 2rem;
+				max-width: 50rem;
+				margin: 0 auto;
+			}
+		}
+
+		@media screen and (min-width: 768px) {
+			section.info {
+				padding-top: 10rem;
+			}
+
+			section.info h2,
+			section.contact-form h2 {
+				margin-bottom: 4rem;
+			}
+		}
+
+		@media screen and (min-width: 1280px) {
+			div.location-info {
+				grid-template-columns: repeat(4, 1fr);
+				max-width: unset;
+			}
+
+			div.location-info-item h3 {
+				font-size: var(--font-body-l);
+			}
+
+			div.booking-actions {
+				justify-content: flex-start;
+			}
+		}
+	</style>
+</svelte:head>
+
 <section class="info">
 	<h2>Get in touch with me</h2>
 	<div class="location-info">
@@ -186,117 +301,6 @@
 {/if}
 
 <style>
-	/* Conact Info ----------------------------------------------------------------------------- */
-	section.info {
-		padding-top: 6rem;
-	}
-
-	section.info h2,
-	section.contact-form h2 {
-		text-align: center;
-		margin-bottom: 2rem;
-		font-size: var(--font-heading-l);
-		font-weight: 400;
-		line-height: 1;
-	}
-
-	div.location-info {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 1rem;
-	}
-
-	div.location-info-item {
-		display: flex;
-		gap: 1rem;
-	}
-
-	div.location-info-item span.material-icons {
-		font-size: 2rem;
-		color: var(--color-bronze-2);
-		transform: translateY(0.25rem);
-	}
-
-	div.location-info-item h3,
-	div.location-info-item p {
-		line-height: 1.6;
-	}
-
-	div.location-info-item h3 {
-		font-size: var(--font-heading-s);
-		font-weight: 400;
-		margin: 0;
-	}
-
-	div.location-info-item p {
-		font-size: var(--font-body-s);
-		margin: 0;
-		font-weight: 400;
-	}
-
-	div.booking-actions {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--spacing-m);
-		width: 100%;
-		justify-content: center;
-		margin-top: 2rem;
-	}
-
-	div.booking-actions button.button-secondary {
-		color: var(--color-pine-3);
-		border-color: var(--color-pine-3);
-	}
-
-	@media (hover: hover) {
-		div.booking-actions button.button-secondary:hover {
-			background-color: var(--color-pine-3);
-			color: var(--color-white);
-		}
-	}
-
-	hr {
-		margin: 2rem 0;
-		border: none;
-		border-top: 2px solid var(--color-pine-2);
-		opacity: 0.25;
-	}
-
-	@media screen and (min-width: 640px) {
-		div.location-info {
-			grid-template-columns: repeat(2, 1fr);
-			gap: 2rem;
-			max-width: 50rem;
-			margin: 0 auto;
-		}
-	}
-
-	@media screen and (min-width: 768px) {
-		section.info {
-			padding-top: 10rem;
-		}
-
-		section.info h2,
-		section.contact-form h2 {
-			margin-bottom: 4rem;
-		}
-	}
-
-	@media screen and (min-width: 1280px) {
-		div.location-info {
-			grid-template-columns: repeat(4, 1fr);
-			max-width: unset;
-		}
-
-		div.location-info-item h3 {
-			font-size: var(--font-body-l);
-		}
-
-		div.booking-actions {
-			justify-content: flex-start;
-		}
-	}
-
 	/* Contact Form ---------------------------------------------------------------------------- */
 	section.contact-form {
 		padding-top: 0;

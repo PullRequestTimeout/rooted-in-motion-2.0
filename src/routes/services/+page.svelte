@@ -16,6 +16,229 @@
 	description="Explore the services offered by Rooted In Motion Osteopathy, including osteopathy, lactation consulting, and more."
 ></SeoHead>
 
+<svelte:head>
+	<style>
+		/* Hero ------------------------------------------------------------------------------------ */
+		section.hero {
+			display: grid;
+			grid-template-columns: 1fr;
+			background: linear-gradient(#00000000, #e9c69aff);
+		}
+
+		section.hero div.hero-text {
+			padding: 7em 0 2em 0;
+		}
+
+		section.hero div.hero-text br {
+			height: 0;
+			width: 0;
+		}
+
+		section.hero div.hero-text h1 {
+			font-family: "Oswald", sans-serif;
+			font-weight: 700;
+			line-height: 1;
+			color: var(--color-pine-6);
+			font-size: 5em;
+		}
+
+		section.hero div.hero-text p {
+			font-size: var(--font-heading-s);
+			font-family: "Raleway", sans-serif;
+			line-height: 1.3;
+			font-weight: 300;
+			max-width: 80%;
+		}
+
+		section.hero div.hero-image {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		section.hero div.hero-image picture img {
+			width: 15rem;
+			filter: drop-shadow(0px 0px 1em var(--color-bronze-2));
+		}
+
+		section.hero div.hero-image .svg {
+			position: absolute;
+		}
+
+		section.hero div.hero-image .hero-svg-1 {
+			right: calc(50% - 1rem);
+			bottom: 0;
+			height: 8em;
+		}
+
+		section.hero div.hero-image .hero-svg-2 {
+			right: calc(50% + 5rem);
+			bottom: 8rem;
+			height: 6em;
+		}
+
+		section.hero div.hero-image .hero-svg-3 {
+			right: calc(50% + 5.5rem);
+			bottom: 14rem;
+			height: 4em;
+		}
+
+		@media screen and (min-width: 640px) {
+			section.hero div.hero-image picture img {
+				width: 20rem;
+			}
+
+			section.hero div.hero-image .hero-svg-1 {
+				right: calc(50%);
+				bottom: 1rem;
+				height: 10em;
+			}
+
+			section.hero div.hero-image .hero-svg-2 {
+				right: calc(50% + 7rem);
+				bottom: 11rem;
+				height: 8em;
+			}
+
+			section.hero div.hero-image .hero-svg-3 {
+				right: calc(50% + 8rem);
+				bottom: 18rem;
+				height: 6em;
+			}
+		}
+
+		@media screen and (min-width: 768px) {
+			section.hero div.hero-text h1 {
+				font-size: 6em;
+			}
+		}
+
+		@media screen and (min-width: 1024px) {
+			section.hero {
+				grid-template-columns: 1fr 1fr;
+				align-items: center;
+				gap: var(--spacing-l);
+			}
+
+			section.hero div.hero-text {
+				/* height: 100%; */
+				padding: 0;
+				display: grid;
+				grid-template-rows: 1fr;
+				align-items: center;
+			}
+
+			section.hero div.hero-image {
+				justify-content: flex-end;
+				padding-top: 2rem;
+			}
+
+			section.hero div.hero-image picture img {
+				width: 18rem;
+			}
+
+			section.hero div.hero-text p {
+				font-size: var(--font-body-l);
+			}
+
+			section.hero div.hero-image .hero-svg-1 {
+				right: 10rem;
+			}
+
+			section.hero div.hero-image .hero-svg-2 {
+				right: 15rem;
+			}
+
+			section.hero div.hero-image .hero-svg-3 {
+				right: 15rem;
+			}
+		}
+
+		@media screen and (min-width: 1280px) {
+			section.hero div.hero-image {
+				padding-top: 4rem;
+			}
+
+			section.hero div.hero-text h1 {
+				font-size: 7em;
+			}
+
+			section.hero div.hero-text p {
+				font-size: calc(var(--font-body-l) * 1.2);
+			}
+
+			section.hero div.hero-image picture img {
+				width: 22rem;
+			}
+
+			section.hero div.hero-image .hero-svg-1 {
+				right: 13rem;
+				bottom: 2rem;
+			}
+
+			section.hero div.hero-image .hero-svg-2 {
+				right: 19rem;
+				bottom: 13rem;
+			}
+
+			section.hero div.hero-image .hero-svg-3 {
+				right: 19rem;
+				bottom: 20rem;
+			}
+		}
+
+		@media screen and (min-width: 1440px) {
+			section.hero div.hero-image picture img {
+				width: 24rem;
+			}
+
+			section.hero div.hero-image .hero-svg-1 {
+				right: 15rem;
+				bottom: 3rem;
+			}
+
+			section.hero div.hero-image .hero-svg-2 {
+				right: 22rem;
+				bottom: 15rem;
+			}
+
+			section.hero div.hero-image .hero-svg-3 {
+				right: 22rem;
+				bottom: 23rem;
+			}
+		}
+
+		@media screen and (min-width: 1600px) {
+			section.hero div.hero-text h1 {
+				font-size: 8em;
+			}
+
+			section.hero div.hero-image picture img {
+				width: 26rem;
+			}
+
+			section.hero div.hero-image .hero-svg-1 {
+				right: 18rem;
+				bottom: 4rem;
+				height: 12rem;
+			}
+
+			section.hero div.hero-image .hero-svg-2 {
+				right: 25rem;
+				bottom: 17rem;
+				height: 10rem;
+			}
+
+			section.hero div.hero-image .hero-svg-3 {
+				right: 23rem;
+				bottom: 25rem;
+				height: 8rem;
+			}
+		}
+	</style>
+</svelte:head>
+
 <section class="hero">
 	<div class="hero-text">
 		<h1>Our <br />Services</h1>
@@ -197,225 +420,6 @@
 {/if}
 
 <style>
-	/* Hero ------------------------------------------------------------------------------------ */
-	section.hero {
-		display: grid;
-		grid-template-columns: 1fr;
-		background: linear-gradient(#00000000, #e9c69aff);
-	}
-
-	section.hero div.hero-text {
-		padding: 7em 0 2em 0;
-	}
-
-	section.hero div.hero-text br {
-		height: 0;
-		width: 0;
-	}
-
-	section.hero div.hero-text h1 {
-		font-family: "Oswald", sans-serif;
-		font-weight: 700;
-		line-height: 1;
-		color: var(--color-pine-6);
-		font-size: 5em;
-	}
-
-	section.hero div.hero-text p {
-		font-size: var(--font-heading-s);
-		font-family: "Raleway", sans-serif;
-		line-height: 1.3;
-		font-weight: 300;
-		max-width: 80%;
-	}
-
-	section.hero div.hero-image {
-		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	section.hero div.hero-image picture img {
-		width: 15rem;
-		filter: drop-shadow(0px 0px 1em var(--color-bronze-2));
-	}
-
-	section.hero div.hero-image .svg {
-		position: absolute;
-	}
-
-	section.hero div.hero-image .hero-svg-1 {
-		right: calc(50% - 1rem);
-		bottom: 0;
-		height: 8em;
-	}
-
-	section.hero div.hero-image .hero-svg-2 {
-		right: calc(50% + 5rem);
-		bottom: 8rem;
-		height: 6em;
-	}
-
-	section.hero div.hero-image .hero-svg-3 {
-		right: calc(50% + 5.5rem);
-		bottom: 14rem;
-		height: 4em;
-	}
-
-	@media screen and (min-width: 640px) {
-		section.hero div.hero-image picture img {
-			width: 20rem;
-		}
-
-		section.hero div.hero-image .hero-svg-1 {
-			right: calc(50%);
-			bottom: 1rem;
-			height: 10em;
-		}
-
-		section.hero div.hero-image .hero-svg-2 {
-			right: calc(50% + 7rem);
-			bottom: 11rem;
-			height: 8em;
-		}
-
-		section.hero div.hero-image .hero-svg-3 {
-			right: calc(50% + 8rem);
-			bottom: 18rem;
-			height: 6em;
-		}
-	}
-
-	@media screen and (min-width: 768px) {
-		section.hero div.hero-text h1 {
-			font-size: 6em;
-		}
-	}
-
-	@media screen and (min-width: 1024px) {
-		section.hero {
-			grid-template-columns: 1fr 1fr;
-			align-items: center;
-			gap: var(--spacing-l);
-		}
-
-		section.hero div.hero-text {
-			/* height: 100%; */
-			padding: 0;
-			display: grid;
-			grid-template-rows: 1fr;
-			align-items: center;
-		}
-
-		section.hero div.hero-image {
-			justify-content: flex-end;
-			padding-top: 2rem;
-		}
-
-		section.hero div.hero-image picture img {
-			width: 18rem;
-		}
-
-		section.hero div.hero-text p {
-			font-size: var(--font-body-l);
-		}
-
-		section.hero div.hero-image .hero-svg-1 {
-			right: 10rem;
-		}
-
-		section.hero div.hero-image .hero-svg-2 {
-			right: 15rem;
-		}
-
-		section.hero div.hero-image .hero-svg-3 {
-			right: 15rem;
-		}
-	}
-
-	@media screen and (min-width: 1280px) {
-		section.hero div.hero-image {
-			padding-top: 4rem;
-		}
-
-		section.hero div.hero-text h1 {
-			font-size: 7em;
-		}
-
-		section.hero div.hero-text p {
-			font-size: calc(var(--font-body-l) * 1.2);
-		}
-
-		section.hero div.hero-image picture img {
-			width: 22rem;
-		}
-
-		section.hero div.hero-image .hero-svg-1 {
-			right: 13rem;
-			bottom: 2rem;
-		}
-
-		section.hero div.hero-image .hero-svg-2 {
-			right: 19rem;
-			bottom: 13rem;
-		}
-
-		section.hero div.hero-image .hero-svg-3 {
-			right: 19rem;
-			bottom: 20rem;
-		}
-	}
-
-	@media screen and (min-width: 1440px) {
-		section.hero div.hero-image picture img {
-			width: 24rem;
-		}
-
-		section.hero div.hero-image .hero-svg-1 {
-			right: 15rem;
-			bottom: 3rem;
-		}
-
-		section.hero div.hero-image .hero-svg-2 {
-			right: 22rem;
-			bottom: 15rem;
-		}
-
-		section.hero div.hero-image .hero-svg-3 {
-			right: 22rem;
-			bottom: 23rem;
-		}
-	}
-
-	@media screen and (min-width: 1600px) {
-		section.hero div.hero-text h1 {
-			font-size: 8em;
-		}
-
-		section.hero div.hero-image picture img {
-			width: 26rem;
-		}
-
-		section.hero div.hero-image .hero-svg-1 {
-			right: 18rem;
-			bottom: 4rem;
-			height: 12rem;
-		}
-
-		section.hero div.hero-image .hero-svg-2 {
-			right: 25rem;
-			bottom: 17rem;
-			height: 10rem;
-		}
-
-		section.hero div.hero-image .hero-svg-3 {
-			right: 23rem;
-			bottom: 25rem;
-			height: 8rem;
-		}
-	}
-
 	/* Osteopathy ------------------------------------------------------------------------------ */
 	section.osteo {
 		position: relative;
