@@ -12,6 +12,7 @@ declare global {
 	declare namespace svelteHTML {
 		interface HTMLAttributes<T> {
 			onoutclick?: CompositionEventHandler<T>;
+			onintersect?: IntersectionObserverCallback<T>;
 		}
 	}
 }
