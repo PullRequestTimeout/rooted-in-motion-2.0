@@ -2,6 +2,8 @@
 	import SeoHead from "$lib/components/SeoHead.svelte";
 	import { fade } from "svelte/transition";
 	import { clickOutside } from "$lib/utils/clickOutside";
+	import { isIntersecting } from "$lib/utils/isIntersecting";
+	import SpanifyText from "$lib/components/SpanifyText.svelte";
 	let mapOpen = $state(false);
 	let rosslandMapOpen = $state(false);
 	let castlegarMapOpen = $state(false);
@@ -235,9 +237,18 @@
 	</div>
 </section>
 <section class="contact-form">
-	<h2>Have a question?</h2>
+	<h2 use:isIntersecting class="heading-fade-in">
+		<SpanifyText text="Have a question?" />
+	</h2>
 
-	<form action="https://getform.io/f/ce024891-ecba-493c-a211-5a74cd48f845" method="POST" name="contactForm" id="contactForm">
+	<form
+		use:isIntersecting
+		class="group-stagger-fade"
+		action="https://getform.io/f/ce024891-ecba-493c-a211-5a74cd48f845"
+		method="POST"
+		name="contactForm"
+		id="contactForm"
+	>
 		<label
 			><span>Full Name</span>
 			<input type="text" name="name" autocomplete="name" required />
@@ -383,7 +394,8 @@
 	div.map-overlay {
 		position: fixed;
 		inset: 0;
-		background-color: #1d201dec;
+		background-color: #1d201db7;
+		backdrop-filter: blur(2px);
 		z-index: 1000;
 		display: flex;
 		align-items: center;

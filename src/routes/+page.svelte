@@ -2,8 +2,11 @@
 	import SeoHead from "$lib/components/SeoHead.svelte";
 	import FAQ from "$lib/components/FAQ.svelte";
 	import FeedbackSection from "$lib/components/FeedbackSection.svelte";
+	import SpanifyText from "$lib/components/SpanifyText.svelte";
 	import { homeFaqs } from "$lib/data/faqs";
 	import { openBookingModal } from "$lib/stores/uiStore.svelte";
+	import { isIntersecting } from "$lib/utils/isIntersecting";
+	import { text } from "@sveltejs/kit";
 </script>
 
 <SeoHead />
@@ -267,9 +270,11 @@
 		</div>
 	</section>
 	<section class="services">
-		<h2>Services I provide</h2>
+		<h2 class="heading-fade-in" use:isIntersecting>
+			<SpanifyText text="Services I provide" />
+		</h2>
 		<div class="services-container">
-			<div class="services-card">
+			<div class="services-card scroll-fade-up" use:isIntersecting>
 				<div class="services-card-heading">
 					<div class="services-card-icon">
 						<img src="/assets/images/svgs/services-1.svg" alt="osteo svg" />
@@ -283,7 +288,7 @@
 					focuses on restoring balance and promoting overall wellbeing through a whole-body approach.
 				</p>
 			</div>
-			<div class="services-card">
+			<div class="services-card scroll-fade-up" use:isIntersecting>
 				<div class="services-card-heading">
 					<div class="services-card-icon">
 						<img src="/assets/images/svgs/services-2.svg" alt="lactation svg" />
@@ -297,7 +302,7 @@
 					online, sessions are tailored to meet your baby’s needs and support your feeding goals with confidence.
 				</p>
 			</div>
-			<div class="services-card">
+			<div class="services-card scroll-fade-up" use:isIntersecting>
 				<div class="services-card-heading">
 					<div class="services-card-icon">
 						<img src="/assets/images/svgs/services-3.svg" alt="osteo svg" />
@@ -317,7 +322,9 @@
 	</section>
 	<section class="benefits">
 		<div class="benefits-text">
-			<h2>Could <span>osteopathy<img src="/assets/images/svgs/chalk-1.svg" alt="chalk outline" /></span> help you feel better?</h2>
+			<h2 use:isIntersecting class="scroll-fade-up">
+				Could <span>osteopathy<img src="/assets/images/svgs/chalk-1.svg" alt="chalk outline" /></span> help you feel better?
+			</h2>
 			<p>
 				Osteopathy addresses the body as a whole — easing tension, improving movement, and helping you feel more like yourself. Osteopathic treatment
 				may help to:
@@ -328,7 +335,7 @@
 				<li>Reduce stress and restore balance</li>
 			</ul>
 		</div>
-		<div class="benefits-image">
+		<div class="benefits-image scroll-fade-up" use:isIntersecting>
 			<picture>
 				<source srcset="/assets/images/treatment-2.webp" type="image/webp" />
 				<source srcset="/assets/images/treatment-2.jpg" type="image/jpeg" />
@@ -344,7 +351,7 @@
 			<p>"My goal is to find the root cause of your pain, symptoms, or reduced range of motion so you can get back to the activities you love."</p>
 			<a href="/about" class="button button-primary">Read About Michelle</a>
 		</div>
-		<div class="vision-image">
+		<div class="vision-image scroll-fade-up" use:isIntersecting>
 			<picture>
 				<source srcset="/assets/images/profile-2.webp" type="image/webp" />
 				<source srcset="/assets/images/profile-2.png" type="image/jpeg" />
@@ -354,17 +361,19 @@
 		</div>
 	</section>
 	<section class="promise">
-		<h2><span>What to expect<img src="/assets/images/svgs/chalk-3.svg" alt="chalk" /></span></h2>
+		<h2 use:isIntersecting class="heading-fade-in">
+			<span> <SpanifyText text="What to expect" /> <img src="/assets/images/svgs/chalk-3.svg" alt="chalk" /></span>
+		</h2>
 		<div class="promise-cards">
-			<div class="promise-card">
+			<div class="promise-card scroll-fade-up" use:isIntersecting>
 				<h3>Personalized Care</h3>
 				<p>No two people are the same — your session is shaped around your unique needs.</p>
 			</div>
-			<div class="promise-card">
+			<div class="promise-card scroll-fade-up" use:isIntersecting>
 				<h3>Whole-Body Focus</h3>
 				<p>We work with the body as a whole, not just isolated symptoms.</p>
 			</div>
-			<div class="promise-card">
+			<div class="promise-card scroll-fade-up" use:isIntersecting>
 				<h3>Sustainable Relief</h3>
 				<p>I support your body's long-term healing and function for lasting comfort and improved movement.</p>
 			</div>
@@ -373,14 +382,16 @@
 			<img src="/assets/images/svgs/arrow-1.svg" alt="arrow" />
 			<div class="promise-link">
 				<p>Wondering if this type of care could help you?</p>
-				<a href="/contact">Let's connect<img src="/assets/images/svgs/chalk-4.svg" alt="chalk line" /></a>
+				<a href="/contact" use:isIntersecting class="scroll-fade-up">Let's connect<img src="/assets/images/svgs/chalk-4.svg" alt="chalk line" /></a>
 			</div>
 			<img src="/assets/images/svgs/arrow-1.svg" alt="arrow" />
 		</div>
 	</section>
 	<FeedbackSection />
 	<section class="faq">
-		<h3>My frequently asked questions</h3>
+		<h3 class="heading-fade-in" use:isIntersecting>
+			<SpanifyText text="My frequently asked questions" />
+		</h3>
 		<FAQ faqs={homeFaqs} />
 	</section>
 </main>

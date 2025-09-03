@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { slide } from "svelte/transition";
+	import { isIntersecting } from "$lib/utils/isIntersecting";
 
 	let openFaqIndex: number | null = $state(null);
 
@@ -10,42 +11,48 @@
 	let { faqs = $bindable([]), darkMode = $bindable(false) } = $props();
 </script>
 
-<hr style={`border-color: ${darkMode ? "#fff" : "var(--color-black)"};`} />
-{#each faqs as faq, i}
-	<div class="faq-item">
-		<button onclick={() => toggleFaq(i)} aria-label="Toggle answer for {faq.question}">
-			<h4 style={`color: ${darkMode ? "#fff" : "var(--color-black)"};`} class="faq-question">{faq.question}</h4>
-			<div class="faq-icon" class:open={openFaqIndex === i}>
-				<span></span>
-				<span></span>
-			</div>
-		</button>
-		{#if openFaqIndex === i}
-			<div style={`color: ${darkMode ? "#fff" : "var(--color-black)"};`} transition:slide={{ axis: "y" }} class="faq-answer">
-				{#each faq.answer as answer}
-					{#if answer.element === "p"}
-						<p>{answer.content}</p>
-					{:else if answer.element === "ul"}
-						<ul>
-							{#if Array.isArray(answer.content)}
-								{#each answer.content as item}
-									<li>{item}</li>
-								{/each}
-							{/if}
-						</ul>
-					{:else if answer.element === "a"}
-						{#if typeof answer.content === "object" && answer.content !== null && "href" in answer.content && "text" in answer.content}
-							<a href={answer.content.href}>{answer.content.text}</a>
-						{/if}
-					{/if}
-				{/each}
-			</div>
-		{/if}
-	</div>
+<div use:isIntersecting class="group-stagger-fade">
 	<hr style={`border-color: ${darkMode ? "#fff" : "var(--color-black)"};`} />
-{/each}
+	{#each faqs as faq, i}
+		<div class="faq-item">
+			<button onclick={() => toggleFaq(i)} aria-label="Toggle answer for {faq.question}">
+				<h4 style={`color: ${darkMode ? "#fff" : "var(--color-black)"};`} class="faq-question">{faq.question}</h4>
+				<div class="faq-icon" class:open={openFaqIndex === i}>
+					<span></span>
+					<span></span>
+				</div>
+			</button>
+			{#if openFaqIndex === i}
+				<div style={`color: ${darkMode ? "#fff" : "var(--color-black)"};`} transition:slide={{ axis: "y" }} class="faq-answer">
+					{#each faq.answer as answer}
+						{#if answer.element === "p"}
+							<p>{answer.content}</p>
+						{:else if answer.element === "ul"}
+							<ul>
+								{#if Array.isArray(answer.content)}
+									{#each answer.content as item}
+										<li>{item}</li>
+									{/each}
+								{/if}
+							</ul>
+						{:else if answer.element === "a"}
+							{#if typeof answer.content === "object" && answer.content !== null && "href" in answer.content && "text" in answer.content}
+								<a href={answer.content.href}>{answer.content.text}</a>
+							{/if}
+						{/if}
+					{/each}
+				</div>
+			{/if}
+		</div>
+		<hr style={`border-color: ${darkMode ? "#fff" : "var(--color-black)"};`} />
+	{/each}
+</div>
 
 <style>
+	div.group-stagger-fade {
+		width: 100%;
+	}
+
 	h4 {
 		text-align: left;
 		font-size: var(--font-body-l);

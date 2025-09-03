@@ -23,7 +23,7 @@ export interface IntersectOptions extends IntersectionObserverInit {
 }
 
 export function isIntersecting(node: HTMLElement, options: IntersectOptions = {}) {
-	const { threshold = 0.1, root = null, rootMargin = "0px", class: cls, once = true } = options;
+	const { threshold = 0.1, root = null, rootMargin = "0px", class: cls = "show", once = true } = options;
 
 	const observer = new IntersectionObserver(
 		([entry]) => {

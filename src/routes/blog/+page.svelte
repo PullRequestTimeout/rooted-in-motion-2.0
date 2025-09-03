@@ -9,6 +9,7 @@
 
 	// Import utils
 	import { formatDate } from "$lib/utils/formatDate";
+	import { isIntersecting } from "$lib/utils/isIntersecting";
 	const blogPostsArr = data.publishedBlogPosts.sort((a: BlogPost, b: BlogPost) => b.date.localeCompare(a.date));
 </script>
 
@@ -28,7 +29,7 @@
 			<p>No blog posts yet, check again soon!</p>
 		{:else}
 			<h2>Latest Articles</h2>
-			<div class="blog-posts-container">
+			<div class="blog-posts-container group-stagger-fade" use:isIntersecting>
 				{#each blogPostsArr as post}
 					<div class="blog-card surface">
 						{#if post.heroImage}

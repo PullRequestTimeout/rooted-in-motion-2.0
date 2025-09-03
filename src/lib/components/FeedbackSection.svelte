@@ -1,14 +1,18 @@
 <script lang="ts">
 	import FeedbackCarousel from "$lib/components/FeedbackCarousel.svelte";
 	import { openBookingModal } from "$lib/stores/uiStore.svelte";
+	import { isIntersecting } from "$lib/utils/isIntersecting";
+	import SpanifyText from "./SpanifyText.svelte";
 </script>
 
 <section class="feedback">
 	<img class="feedback-plant-1" src="/assets/images/svgs/plant-9.svg" alt="plant svg" />
-	<h2>What my clients think</h2>
+	<h2 use:isIntersecting class="heading-fade-in">
+		<SpanifyText text="What my clients think" />
+	</h2>
 	<FeedbackCarousel />
 	<div class="feedback-cta">
-		<div class="feedback-cta-image">
+		<div class="feedback-cta-image scroll-fade-up" use:isIntersecting>
 			<picture>
 				<source srcset="/assets/images/treatment-3.webp" type="image/webp" />
 				<source srcset="/assets/images/treatment-3.jpg" type="image/jpeg" />
@@ -16,7 +20,9 @@
 			</picture>
 		</div>
 		<div class="feedback-cta-text">
-			<h2>Specialized care for women, parents, & growing families</h2>
+			<h2 use:isIntersecting class="heading-fade-in">
+				<SpanifyText text="Specialized care for women, parents, & growing families" />
+			</h2>
 			<p>
 				Whether you're healing from injury, navigating hormonal changes, or recovering from birth, I offer personalized, whole-body care focused on
 				relieving pain, restoring function, and supporting long-term wellbeing.

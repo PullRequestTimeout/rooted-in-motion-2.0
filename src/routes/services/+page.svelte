@@ -6,6 +6,8 @@
 	import { fade } from "svelte/transition";
 	import { clickOutside } from "$lib/utils/clickOutside";
 	import { openBookingModal } from "$lib/stores/uiStore.svelte";
+	import { isIntersecting } from "$lib/utils/isIntersecting";
+	import SpanifyText from "$lib/components/SpanifyText.svelte";
 
 	let modalOpen = $state(false);
 	let modalContent = $state<{ title: string; description: string[] }>({ title: "", description: [] });
@@ -259,14 +261,16 @@
 <section class="osteo" id="osteopathy">
 	<img class="symptoms-svg" src="/assets/images/svgs/plant-5.svg" alt="plant svg" />
 	<div class="osteo-text">
-		<h2>Osteopathic Manual Therapy</h2>
+		<h2 use:isIntersecting class="heading-fade-in">
+			<SpanifyText text="Osteopathic Manual Therapy" />
+		</h2>
 		<p>
 			Osteopathy is a gentle, hands-on approach to manual therapy that considers the whole body. Treatment focuses on how your muscles, joints,
 			fascia, blood vessels, and nerves all work together—helping to relieve pain, improve movement, and restore overall function. I support clients
 			of all ages and stages, using an individualized approach to get to the root of your symptoms.
 		</p>
 	</div>
-	<div class="osteo-image">
+	<div use:isIntersecting class="osteo-image scroll-fade-up">
 		<picture>
 			<source srcset="/assets/images/treatment-4.webp" type="image/webp" />
 			<source srcset="/assets/images/treatment-4.jpg" type="image/jpeg" />
@@ -275,8 +279,10 @@
 	</div>
 </section>
 <section class="symptoms">
-	<h2>What brings people in</h2>
-	<div class="symptoms-list">
+	<h2 use:isIntersecting class="heading-fade-in">
+		<SpanifyText text="What brings people in" />
+	</h2>
+	<div class="symptoms-list group-stagger-fade" use:isIntersecting>
 		{#each symptoms as symptom, i}
 			<div class="symptoms-item">
 				<button
@@ -297,21 +303,25 @@
 	<button class="button button-secondary" onclick={openBookingModal}>Book Session</button>
 </section>
 <section class="osteo-faq">
-	<h2>Questions I get asked about Osteopathy</h2>
+	<h2 use:isIntersecting class="heading-fade-in">
+		<SpanifyText text="Questions I get asked about Osteopathy" />
+	</h2>
 	<Faq darkMode={true} faqs={osteoFaqs} />
 </section>
 
 <div class="boob-background">
 	<section class="osteo lactation" id="lactation">
 		<div class="osteo-text">
-			<h2>Lactation Consultation</h2>
+			<h2 use:isIntersecting class="heading-fade-in">
+				<SpanifyText text="Lactation Consultation" />
+			</h2>
 			<p>
 				Whether you're exclusively breastfeeding, pumping, combo feeding, or using formula, I provide in person and virtual consults to help you meet
 				your feeding goals with confidence. From newborn feeding challenges to complex cases, I combine IBCLC expertise with a whole-person approach
 				that centers your values and your baby's needs. In person consults available in Rossland, BC and virtual consults are available across Canada.
 			</p>
 		</div>
-		<div class="osteo-image">
+		<div class="osteo-image scroll-fade-up" use:isIntersecting>
 			<picture>
 				<source srcset="/assets/images/profile-4.webp" type="image/webp" />
 				<source srcset="/assets/images/profile-4.jpg" type="image/jpeg" />
@@ -320,8 +330,10 @@
 		</div>
 	</section>
 	<section class="symptoms lactation">
-		<h2>Feeding concerns I work with</h2>
-		<div class="symptoms-list">
+		<h2 use:isIntersecting class="heading-fade-in">
+			<SpanifyText text="Feeding concerns I work with" />
+		</h2>
+		<div class="symptoms-list group-stagger-fade" use:isIntersecting>
 			{#each symptoms as symptom, i}
 				<div class="symptoms-item">
 					<button
@@ -347,8 +359,10 @@
 	</section>
 </div>
 <section class="pricing">
-	<h2>Pricing</h2>
-	<div class="pricing-section">
+	<h2 use:isIntersecting class="heading-fade-in">
+		<SpanifyText text="Pricing" />
+	</h2>
+	<div class="pricing-section group-stagger-fade" use:isIntersecting>
 		<h3>Osteopathy</h3>
 		<div class="pricing-item">
 			<p class="pricing-item-heading">60 min Osteopathic Treatment</p>
@@ -371,7 +385,7 @@
 			<p>$180</p>
 		</div>
 	</div>
-	<div class="pricing-section">
+	<div class="pricing-section group-stagger-fade" use:isIntersecting>
 		<h3>Lactation Consultation</h3>
 		<div class="pricing-item">
 			<p class="pricing-item-heading">20 min Discovery Call</p>
@@ -394,7 +408,7 @@
 			<p>$135</p>
 		</div>
 	</div>
-	<div class="pricing-section">
+	<div class="pricing-section group-stagger-fade" use:isIntersecting>
 		<h3>Osteopathy & Lactation Combination Session</h3>
 		<div class="pricing-item">
 			<p class="pricing-item-heading">90 min Osteopathy + Lactation Consultation</p>

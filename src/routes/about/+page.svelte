@@ -1,6 +1,8 @@
 <script lang="ts">
 	import FeedbackSection from "$lib/components/FeedbackSection.svelte";
 	import SeoHead from "$lib/components/SeoHead.svelte";
+	import SpanifyText from "$lib/components/SpanifyText.svelte";
+	import { isIntersecting } from "$lib/utils/isIntersecting";
 </script>
 
 <SeoHead
@@ -212,28 +214,30 @@
 		</div>
 	</section>
 	<section class="about-me">
-		<h2>My Story</h2>
-		<p>
+		<h2 class="heading-fade-in" use:isIntersecting={{ threshold: 0.5, once: true, class: "show" }}>
+			<SpanifyText text="My Story" />
+		</h2>
+		<p use:isIntersecting class="scroll-fade-up">
 			I'm Michelle — an osteopathic practitioner and lactation consultant providing hands-on treatment for pain, tension, feeding issues, and
 			hormone-related concerns across all stages of life. My work is shaped by over a decade of clinical experience and a holistic, client-centered
 			approach that focuses on uncovering and treating the root cause of each person's concerns.
 		</p>
-		<p>
+		<p use:isIntersecting class="scroll-fade-up">
 			I provide osteopathic treatment in Rossland and Castlegar, BC, and provide virtual lactation consultations to families across Canada. I work
 			primarily with women, parents, and growing families — supporting recovery from injury, birth, and chronic stress, as well as navigating
 			menstrual concerns, pregnancy, postpartum, and infant feeding challenges. My goal is always to understand the full picture and help restore
 			balance, movement, and function.
 		</p>
-		<p>
+		<p use:isIntersecting class="scroll-fade-up">
 			I completed the five-year program at the Canadian School of Osteopathy Manual Practice in Vancouver and hold a Bachelor of Science in Nursing,
 			with clinical experience in labour and delivery, pediatrics, and public health. As an International Board Certified Lactation Consultant
 			(IBCLC), I integrate infant feeding support into my osteopathic care when needed.
 		</p>
-		<p>
+		<p use:isIntersecting class="scroll-fade-up">
 			I'm a member of Osteopathy BC, and my treatments are eligible for most extended health benefits. Combining osteopathy and lactation consulting,
 			I provide comprehensive, compassionate care to help you feel better, move more freely, and feed with confidence.
 		</p>
-		<p>I'm excited to meet you and support your journey—get in touch to learn how I can help!</p>
+		<p use:isIntersecting class="scroll-fade-up">I'm excited to meet you and support your journey—get in touch to learn how I can help!</p>
 	</section>
 	<FeedbackSection />
 </main>
