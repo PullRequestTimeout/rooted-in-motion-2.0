@@ -1,6 +1,8 @@
 // Reusable Intersection Observer Action for SvelteKit
-// Usage: <div use:isIntersecting={{threshold: 0.5}} on:intersect={handleIntersect}>...</div>
+// Usage: <div use:isIntersecting={{threshold: 0.5, class: "show"}} || onintersect={handleIntersect}>...</div>
+
 // Ensure to import the action: import { isIntersecting } from '$lib/utils/isIntersecting';
+
 // Ensure app.d.ts has the following declaration:
 /*
 interface HTMLAttributes<T> {
@@ -10,31 +12,30 @@ interface HTMLAttributes<T> {
 */
 /* 
 	Example usage in this project with SpanifyText.svelte:
-    <h1
-        class="heading-fade-in"
-        use:isIntersecting={{ threshold: 0.5, once: true }}
-        onintersect={(e: CustomEvent<boolean>) => (e.currentTarget as HTMLElement).classList.toggle("show", e.detail)}
-    >
+    <h3 class="heading-fade-in" use:isIntersecting={{ threshold: 0.5, once: true, class: "show" }}>
         <SpanifyText text="My frequently asked questions" />
-    </h1>
+    </h3>
 */
 
-export interface IsIntersectingOptions {
-	threshold?: number | number[];
-	once?: boolean;
-	root?: Element | null;
-	rootMargin?: string;
+export interface IntersectOptions extends IntersectionObserverInit {
+	class?: string; // class to toggle when visible
+	once?: boolean; // only fire once
 }
 
-export function isIntersecting(node: HTMLElement, { threshold = 0.1, once = false, root = null, rootMargin }: IsIntersectingOptions = {}) {
+export function isIntersecting(node: HTMLElement, options: IntersectOptions = {}) {
+	const { threshold = 0.1, root = null, rootMargin = "0px", class: cls, once = true } = options;
+
 	const observer = new IntersectionObserver(
-		(entries) => {
-			const e = entries[0];
-			if (e.isIntersecting) {
-				node.dispatchEvent(new CustomEvent<boolean>("intersect", { detail: true }));
+		([entry]) => {
+			if (entry.isIntersecting) {
+				if (cls) node.classList.add(cls);
+
+				node.dispatchEvent(new CustomEvent("intersect", { detail: true }));
+
 				if (once) observer.disconnect();
-			} else if (!once) {
-				node.dispatchEvent(new CustomEvent<boolean>("intersect", { detail: false }));
+			} else {
+				if (cls && !once) node.classList.remove(cls);
+				node.dispatchEvent(new CustomEvent("intersect", { detail: false }));
 			}
 		},
 		{ threshold, root, rootMargin }
