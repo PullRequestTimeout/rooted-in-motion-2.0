@@ -42,11 +42,13 @@
 		transition: 0.2s;
 	}
 
-	svg:hover .path {
-		fill: #e59c42;
-	}
+	@media (hover: hover) {
+		svg:hover .path {
+			fill: #e59c42;
+		}
 
-	svg:hover .stroke {
-		stroke: #e59c42;
+		svg:hover .stroke {
+			stroke: #e59c42;
+		}
 	}
 </style>
