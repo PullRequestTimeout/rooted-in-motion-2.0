@@ -25,6 +25,7 @@
 	},
 	"dependencies": {
 		"@types/quill": "^2.0.14",
+		"embla-carousel-autoplay": "^8.6.0",
 		"embla-carousel-svelte": "^8.6.0",
 		"firebase": "^11.6.0",
 		"material-icons": "^1.13.14",

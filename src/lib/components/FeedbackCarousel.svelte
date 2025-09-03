@@ -1,5 +1,7 @@
 <script lang="ts">
 	import emblaCarouselSvelte from "embla-carousel-svelte";
+	import Autoplay from "embla-carousel-autoplay";
+
 	let emblaApi: any;
 	let options = { loop: true };
 	let selectedIndex = 0;
@@ -15,6 +17,8 @@
 	function updateSelectedIndex() {
 		selectedIndex = emblaApi.selectedScrollSnap();
 	}
+
+	let plugins = [Autoplay({ delay: 10000 })];
 
 	const feedback = [
 		"I've had my second treatment with Michelle and she doesn't disappoint. Both times I came in with a lot of restriction and tightness throughout my mid back and rib cage. I felt so free and loose and able to move again after both treatments. She is a very skilled and intuitive healer. ",
@@ -33,7 +37,7 @@
 	}
 </script>
 
-<div class="embla" use:emblaCarouselSvelte={{ options, plugins: [] }} onemblaInit={onInit}>
+<div class="embla" use:emblaCarouselSvelte={{ options, plugins }} onemblaInit={onInit}>
 	<div class="embla__container">
 		{#each feedback as text, index}
 			<div class="embla__slide">
@@ -70,6 +74,7 @@
 
 	div.embla__container {
 		display: flex;
+		align-items: center;
 	}
 
 	div.embla__slide {
