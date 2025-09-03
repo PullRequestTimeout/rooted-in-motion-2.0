@@ -283,7 +283,7 @@
 		<SpanifyText text="What brings people in" />
 	</h2>
 	<div class="symptoms-list group-stagger-fade" use:isIntersecting>
-		{#each symptoms as symptom, i}
+		{#each symptoms.osteo as symptom, i}
 			<div class="symptoms-item">
 				<button
 					class="button button-primary"
@@ -333,8 +333,8 @@
 		<h2 use:isIntersecting class="heading-fade-in">
 			<SpanifyText text="Feeding concerns I work with" />
 		</h2>
-		<div class="symptoms-list group-stagger-fade" use:isIntersecting>
-			{#each symptoms as symptom, i}
+		<div class="symptoms-list symptoms-list-lactation group-stagger-fade" use:isIntersecting>
+			{#each symptoms.lactation as symptom, i}
 				<div class="symptoms-item">
 					<button
 						class="button button-primary"
@@ -344,8 +344,8 @@
 							modalContent = { title: symptom.title, description: symptom.description };
 						}}
 					>
-						<img src={`assets/images/svgs/symptom-${i + 1}.svg`} alt={`${symptom.title} icon`} />
-						<img src={`assets/images/svgs/symptom-${i + 1}-white.svg`} alt={`${symptom.title} icon`} />
+						<img src={`assets/images/svgs/symptom-${i + 11}.svg`} alt={`${symptom.title} icon`} />
+						<img src={`assets/images/svgs/symptom-${i + 11}-white.svg`} alt={`${symptom.title} icon`} />
 					</button>
 					<p>{symptom.title}</p>
 				</div>
@@ -424,11 +424,15 @@
 		<div class="modal-content" use:clickOutside onoutclick={() => (modalOpen = false)}>
 			<button class="modal-close" onclick={() => (modalOpen = false)}><span class="material-icons">close</span></button>
 			<h2>{modalContent.title}</h2>
-			<ul>
-				{#each modalContent.description as description}
-					<li>{description}</li>
-				{/each}
-			</ul>
+			{#if modalContent.description.length > 1}
+				<ul>
+					{#each modalContent.description as description}
+						<li>{description}</li>
+					{/each}
+				</ul>
+			{:else}
+				<p>{modalContent.description[0]}</p>
+			{/if}
 		</div>
 	</div>
 {/if}
@@ -515,6 +519,11 @@
 		padding-block: 0;
 	}
 
+	section.symptoms button.button-primary,
+	section.symptoms button.button-secondary {
+		margin-top: var(--spacing-m);
+	}
+
 	section.symptoms h2 {
 		font-size: var(--font-heading-s);
 		font-weight: 400;
@@ -581,11 +590,14 @@
 
 	@media screen and (min-width: 640px) {
 		section.symptoms div.symptoms-list {
-			grid-template-columns: repeat(3, 1fr);
 			gap: var(--spacing-l);
 		}
 
-		section.symptoms div.symptoms-item:last-child {
+		section.symptoms div.symptoms-list:not(.symptoms-list-lactation) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		section.symptoms div.symptoms-list:not(.symptoms-list-lactation) > div.symptoms-item:last-child {
 			grid-column: 2;
 		}
 
@@ -594,17 +606,40 @@
 		}
 	}
 
+	@media screen and (min-width: 768px) {
+		section.symptoms div.symptoms-list.symptoms-list-lactation {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		section.symptoms div.symptoms-list {
+			max-width: 50rem;
+		}
+	}
+
 	@media screen and (min-width: 1024px) {
 		section.symptoms {
 			gap: var(--spacing-l);
 		}
 
-		section.symptoms div.symptoms-list {
+		section.symptoms div.symptoms-item button {
+			width: 6rem;
+			height: 6rem;
+		}
+
+		section.symptoms div.symptoms-item button img {
+			height: 4.5rem;
+			width: 3.5rem;
+		}
+
+		section.symptoms div.symptoms-list:not(.symptoms-list-lactation) {
 			grid-template-columns: repeat(5, 1fr);
+		}
+
+		section.symptoms div.symptoms-list {
 			max-width: 50rem;
 		}
 
-		section.symptoms div.symptoms-item:last-child {
+		section.symptoms div.symptoms-list:not(.symptoms-list-lactation) > div.symptoms-item:last-child {
 			grid-column: unset;
 		}
 
@@ -808,7 +843,8 @@
 		text-align: center;
 	}
 
-	div.modal-content li {
+	div.modal-content li,
+	div.modal-content p {
 		font-size: var(--font-body-l);
 		font-weight: 300;
 		margin-bottom: 0.25rem;
@@ -839,7 +875,8 @@
 			padding: var(--spacing-l);
 		}
 
-		div.modal-content li {
+		div.modal-content li,
+		div.modal-content p {
 			font-size: var(--font-body-m);
 		}
 
