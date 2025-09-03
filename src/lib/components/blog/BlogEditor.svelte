@@ -526,7 +526,12 @@
 		font-size: 1.5rem;
 	}
 
-	button.close:hover,
+	@media (hover: hover) {
+		button.close:hover {
+			color: var(--color-bronze-2);
+		}
+	}
+
 	button.close:focus {
 		color: var(--color-bronze-2);
 	}
@@ -606,7 +611,7 @@
 
 	div.blog-actions {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: 1fr;
 		gap: var(--spacing-s);
 	}
 
@@ -647,6 +652,10 @@
 
 		div.hero-image-upload {
 			flex-direction: row;
+		}
+
+		div.blog-actions {
+			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 

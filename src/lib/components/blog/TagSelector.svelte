@@ -202,6 +202,7 @@
 	span.tag button span {
 		font-size: 0.75rem;
 		transform: translate(0.005rem, 0);
+		color: var(--color-black);
 	}
 
 	button.button-secondary {

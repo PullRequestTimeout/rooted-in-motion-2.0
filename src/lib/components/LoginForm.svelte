@@ -135,6 +135,7 @@
 
 	div.password-input span.material-icons {
 		transform: translateY(0.25rem);
+		color: var(--color-black);
 	}
 
 	div.form-container {
