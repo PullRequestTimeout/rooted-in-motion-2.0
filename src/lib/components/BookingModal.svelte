@@ -55,6 +55,7 @@
 		align-items: center;
 		background-color: var(--color-footer);
 		color: var(--color-white);
+		gap: var(--spacing-m);
 		text-align: center;
 		width: calc(100% - calc(var(--padding-inline) * 2));
 		height: 70%;
@@ -78,7 +79,7 @@
 
 	div.modal-content h2 {
 		font-weight: 400;
-		margin-bottom: var(--spacing-xl);
+		margin-bottom: var(--spacing-l);
 	}
 
 	div.modal-content hr {
