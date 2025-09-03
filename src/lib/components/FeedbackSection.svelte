@@ -64,7 +64,7 @@
 		max-width: 30rem;
 		border-radius: var(--spacing-s);
 		filter: drop-shadow(-1rem 1rem 0 var(--color-bronze-6));
-		transform: translateX(1rem);
+		margin: 0 0 1rem 1rem;
 	}
 
 	section.feedback div.feedback-cta-text {
@@ -167,6 +167,10 @@
 	}
 
 	@media screen and (min-width: 1280px) {
+		section.feedback div.feedback-cta {
+			gap: calc(var(--spacing-l) + var(--spacing-m));
+		}
+
 		section.feedback div.feedback-cta-text {
 			gap: var(--spacing-l);
 		}
@@ -181,7 +185,6 @@
 	@media screen and (min-width: 1600px) {
 		section.feedback div.feedback-cta {
 			grid-template-columns: 1fr 1.5fr;
-			gap: var(--spacing-xl);
 		}
 	}
 </style>
