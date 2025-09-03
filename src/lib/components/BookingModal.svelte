@@ -53,7 +53,6 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		gap: 1rem;
 		background-color: var(--color-footer);
 		color: var(--color-white);
 		text-align: center;
@@ -79,7 +78,7 @@
 
 	div.modal-content h2 {
 		font-weight: 400;
-		margin-bottom: var(--spacing-l);
+		margin-bottom: var(--spacing-xl);
 	}
 
 	div.modal-content hr {
