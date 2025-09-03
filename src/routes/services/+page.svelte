@@ -568,23 +568,25 @@
 		height: 4rem;
 		width: 3rem;
 		transition: opacity 0.3s ease-in-out;
+		user-select: none;
+		pointer-events: none;
 	}
 
 	section.symptoms div.symptoms-item button img:last-child {
 		opacity: 0;
 	}
 
-	section.symptoms div.symptoms-item button:hover img:first-child {
-		opacity: 0;
-	}
-
-	section.symptoms div.symptoms-item button:hover img:last-child {
-		opacity: 1;
-	}
-
 	@media (hover: hover) {
 		section.symptoms div.symptoms-item button:hover {
 			background-color: var(--color-bronze-2);
+		}
+
+		section.symptoms div.symptoms-item button:hover img:first-child {
+			opacity: 0;
+		}
+
+		section.symptoms div.symptoms-item button:hover img:last-child {
+			opacity: 1;
 		}
 	}
 
@@ -719,8 +721,10 @@
 		transition: 0.2s;
 	}
 
-	section.symptoms.lactation div.symptoms-item button:hover {
-		background-color: var(--color-bronze-2);
+	@media (hover: hover) {
+		section.symptoms.lactation div.symptoms-item button:hover {
+			background-color: var(--color-bronze-2);
+		}
 	}
 
 	/* Pricing ------------------------------------------------------------------------------- */
@@ -841,6 +845,7 @@
 		font-size: var(--font-heading-s);
 		font-weight: 400;
 		text-align: center;
+		margin-inline: 2rem;
 	}
 
 	div.modal-content li,
@@ -862,6 +867,7 @@
 	button.modal-close span {
 		font-size: 1.5rem;
 		transition: color 0.2s;
+		color: var(--color-black);
 	}
 
 	@media (hover: hover) {
