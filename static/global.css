@@ -181,7 +181,11 @@ button {
 		--font-heading-s: 2rem;
 		--font-heading-m: 2.5rem;
 		--font-heading-l: 3rem;
+	}
+}
 
+@media screen and (min-width: 1024px) {
+	:root {
 		/* Spacing */
 		--padding-inline: 6rem;
 		--padding-block: 4rem;
@@ -200,7 +204,6 @@ button {
 
 		/* Spacing */
 		--padding-inline: 8rem;
-		--padding-block: 6rem;
 	}
 }
 

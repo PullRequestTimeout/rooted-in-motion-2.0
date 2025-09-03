@@ -959,7 +959,7 @@
 		translate: 0.5rem 0;
 	}
 
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 1024px) {
 		section.promise {
 			gap: var(--spacing-l);
 		}
