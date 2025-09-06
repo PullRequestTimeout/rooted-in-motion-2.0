@@ -85,7 +85,7 @@
 			}
 		}
 
-		hr {
+		hr.divider {
 			margin: 2rem 0;
 			border: none;
 			border-top: 2px solid var(--color-pine-2);
@@ -183,7 +183,7 @@
 		>
 		<a href="https://madhucollective.janeapp.com/#/staff_member/42" class="button button-primary">Book Rossland</a>
 	</div>
-	<hr />
+	<hr class="divider" />
 	<div class="location-info">
 		<div class="location-info-item">
 			<div class="location-info-item-col">
@@ -347,6 +347,7 @@
 	section.contact-form form textarea {
 		background-color: transparent;
 		border: none;
+		border-radius: 0;
 		transition: 0.1s;
 	}
 
