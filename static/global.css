@@ -216,6 +216,10 @@ button {
 
 /* Global Styles --------------------------------------- */
 
+:root {
+	color-scheme: only light;
+}
+
 html {
 	overflow-x: hidden;
 	background-color: var(--color-bronze-5);
