@@ -161,6 +161,7 @@
 		height: 0.75rem;
 		border-radius: 50%;
 		padding: 0;
+		opacity: 0.5;
 	}
 
 	div.embla__dots button.selected,
