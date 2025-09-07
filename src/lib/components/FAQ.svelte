@@ -72,6 +72,7 @@
 		background: none;
 		border: none;
 		padding: 0.75rem 0;
+		gap: var(--spacing-xs);
 	}
 
 	div.faq-item button * {
@@ -115,7 +116,7 @@
 
 	div.faq-icon span {
 		position: absolute;
-		width: 100%;
+		width: 1rem;
 		height: 3px;
 		background-color: var(--color-pine-3);
 		transition: transform 0.3s ease;
