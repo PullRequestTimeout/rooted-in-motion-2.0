@@ -123,7 +123,7 @@
 	{/if}
 </header>
 <header class="large-screen-nav" class:scrolled={scrollPosition > 10}>
-	<a href="/">
+	<a href="/" aria-label="Home">
 		<NavLogo />
 	</a>
 	<nav>
