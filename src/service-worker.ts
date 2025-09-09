@@ -1,3 +1,6 @@
+// Future Jake - Be aware that if copy and pasted into a file with significant local assetts, it may cause your browser to run out of storage space.
+// You may want to selectively cache only certain assets or implement a more sophisticated caching strategy in the future for larger projects.
+
 /// <reference lib="webworker" />
 
 import { build, files, version } from "$service-worker";
