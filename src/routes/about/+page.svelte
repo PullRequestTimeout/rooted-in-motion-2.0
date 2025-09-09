@@ -11,6 +11,11 @@
 ></SeoHead>
 
 <svelte:head>
+	<link rel="preload" as="image" href="/assets/images/profile-1.png" />
+	<link rel="preload" as="image" href="/assets/images/svgs/plant-11.svg" />
+	<link rel="preload" as="image" href="/assets/images/svgs/plant-12.svg" />
+	<link rel="preload" as="image" href="/assets/images/svgs/plant-13.svg" />
+
 	<style>
 		/* Hero ------------------------------------------------------------------------------------ */
 
@@ -68,6 +73,7 @@
 			transform: translateY(calc(0.75rem + var(--padding-block)));
 			z-index: 10;
 			width: 20em;
+			height: auto;
 			filter: drop-shadow(1em 1em 1em var(--color-black));
 		}
 
@@ -205,7 +211,7 @@
 			<picture>
 				<source srcset="/assets/images/profile-1.webp" type="image/webp" />
 				<source srcset="/assets/images/profile-1.png" type="image/jpeg" />
-				<img src="/assets/images/profile-1.png" alt="Michelle Coish" />
+				<img src="/assets/images/profile-1.png" alt="Michelle Coish" width="320px" height="426px" />
 			</picture>
 			<img src="/assets/images/svgs/plant-11.svg" alt="plant svg" class="hero-svg1 svg" />
 			<img src="/assets/images/svgs/plant-12.svg" alt="plant svg" class="hero-svg2 svg" />
