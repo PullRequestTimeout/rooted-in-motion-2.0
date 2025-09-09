@@ -19,6 +19,8 @@
 ></SeoHead>
 
 <svelte:head>
+	<link rel="preload" as="image" href="/assets/images/profile-3.png" />
+
 	<style>
 		/* Hero ------------------------------------------------------------------------------------ */
 		section.hero {

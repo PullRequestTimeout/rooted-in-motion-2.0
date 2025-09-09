@@ -1,6 +1,6 @@
 /* Font Imports ---------------------------------------- */
 
-@font-face {
+/* @font-face {
 	font-family: "Oswald";
 	font-weight: 700;
 	font-style: normal;
@@ -8,7 +8,7 @@
 		url("/assets/fonts/Oswald-Bold.woff2") format("woff2"),
 		url("/assets/fonts/Oswald-Bold.woff") format("woff");
 	font-display: swap;
-}
+} */
 
 /* Global Styles --------------------------------------- */
 

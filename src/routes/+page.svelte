@@ -6,12 +6,13 @@
 	import { homeFaqs } from "$lib/data/faqs";
 	import { openBookingModal } from "$lib/stores/uiStore.svelte";
 	import { isIntersecting } from "$lib/utils/isIntersecting";
-	import { text } from "@sveltejs/kit";
 </script>
 
 <SeoHead />
 
 <svelte:head>
+	<link rel="preload" as="image" href="/assets/images/treatment-1.png" />
+
 	<style>
 		/* Hero ------------------------------------------------------------------------------------ */
 		section.hero {
@@ -950,7 +951,7 @@
 	section.promise div.promise-link a {
 		font-size: var(--font-body-xl, 1.6rem);
 		text-decoration: none;
-		color: var(--color-bronze-1);
+		color: var(--color-pine-2);
 		text-align: center;
 	}
 
