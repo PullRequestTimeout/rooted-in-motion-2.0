@@ -38,6 +38,7 @@
 >
 	<a
 		href="/"
+		aria-label="Home"
 		onclick={() => {
 			open = false;
 		}}><NavLogo invertColor={open} /></a
