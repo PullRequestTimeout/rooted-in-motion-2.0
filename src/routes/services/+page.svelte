@@ -66,7 +66,7 @@
 
 		section.hero div.hero-image picture img {
 			width: 15rem;
-			height: auto; fetchpriority="high"
+			height: auto;
 			filter: drop-shadow(0px 0px 1em var(--color-bronze-2));
 		}
 
