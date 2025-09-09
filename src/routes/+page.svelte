@@ -12,6 +12,11 @@
 
 <svelte:head>
 	<link rel="preload" as="image" href="/assets/images/treatment-1.png" />
+	<link rel="preload" as="image" href="/assets/images/svgs/plant-1.svg" />
+	<link rel="preload" as="image" href="/assets/images/svgs/plant-2.svg" />
+	<link rel="preload" as="image" href="/assets/images/svgs/plant-3.svg" />
+	<link rel="preload" as="image" href="/assets/images/svgs/plant-4.svg" />
+	<link rel="preload" as="image" href="/assets/images/svgs/chalk-1.svg" />
 
 	<style>
 		/* Hero ------------------------------------------------------------------------------------ */
@@ -66,7 +71,8 @@
 
 		div.hero-image picture img {
 			filter: drop-shadow(0px 0px 1em var(--color-bronze-2));
-			width: 15em;
+			width: 15rem;
+			height: auto;
 		}
 
 		div.hero-image .svg {
@@ -266,7 +272,7 @@
 			<picture>
 				<source srcset="/assets/images/treatment-1.webp" type="image/webp" />
 				<source srcset="/assets/images/treatment-1.png" type="image/jpeg" />
-				<img src="/assets/images/treatment-1.png" alt="Michelle treating a client" />
+				<img src="/assets/images/treatment-1.png" alt="Michelle treating a client" width="240px" height="302px" />
 			</picture>
 		</div>
 	</section>
