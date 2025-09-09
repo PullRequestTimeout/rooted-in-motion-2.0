@@ -211,11 +211,11 @@
 			<picture>
 				<source srcset="/assets/images/profile-1.webp" type="image/webp" />
 				<source srcset="/assets/images/profile-1.png" type="image/jpeg" />
-				<img src="/assets/images/profile-1.png" alt="Michelle Coish" width="320px" height="426px" />
+				<img src="/assets/images/profile-1.png" alt="Michelle Coish" width="320px" height="426px" fetchpriority="high" />
 			</picture>
-			<img src="/assets/images/svgs/plant-11.svg" alt="plant svg" class="hero-svg1 svg" />
-			<img src="/assets/images/svgs/plant-12.svg" alt="plant svg" class="hero-svg2 svg" />
-			<img src="/assets/images/svgs/plant-13.svg" alt="plant svg" class="hero-svg3 svg" />
+			<img src="/assets/images/svgs/plant-11.svg" alt="plant svg" class="hero-svg1 svg" fetchpriority="high" />
+			<img src="/assets/images/svgs/plant-12.svg" alt="plant svg" class="hero-svg2 svg" fetchpriority="high" />
+			<img src="/assets/images/svgs/plant-13.svg" alt="plant svg" class="hero-svg3 svg" fetchpriority="high" />
 			<div class="hero-circle"></div>
 		</div>
 	</section>

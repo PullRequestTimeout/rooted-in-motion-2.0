@@ -66,7 +66,7 @@
 
 		section.hero div.hero-image picture img {
 			width: 15rem;
-			height: auto;
+			height: auto; fetchpriority="high"
 			filter: drop-shadow(0px 0px 1em var(--color-bronze-2));
 		}
 
@@ -253,13 +253,13 @@
 		<p>Providing Osteopathic Treatment and Lactation Consultation to the West Kootenays</p>
 	</div>
 	<div class="hero-image">
-		<img src="/assets/images/svgs/plant-16.svg" alt="plant svg" class="svg hero-svg-3" />
-		<img src="/assets/images/svgs/plant-15.svg" alt="plant svg" class="svg hero-svg-2" />
-		<img src="/assets/images/svgs/plant-14.svg" alt="plant svg" class="svg hero-svg-1" />
+		<img src="/assets/images/svgs/plant-16.svg" alt="plant svg" class="svg hero-svg-3" fetchpriority="high" />
+		<img src="/assets/images/svgs/plant-15.svg" alt="plant svg" class="svg hero-svg-2" fetchpriority="high" />
+		<img src="/assets/images/svgs/plant-14.svg" alt="plant svg" class="svg hero-svg-1" fetchpriority="high" />
 		<picture>
 			<source srcset="/assets/images/profile-3.webp" type="image/webp" />
 			<source srcset="/assets/images/profile-3.png" type="image/jpeg" />
-			<img src="/assets/images/profile-3.png" alt="Michelle treating a client" width="240px" height="302px" />
+			<img src="/assets/images/profile-3.png" alt="Michelle treating a client" width="240px" height="302px" fetchpriority="high" />
 		</picture>
 	</div>
 </section>

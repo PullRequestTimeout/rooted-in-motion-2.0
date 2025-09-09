@@ -264,15 +264,15 @@
 			<button class="button button-primary" onclick={openBookingModal}>Book Session</button>
 		</div>
 		<div class="hero-image">
-			<img class="hero-svg1 svg" src="/assets/images/svgs/plant-1.svg" alt="plant svg" />
-			<img class="hero-svg2 svg" src="/assets/images/svgs/plant-2.svg" alt="plant svg" />
-			<img class="hero-svg3 svg" src="/assets/images/svgs/plant-3.svg" alt="plant svg" />
-			<img class="hero-svg4 svg" src="/assets/images/svgs/plant-4.svg" alt="plant svg" />
+			<img class="hero-svg1 svg" src="/assets/images/svgs/plant-1.svg" alt="plant svg" fetchpriority="high" />
+			<img class="hero-svg2 svg" src="/assets/images/svgs/plant-2.svg" alt="plant svg" fetchpriority="high" />
+			<img class="hero-svg3 svg" src="/assets/images/svgs/plant-3.svg" alt="plant svg" fetchpriority="high" />
+			<img class="hero-svg4 svg" src="/assets/images/svgs/plant-4.svg" alt="plant svg" fetchpriority="high" />
 
 			<picture>
 				<source srcset="/assets/images/treatment-1.webp" type="image/webp" />
 				<source srcset="/assets/images/treatment-1.png" type="image/jpeg" />
-				<img src="/assets/images/treatment-1.png" alt="Michelle treating a client" width="240px" height="302px" />
+				<img src="/assets/images/treatment-1.png" alt="Michelle treating a client" width="240px" height="302px" fetchpriority="high" />
 			</picture>
 		</div>
 	</section>
