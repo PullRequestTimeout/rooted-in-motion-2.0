@@ -7,6 +7,7 @@
 	import Nav from "$lib/components/Nav.svelte";
 	import Footer from "$lib/components/Footer.svelte";
 	import BookingModal from "$lib/components/BookingModal.svelte";
+	import Popup from "$lib/components/Popup.svelte";
 
 	onMount(() => {
 		uiStore.loading = true;
@@ -37,3 +38,4 @@
 <Footer />
 <Toast />
 <BookingModal />
+<Popup />

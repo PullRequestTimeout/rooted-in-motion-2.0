@@ -111,6 +111,8 @@
 				<hr />
 				<a href="https://spectrumtreatmentcentre.janeapp.com/#/staff_member/29">Castlegar</a>
 				<hr />
+				<a href="https://redrivertherapeutics.janeapp.com/#/osteopathy">New Castlegar Location</a>
+				<hr />
 				<a href="https://fernandfawnlactation.janeapp.com/#/staff_member/1">Virtual</a>
 				<button
 					class="button button-secondary"
