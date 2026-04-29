@@ -168,7 +168,7 @@
 			</div>
 			<div class="location-info-item-col">
 				<h3>Hours</h3>
-				<p>Tuesday : 9AM - 5:30PM</p>
+				<p>Tuesday : 10AM - 6PM</p>
 				<p>Wednesday : 9AM - 5PM</p>
 			</div>
 		</div>
@@ -191,10 +191,10 @@
 			</div>
 			<div class="location-info-item-col">
 				<h3>Castlegar Location</h3>
-				<p>Spectrum Treatment Centre</p>
-				<p>2032 Columbia Ave</p>
+				<p>The Confluence</p>
+				<p>1995 6th Ave</p>
 				<p>Castlegar, BC</p>
-				<p>V1N 2W8</p>
+				<p>V1N 2P2</p>
 			</div>
 		</div>
 		<div class="location-info-item">
@@ -203,7 +203,7 @@
 			</div>
 			<div class="location-info-item-col">
 				<h3>Phone</h3>
-				<p><a href="tel:+12503042211">+1 (250) 304-2211</a></p>
+				<p><a href="tel:+12043906089">+1 (204) 390-6089</a></p>
 			</div>
 		</div>
 		<div class="location-info-item">
@@ -221,7 +221,8 @@
 			</div>
 			<div class="location-info-item-col">
 				<h3>Hours</h3>
-				<p>Thursday : 11PM - 7PM</p>
+				<p>Monday : 11AM - 7PM</p>
+				<p>Sunday : 11AM - 5PM</p>
 			</div>
 		</div>
 	</div>
@@ -233,7 +234,7 @@
 				castlegarMapOpen = true;
 			}}>Get Directions</button
 		>
-		<a href="https://madhucollective.janeapp.com/#/staff_member/42" class="button button-primary">Book Castlegar</a>
+		<a href="https://redrivertherapeutics.janeapp.com/#/osteopathy" class="button button-primary">Book Castlegar</a>
 	</div>
 </section>
 <section class="contact-form">
@@ -302,7 +303,7 @@
 					frameborder="0"
 					style="border:0"
 					loading="lazy"
-					src={`https://www.google.com/maps/embed/v1/place?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}&q=Spectrum+Treatment+Centre,Castlegar,BC`}
+					src={`https://www.google.com/maps/embed/v1/place?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}&q=The+Confluence,Castlegar,BC`}
 					allowfullscreen
 				>
 				</iframe>

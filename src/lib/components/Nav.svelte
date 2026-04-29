@@ -106,12 +106,9 @@
 			</ul>
 			<div class="small-screen-booking" class:booking={bookingOpen}>
 				<h2>Book Session:</h2>
-				<!-- <hr /> -->
 				<a href="https://madhucollective.janeapp.com/#/staff_member/42">Rossland</a>
 				<hr />
-				<a href="https://spectrumtreatmentcentre.janeapp.com/#/staff_member/29">Castlegar</a>
-				<hr />
-				<a href="https://redrivertherapeutics.janeapp.com/#/osteopathy">New Castlegar Location</a>
+				<a href="https://redrivertherapeutics.janeapp.com/#/osteopathy">Castlegar</a>
 				<hr />
 				<a href="https://fernandfawnlactation.janeapp.com/#/staff_member/1">Virtual</a>
 				<button

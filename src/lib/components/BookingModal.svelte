@@ -22,18 +22,10 @@
 				in:fade={{ delay: 3.5 * 100 }}
 				onclick={closeBookingModal}
 				target="_blank"
-				href="https://spectrumtreatmentcentre.janeapp.com/#/staff_member/29">Castlegar</a
+				href="https://redrivertherapeutics.janeapp.com/#/osteopathy">Castlegar</a
 			>
 			<hr out:fade in:fade={{ delay: 4 * 100 }} />
-			<a
-				out:fade
-				in:fade={{ delay: 4.5 * 100 }}
-				onclick={closeBookingModal}
-				target="_blank"
-				href="https://redrivertherapeutics.janeapp.com/#/osteopathy">New Castlegar Location</a
-			>
-			<hr out:fade in:fade={{ delay: 5 * 100 }} />
-			<a out:fade in:fade={{ delay: 5.5 * 100 }} onclick={closeBookingModal} href="https://fernandfawnlactation.janeapp.com/#/staff_member/1"
+			<a out:fade in:fade={{ delay: 4.5 * 100 }} onclick={closeBookingModal} href="https://fernandfawnlactation.janeapp.com/#/staff_member/1"
 				>Virtual</a
 			>
 		</div>
